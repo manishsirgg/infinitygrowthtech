@@ -72,8 +72,8 @@ export const CONTACT: ContactInfo = {
 };
 
 export const SOCIAL_LINKS = {
-  facebook: "https://facebook.com/profile.php?id=61588041837546",
-  instagram: "https://instagram.com/vidya.infinity",
-  linkedin: "https://linkedin.com/company/vidya-infinity",
+  facebook: "https://www.facebook.com/profile.php?id=61588130169508",
+  instagram: "https://instagram.com/infinitygrowthtech",
+  linkedin: "https://www.linkedin.com/company/112171242/",
   x: "https://x.com/YOUR_HANDLE",
 };
