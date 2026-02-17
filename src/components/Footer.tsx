@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center hover:bg-blue-900 hover:text-white transition-all"
+            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
           >
             <Facebook size={18} />
           </a>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center hover:bg-blue-900 hover:text-white transition-all"
+            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
           >
            <Instagram size={18} />
           </a>
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center hover:bg-blue-900 hover:text-white transition-all"
+            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
           >
             <Linkedin size={18} />
           </a>
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.x}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-10 h-10 bg-blue-50 text-blue-900 rounded-full flex items-center justify-center hover:bg-blue-900 hover:text-white transition-all"
+            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
           >
             <X size={18} />
           </a>
