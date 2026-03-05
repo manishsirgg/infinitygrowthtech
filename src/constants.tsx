@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [
     title: 'Media & PR Strategy',
     description: 'Strategic public relations and media outreach to establish authority and brand credibility.',
     icon: '📰'
-  }
+  },
   {
     id: 'saas',
     title: 'SaaS Development',
