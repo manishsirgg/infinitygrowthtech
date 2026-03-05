@@ -63,6 +63,18 @@ export const SERVICES: Service[] = [
     description: 'Strategic public relations and media outreach to establish authority and brand credibility.',
     icon: '📰'
   }
+  {
+    id: 'saas',
+    title: 'SaaS Development',
+    description: 'Building scalable, high-performance software-as-a-service platforms with modern tech stacks.',
+    icon: '💻'
+  },
+  {
+    id: 'automation',
+    title: 'AI & Automation Workflows',
+    description: 'Streamlining business processes with intelligent automation and AI-driven efficiency.',
+    icon: '🤖'
+  }
 ];
 
 export const CONTACT: ContactInfo = {
