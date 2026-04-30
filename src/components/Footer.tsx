@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <p className="text-gray-500 text-xs text-center">
-          © {new Date().getFullYear()} Infinity Growth Tech (Infinity Global Advisory). Architecting Digital Growth.
+          © {new Date().getFullYear()} Infinity Growth Tech (Infinity Global Advisory). Architecting Business Growth.
         </p>
 
         {/* Social Icons */}
