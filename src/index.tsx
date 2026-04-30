@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -10,8 +9,12 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
+
+const params = new URLSearchParams(window.location.search);
+const isPricingRoute = window.location.pathname === '/pricing' || params.get('page') === 'pricing';
+
 root.render(
   <React.StrictMode>
-    {window.location.pathname === '/pricing' ? <PricingPage /> : <App />}
+    {isPricingRoute ? <PricingPage /> : <App />}
   </React.StrictMode>
 );
