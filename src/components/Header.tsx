@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
           <a href="#home" className="hover:text-green-400 transition-colors">Home</a>
           <a href="#services" className="hover:text-green-400 transition-colors">Services</a>
-          <a href="/pricing" className="hover:text-green-400 transition-colors">Pricing</a>
+          <a href="/?page=pricing" className="hover:text-green-400 transition-colors">Pricing</a>
           <a href="#advisor" className="hover:text-green-400 transition-colors">AI Advisor</a>
           <a href="#contact" className="hover:text-green-400 transition-colors">Contact</a>
         </nav>
