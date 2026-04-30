@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-          <span className="text-xs font-semibold tracking-wider uppercase text-green-400">Architecting Digital Growth</span>
+          <span className="text-xs font-semibold tracking-wider uppercase text-green-400">Architecting Business Growth</span>
         </div>
         
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-6 md:mb-8 leading-[1.1] tracking-tighter">
