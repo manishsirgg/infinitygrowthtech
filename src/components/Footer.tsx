@@ -20,6 +20,7 @@ const Footer: React.FC = () => {
             Architecting Business Growth
           </span>
         </div>
+        </div>
 
         {/* Copyright */}
         <p className="text-gray-500 text-xs text-center">
