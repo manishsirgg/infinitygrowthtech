@@ -4,9 +4,9 @@ import { SERVICES } from '../constants';
 
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-[#080A0F]">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
+    <section id="services" className="py-16 md:py-24 bg-[#080A0F]">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-black mb-6">High-Impact Services</h2>
           <div className="w-20 h-1 bg-gradient-brand mx-auto rounded-full"></div>
           <p className="mt-8 text-gray-400 max-w-xl mx-auto">
@@ -18,7 +18,7 @@ const Services: React.FC = () => {
           {SERVICES.map((service) => (
             <div 
               key={service.id} 
-              className="group p-8 glass rounded-2xl hover:bg-white/[0.05] transition-all duration-500 border-b-2 border-transparent hover:border-green-400"
+              className="group p-6 sm:p-8 glass rounded-2xl hover:bg-white/[0.05] transition-all duration-500 border-b-2 border-transparent hover:border-green-400"
             >
               <div className="text-4xl mb-6 transform group-hover:scale-110 transition-transform duration-300 inline-block">
                 {service.icon}

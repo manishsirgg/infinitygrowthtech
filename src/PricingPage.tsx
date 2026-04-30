@@ -67,12 +67,12 @@ const gridThree = 'grid gap-6 md:grid-cols-2 xl:grid-cols-3';
 const PricingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0B0F19] text-white">
-      <main className="mx-auto w-full max-w-7xl px-4 py-14 md:px-8 md:py-20">
+      <main className="mx-auto w-full max-w-7xl px-4 py-10 sm:py-12 md:px-8 md:py-20">
         <section className="mb-16 text-center md:mb-24">
           <p className="mx-auto mb-4 inline-flex rounded-full border border-[#00E5A8]/35 bg-[#00E5A8]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#00E5A8]">
             Limited onboarding slots this month
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight md:text-6xl">Architecting Business Growth</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight md:text-6xl">Architecting Business Growth</h1>
           <p className="mx-auto mt-5 max-w-3xl text-base text-[#A1A1AA] md:text-xl">
             Complete Branding, Technology &amp; Marketing Systems to Scale Your Business
           </p>
