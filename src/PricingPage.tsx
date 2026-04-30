@@ -3,15 +3,26 @@ import React from 'react';
 type PricingCardProps = {
   title: string;
   price: string;
+  gstNote?: string;
   features?: string[];
   highlight?: boolean;
+  badgeLabel?: string;
   subtitle?: string;
-  ctaLabel?: string;
+  ctaLabel?: 'Get Started' | 'Choose Plan';
 };
 
-const PricingCard: React.FC<PricingCardProps> = ({ title, price, features = [], highlight = false, subtitle, ctaLabel = 'Book This Plan' }) => (
+const PricingCard: React.FC<PricingCardProps> = ({
+  title,
+  price,
+  gstNote = 'Excl. GST',
+  features = [],
+  highlight = false,
+  badgeLabel,
+  subtitle,
+  ctaLabel = 'Get Started',
+}) => (
   <article
-    className={`group rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,229,168,0.2)] ${
+    className={`group flex h-full flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,229,168,0.2)] ${
       highlight
         ? 'border-[#00E5A8] bg-gradient-to-b from-[#00E5A8]/15 to-[#111827]'
         : 'border-white/10 bg-[#111827]'
@@ -19,12 +30,17 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, features = [], 
   >
     <div className="mb-5 flex items-start justify-between gap-3">
       <div>
-        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <h3 className="text-lg font-bold text-white md:text-xl">{title}</h3>
         {subtitle ? <p className="mt-1 text-sm text-[#A1A1AA]">{subtitle}</p> : null}
       </div>
-      {highlight ? <span className="rounded-full border border-[#00E5A8]/40 bg-[#00E5A8]/20 px-3 py-1 text-xs font-semibold text-[#00E5A8]">Most Chosen</span> : null}
+      {badgeLabel ? (
+        <span className="rounded-full border border-[#00E5A8]/40 bg-[#00E5A8]/20 px-3 py-1 text-xs font-semibold text-[#00E5A8]">{badgeLabel}</span>
+      ) : null}
     </div>
-    <p className="mb-5 text-3xl font-extrabold text-white">{price}</p>
+    <div className="mb-5">
+      <p className="text-2xl font-extrabold text-white md:text-3xl">{price}</p>
+      <p className="mt-1 text-xs font-medium uppercase tracking-wider text-[#A1A1AA]">{gstNote}</p>
+    </div>
     {features.length > 0 ? (
       <ul className="space-y-2 text-sm text-[#A1A1AA]">
         {features.map((feature) => (
@@ -35,13 +51,18 @@ const PricingCard: React.FC<PricingCardProps> = ({ title, price, features = [], 
         ))}
       </ul>
     ) : null}
-    <a href="https://wa.me/918989601701" className="mt-6 block w-full rounded-xl border border-[#00E5A8]/40 bg-[#00E5A8]/10 px-4 py-2.5 text-center text-sm font-semibold text-[#00E5A8] transition-all hover:scale-[1.02] hover:bg-[#00E5A8]/20">
+    <a
+      href="https://wa.me/918989601701"
+      className="mt-auto pt-6 block w-full rounded-xl border border-[#00E5A8]/40 bg-[#00E5A8]/10 px-4 py-2.5 text-center text-sm font-semibold text-[#00E5A8] transition-all hover:scale-[1.02] hover:bg-[#00E5A8]/20"
+    >
       {ctaLabel}
     </a>
   </article>
 );
 
-const sectionTitle = 'mb-8 text-2xl font-bold text-white md:text-3xl';
+const sectionTitle = 'mb-3 text-2xl font-bold text-white md:text-3xl';
+const sectionSubtitle = 'mb-8 max-w-4xl text-sm text-[#A1A1AA] md:text-base';
+const gridThree = 'grid gap-6 md:grid-cols-2 xl:grid-cols-3';
 
 const PricingPage: React.FC = () => {
   return (
@@ -61,60 +82,81 @@ const PricingPage: React.FC = () => {
           </div>
         </section>
 
-        <section id="branding" className="mb-16 md:mb-20">
+        <section id="branding" className="mb-16 md:mb-24">
           <h2 className={sectionTitle}>Branding Packages</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className={gridThree}>
             <PricingCard title="Premium Logo" price="₹6,049" features={['3 Concepts', '5 Revisions', 'Mockups', 'Social Profile', 'Source Files']} />
             <PricingCard title="Logo + Stationery" price="₹8,799" features={['Everything above', 'Business Card', 'Letterhead', 'Envelope']} />
-            <PricingCard title="Brand Identity" price="₹16,499" highlight features={['Unlimited revisions', 'Guidelines', 'Animation', 'Social kit']} ctaLabel="Reserve Brand Identity" />
+            <PricingCard title="Brand Identity" price="₹16,499" features={['Unlimited revisions', 'Guidelines', 'Animation', 'Social kit']} ctaLabel="Choose Plan" />
           </div>
         </section>
 
-        <section className="mb-16 md:mb-20">
+        <section className="mb-16 md:mb-24">
           <h2 className={sectionTitle}>Website + Combos</h2>
-          <div className="mb-6 rounded-2xl border border-[#3B82F6]/40 bg-[#111827] p-5 text-sm text-[#A1A1AA] md:text-base">
-            Fast-track offer: Launch in as little as 7–14 days based on scope.
-          </div>
-          <div className="grid gap-6 lg:grid-cols-4">
-            <PricingCard title="One Page Website" price="₹19,999" features={['Responsive design', 'Lead form', 'WhatsApp button', 'SEO', 'Portfolio + services']} />
-            <PricingCard title="Starter" price="₹24,999" />
-            <PricingCard title="Growth" price="₹32,999" highlight ctaLabel="Choose Growth Plan" />
-            <PricingCard title="Elite" price="₹44,999" />
+          <p className={sectionSubtitle}>Fast-track offer: Launch in as little as 7–14 days based on scope.</p>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <PricingCard title="One Page Website" price="₹19,999" features={['Modern & clean responsive design', 'Lead capture form', 'WhatsApp floating button', 'Google Map integration', 'Social media links', 'Dynamic portfolio section', 'Dynamic services/products section', 'Email integration for leads', 'On-page SEO', 'Graphics included']} />
+            <PricingCard title="Starter" price="₹24,999" features={['Premium logo design', 'One page business website', 'Mobile responsive design', 'Lead capture form', 'WhatsApp button integration', 'Basic SEO setup', 'Social media profile-ready assets']} ctaLabel="Choose Plan" />
+            <PricingCard title="Growth" price="₹32,999" highlight badgeLabel="Most Chosen" features={['Logo + office stationery', 'One page business website', 'Advanced UI/UX layout', 'Lead generation system', 'WhatsApp + email integration', 'SEO optimization', 'Portfolio + services sections']} ctaLabel="Choose Plan" />
+            <PricingCard title="Elite" price="₹44,999" features={['Complete brand identity kit', 'One page business website', 'Brand guidelines', 'Social media kit', 'Logo animation', 'Conversion-focused layout', 'Full visual identity system']} ctaLabel="Choose Plan" />
           </div>
         </section>
 
-        <section className="mb-16 grid gap-6 md:grid-cols-2 md:mb-20">
+        <section className="mb-16 grid gap-6 md:grid-cols-2 md:mb-24">
           <PricingCard title="Ecommerce" price="₹59,999" features={['Up to 100 products', 'Payment integration', 'Inventory', 'WhatsApp', 'SEO + analytics']} />
           <PricingCard title="LMS" price="₹79,999+" features={['Courses', 'Dashboard', 'Payments', 'Certificates']} />
         </section>
 
-        <section className="mb-16 md:mb-20">
-          <h2 className={sectionTitle}>Social Media</h2>
+        <section className="mb-16 md:mb-24">
+          <h2 className={sectionTitle}>Social Media Setup &amp; Management</h2>
+          <p className={sectionSubtitle}>Choose platform-wise setup or monthly growth management based on your business needs.</p>
+          <h3 className="mb-5 text-xl font-semibold text-white">Setup Plans</h3>
+          <div className={`${gridThree} mb-10`}>
+            <PricingCard title="Meta Setup" price="₹6,999" features={['Facebook page optimization', 'Instagram business profile optimization', 'Bio, branding & CTA setup', 'Highlights setup', 'Profile image/cover guidance']} />
+            <PricingCard title="Google Business Profile Setup" price="₹3,999" features={['Google Business Profile setup/optimization', 'Business info structuring', 'SEO keyword optimization', 'Location & contact setup', 'Service/category optimization']} />
+            <PricingCard title="YouTube Channel Setup" price="₹7,999" features={['Channel setup/optimization', 'Banner & branding guidance', 'SEO-friendly channel description', 'Keyword setup', 'Basic upload structure']} />
+          </div>
+          <h3 className="mb-5 text-xl font-semibold text-white">Monthly Growth Plans</h3>
+          <div className={gridThree}>
+            <PricingCard title="Meta Growth" price="₹14,999/month" features={['Instagram + Facebook management', 'Content planning', 'Post creatives', 'Captions & hashtags', 'Basic engagement handling']} />
+            <PricingCard title="Meta + Google Growth" price="₹19,999/month" highlight badgeLabel="Most Popular" features={['Meta management', 'Google Business Profile optimization', 'Regular posting', 'Review visibility support', 'Monthly performance insights']} ctaLabel="Choose Plan" />
+            <PricingCard title="Full Growth System" price="₹29,999/month" features={['Meta + Google + YouTube management', 'Reels/shorts support', 'Content strategy', 'Engagement-focused execution', 'Growth-oriented monthly plan']} />
+          </div>
+        </section>
+
+        <section className="mb-16 md:mb-24">
+          <h2 className={sectionTitle}>Paid Ads Management</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            <PricingCard title="Setup" price="Meta ₹6,999 • Google ₹3,999 • YouTube ₹7,999" />
-            <PricingCard title="Monthly" price="Meta ₹14,999 • Meta + Google ₹19,999 • Full System ₹29,999" highlight subtitle="₹19,999/month is our highest-converting package" ctaLabel="Lock ₹19,999 Plan" />
+            <PricingCard title="Ads Setup" price="₹9,999" features={['Meta/Google ad account setup', 'Pixel/conversion tracking setup', 'Audience research', 'Campaign structure setup', 'Initial ad creative guidance']} />
+            <PricingCard title="Monthly Ads Management" price="₹14,999/month" features={['Campaign creation & optimization', 'Audience targeting', 'A/B testing', 'Performance monitoring', 'ROI-focused strategy']} />
+          </div>
+          <p className="mt-5 rounded-xl border border-white/10 bg-[#111827] p-4 text-sm text-[#A1A1AA]">Ad spend is separate and paid directly by the client.</p>
+        </section>
+
+        <section className="mb-16 md:mb-24">
+          <h2 className={sectionTitle}>Amazon &amp; Flipkart Seller Services</h2>
+          <div className={gridThree}>
+            <PricingCard title="Amazon Seller Setup" price="₹9,999/platform" features={['Seller account setup support', 'Documentation guidance', 'Dashboard configuration', 'Payment setup guidance', 'Shipping settings support']} />
+            <PricingCard title="Flipkart Seller Setup" price="₹9,999/platform" features={['Seller account setup support', 'Documentation guidance', 'Dashboard configuration', 'Payment setup guidance', 'Shipping settings support']} />
+            <PricingCard title="Marketplace Management Combo" price="₹24,999/month" highlight badgeLabel="Best Value" features={['Amazon + Flipkart management', 'Product listing support', 'Catalog optimization', 'Inventory/order support', 'Performance monitoring']} ctaLabel="Choose Plan" />
+          </div>
+          <p className="mt-5 rounded-xl border border-white/10 bg-[#111827] p-4 text-sm text-[#A1A1AA]">Single platform monthly management: ₹14,999/month/platform Excl. GST</p>
+        </section>
+
+        <section className="mb-16 md:mb-24">
+          <h2 className={sectionTitle}>Packaging Design Services</h2>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <PricingCard title="Cosmetics Packaging" price="₹8,799" features={['2 unique packaging concepts', 'Revisions on final design', 'Realistic mockup presentation', 'CMYK print-ready design', 'Source files']} />
+            <PricingCard title="Food Product Packaging" price="₹7,699" features={['2 packaging design concepts', 'Revisions on final design', 'Product mockup', 'Print-ready files', 'Source files']} />
+            <PricingCard title="Product Box Packaging" price="₹7,699" features={['2 box packaging concepts', 'Revisions on final design', 'Mockup presentation', 'CMYK print-ready files', 'Source files']} />
+            <PricingCard title="Product Label / Sticker Design" price="₹5,499" features={['2 label concepts', 'Revisions on final design', 'Mockup preview', 'Print-ready files', 'Source files']} />
+            <PricingCard title="Bottle Label Design" price="₹5,499" features={['2 bottle label concepts', 'Revisions on final design', 'Mockup preview', 'Print-ready files', 'Source files']} />
           </div>
         </section>
 
-        <section className="mb-16 grid gap-6 md:grid-cols-3 md:mb-20">
-          <PricingCard title="Ads Setup" price="₹9,999" />
-          <PricingCard title="Ads Monthly" price="₹14,999" subtitle="Ad spend is separate" />
-          <PricingCard title="Marketplace" price="Setup ₹9,999/platform • Management ₹14,999/platform • Combo ₹24,999" highlight />
-        </section>
-
-        <section className="mb-16 md:mb-20">
-          <h2 className={sectionTitle}>Packaging</h2>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <PricingCard title="Cosmetics" price="₹6,599" />
-            <PricingCard title="Food" price="₹7,699" />
-            <PricingCard title="Box" price="₹7,699" />
-            <PricingCard title="Labels" price="₹5,499" />
-          </div>
-        </section>
-
-        <section className="mb-16 grid gap-6 md:grid-cols-2 md:mb-20">
-          <PricingCard title="Video Editing" price="₹1,000/min" features={['Reels', 'Ads', 'Transitions', 'Music']} />
-          <PricingCard title="Custom Software" price="Pricing based on requirements" features={['SaaS', 'CRM', 'Automation', 'APIs']} subtitle="Request Custom Quote" ctaLabel="Get Custom Proposal" />
+        <section className="mb-16 grid gap-6 md:grid-cols-2 md:mb-24">
+          <PricingCard title="Video Editing" price="₹1,000/minute" features={['Reels/shorts editing', 'Ad video editing', 'Smooth transitions', 'Text animations', 'Background music', 'Basic color correction']} />
+          <PricingCard title="Custom Software" price="Pricing based on requirements" gstNote="Excl. GST if applicable" features={['SaaS', 'CRM', 'Automation', 'APIs']} ctaLabel="Choose Plan" />
         </section>
 
         <section id="final-cta" className="rounded-2xl border border-[#3B82F6]/40 bg-[#111827] p-8 text-center md:p-12">
