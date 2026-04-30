@@ -9,17 +9,26 @@ const Footer: React.FC = () => {
 
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-         <div className="h-8 sm:h-10 w-auto transition-transform duration-300 hover:scale-105">
-  <img 
-    src="/logo.svg" 
-    alt="Infinity Growth Tech Logo" 
-    className="h-8 sm:h-10 w-auto"
-  />
-          <span className="font-bold text-sm tracking-tighter uppercase">
-            Infinity Growth Tech <br>
-            Architecting Business Growth
-          </span>
-        </div>
+          
+          {/* Logo */}
+          <div className="transition-transform duration-300 hover:scale-105">
+            <img 
+              src="/logo.svg" 
+              alt="Infinity Growth Tech Logo" 
+              className="h-8 sm:h-10 w-auto"
+            />
+          </div>
+
+          {/* Text */}
+          <div className="flex flex-col">
+            <span className="font-bold text-sm tracking-tighter uppercase">
+              Infinity Growth Tech
+            </span>
+            <span className="text-xs text-green-400 tracking-wide">
+              Architecting Business Growth
+            </span>
+          </div>
+
         </div>
 
         {/* Copyright */}
@@ -33,7 +42,7 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.facebook}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
+            className="text-gray-500 hover:text-green-400 transition-colors"
           >
             <Facebook size={18} />
           </a>
@@ -42,20 +51,19 @@ const Footer: React.FC = () => {
             href={SOCIAL_LINKS.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
+            className="text-gray-500 hover:text-green-400 transition-colors"
           >
-           <Instagram size={18} />
+            <Instagram size={18} />
           </a>
 
           <a
             href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
+            className="text-gray-500 hover:text-green-400 transition-colors"
           >
             <Linkedin size={18} />
           </a>
-
         </div>
 
       </div>
