@@ -15,12 +15,9 @@ const Footer: React.FC = () => {
     alt="Infinity Growth Tech Logo" 
     className="h-8 sm:h-10 w-auto"
   />
-  <span className="text-xs text-green-400 mt-1 tracking-wide">
-    Architecting Business Growth
-  </span>
-</div>
           <span className="font-bold text-sm tracking-tighter uppercase">
             Infinity Growth Tech
+            Architecting Business Growth
           </span>
         </div>
 
