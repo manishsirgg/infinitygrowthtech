@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import WhatsAppFloat from './components/WhatsAppFloat';
+import Footer from './components/Footer';
 
 type PricingCardProps = {
   title: string;
@@ -171,6 +172,7 @@ const PricingPage: React.FC = () => {
           </div>
         </section>
       </main>
+      <Footer />
       <WhatsAppFloat />
     </div>
   );
