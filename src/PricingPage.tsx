@@ -164,7 +164,7 @@ const PricingPage: React.FC = () => {
           <p className="mx-auto mt-3 max-w-2xl text-[#A1A1AA]">Priority onboarding closes soon. Secure your growth sprint now.</p>
           <div className="mt-7 flex flex-col justify-center gap-4 sm:flex-row">
             <a href="https://wa.me/918989601701" className="w-full rounded-xl bg-[#00E5A8] px-7 py-3 text-center font-semibold text-black transition-transform hover:scale-[1.03] sm:w-auto">Get Started</a>
-            <a href="/#contact" className="w-full rounded-xl border border-white/20 px-7 py-3 text-center font-semibold transition-transform hover:scale-[1.03] hover:border-[#3B82F6] sm:w-auto">Contact Now</a>
+            <a href="/?scrollTo=contact#contact" className="w-full rounded-xl border border-white/20 px-7 py-3 text-center font-semibold transition-transform hover:scale-[1.03] hover:border-[#3B82F6] sm:w-auto">Contact Now</a>
           </div>
         </section>
       </main>

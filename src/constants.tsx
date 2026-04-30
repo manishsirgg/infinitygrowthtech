@@ -84,8 +84,7 @@ export const CONTACT: ContactInfo = {
 };
 
 export const SOCIAL_LINKS = {
-  facebook: "https://www.facebook.com/profile.php?id=61588130169508",
-  instagram: "https://instagram.com/infinitygrowthtech",
-  linkedin: "https://www.linkedin.com/company/112171242/",
-  x: "https://x.com/YOUR_HANDLE",
+  facebook: 'https://www.facebook.com/infinitygrowthtech',
+  instagram: 'https://www.instagram.com/infinitygrowthtech/',
+  linkedin: 'https://www.linkedin.com/company/infinitygrowthtech',
 };

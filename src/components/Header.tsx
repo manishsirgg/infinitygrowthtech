@@ -1,5 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { SOCIAL_LINKS } from '../constants';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,9 +38,16 @@ const Header: React.FC = () => {
           <a href="#contact" className="hover:text-green-400 transition-colors">Contact</a>
         </nav>
 
-        <a href="https://wa.me/918989601701" target="_blank" rel="noopener noreferrer" className="bg-gradient-brand text-black px-6 py-2.5 rounded-full text-sm font-bold hover:shadow-[0_0_20px_rgba(74,222,128,0.4)] transition-all">
-          Get Started
-        </a>
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2">
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors"><Linkedin size={18} /></a>
+            <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors"><Instagram size={18} /></a>
+            <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-400 transition-colors"><Facebook size={18} /></a>
+          </div>
+          <a href="https://wa.me/918989601701" target="_blank" rel="noopener noreferrer" className="bg-gradient-brand text-black px-6 py-2.5 rounded-full text-sm font-bold hover:shadow-[0_0_20px_rgba(74,222,128,0.4)] transition-all">
+            Get Started
+          </a>
+        </div>
       </div>
     </header>
   );

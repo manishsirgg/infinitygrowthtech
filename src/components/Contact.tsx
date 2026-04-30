@@ -12,12 +12,18 @@ const Contact: React.FC = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const response = await fetch("https://formspree.io/f/mbdayzrl", {
+    const response = await fetch('https://formsubmit.co/ajax/manishsirgg@gmail.com', {
       method: "POST",
-      body: formData,
       headers: {
+        'Content-Type': 'application/json',
         Accept: "application/json",
       },
+      body: JSON.stringify({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+      }),
     });
 
     if (response.ok) {

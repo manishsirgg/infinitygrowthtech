@@ -1,6 +1,6 @@
 import React from 'react';
 import { SOCIAL_LINKS } from '../constants';
-import { Facebook, Instagram, Linkedin, X } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <p className="text-gray-500 text-xs text-center">
-          © {new Date().getFullYear()} Infinity Growth Tech. Architecting Digital Growth.
+          © {new Date().getFullYear()} Infinity Growth Tech (Infinity Global Advisory). Architecting Digital Growth.
         </p>
 
         {/* Social Icons */}
@@ -65,14 +65,6 @@ const Footer: React.FC = () => {
             <Linkedin size={18} />
           </a>
 
-          <a
-            href={SOCIAL_LINKS.x}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-500 hover:text-green-400 transition-colors text-xs uppercase tracking-widest font-bold"
-          >
-            <X size={18} />
-          </a>
         </div>
 
       </div>
