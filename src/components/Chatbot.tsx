@@ -18,15 +18,15 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <section id="advisor" className="py-24">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto glass rounded-3xl p-8 md:p-12 relative overflow-hidden">
+    <section id="advisor" className="py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto glass rounded-2xl md:rounded-3xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/20 blur-3xl -z-10"></div>
           
-          <div className="flex flex-col md:flex-row gap-12 items-start">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-start">
             <div className="flex-1">
               <span className="text-green-400 font-bold text-xs uppercase tracking-widest mb-4 block">Beta Feature</span>
-              <h2 className="text-3xl font-black mb-6">AI Growth Advisor</h2>
+              <h2 className="text-2xl sm:text-3xl font-black mb-5 md:mb-6">AI Growth Advisor</h2>
               <p className="text-gray-400 mb-8">
                 Tell our AI strategist about your business goals, and get an instant recommendation on which Infinity Growth Tech services you need.
               </p>

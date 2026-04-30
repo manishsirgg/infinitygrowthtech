@@ -35,13 +35,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-black relative">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <section id="contact" className="py-16 md:py-24 bg-black relative">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-20">
 
           {/* LEFT SIDE */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 md:mb-8 leading-tight">
               Ready to <br />
               <span className="text-gradient">Accelerate?</span>
             </h2>
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* RIGHT SIDE FORM */}
-          <div className="glass p-10 rounded-3xl">
+          <div className="glass p-5 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl">
             <h3 className="text-2xl font-bold mb-8">Send a Message</h3>
 
             {success && (
