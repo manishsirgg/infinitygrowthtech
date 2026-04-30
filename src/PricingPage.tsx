@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from './components/Header';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 type PricingCardProps = {
   title: string;
@@ -67,7 +69,8 @@ const gridThree = 'grid gap-6 md:grid-cols-2 xl:grid-cols-3';
 const PricingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-[#0B0F19] text-white">
-      <main className="mx-auto w-full max-w-7xl px-4 py-10 sm:py-12 md:px-8 md:py-20">
+      <Header />
+      <main className="mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:pb-12 sm:pt-32 md:px-8 md:pb-20 md:pt-36">
         <section className="mb-16 text-center md:mb-24">
           <p className="mx-auto mb-4 inline-flex rounded-full border border-[#00E5A8]/35 bg-[#00E5A8]/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#00E5A8]">
             Limited onboarding slots this month
@@ -168,6 +171,7 @@ const PricingPage: React.FC = () => {
           </div>
         </section>
       </main>
+      <WhatsAppFloat />
     </div>
   );
 };

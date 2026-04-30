@@ -6,6 +6,7 @@ import Services from './components/Services';
 import Chatbot from './components/Chatbot';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -30,6 +31,7 @@ const App: React.FC = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 };
