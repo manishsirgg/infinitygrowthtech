@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
     className="h-8 sm:h-10 w-auto"
   />
           <span className="font-bold text-sm tracking-tighter uppercase">
-            Infinity Growth Tech
+            Infinity Growth Tech <br>
             Architecting Business Growth
           </span>
         </div>
