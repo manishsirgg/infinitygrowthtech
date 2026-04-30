@@ -9,23 +9,16 @@ const Footer: React.FC = () => {
 
         {/* Logo Section */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-brand rounded-md flex items-center justify-center">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-black"
-            >
-              <path
-                d="M4 18V9M9 18V6M14 18V3M19 18V12"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
+         <div className="h-8 sm:h-10 w-auto transition-transform duration-300 hover:scale-105">
+  <img 
+    src="/logo.svg" 
+    alt="Infinity Growth Tech Logo" 
+    className="h-8 sm:h-10 w-auto"
+  />
+  <span className="text-xs text-green-400 mt-1 tracking-wide">
+    Architecting Business Growth
+  </span>
+</div>
           <span className="font-bold text-sm tracking-tighter uppercase">
             Infinity Growth Tech
           </span>
