@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Facebook, Instagram, Linkedin, Menu, X } from 'lucide-react';
 import { SOCIAL_LINKS } from '../constants';
 
+const isPricingPage =
+  window.location.pathname === '/pricing' || new URLSearchParams(window.location.search).get('page') === 'pricing';
+
 const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
+  { label: 'Home', href: isPricingPage ? '/' : '#home' },
+  { label: 'Services', href: isPricingPage ? '/#services' : '#services' },
   { label: 'Pricing', href: '/?page=pricing' },
-  { label: 'AI Advisor', href: '#advisor' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'AI Advisor', href: isPricingPage ? '/#advisor' : '#advisor' },
+  { label: 'Contact', href: isPricingPage ? '/#contact' : '#contact' },
 ];
 
 const Header: React.FC = () => {
@@ -33,7 +36,7 @@ const Header: React.FC = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#05070A]/90 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-4 md:py-5'}`}>
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center gap-4">
-        <div className="flex items-center gap-2 group cursor-pointer">
+        <a href="/" className="flex items-center gap-2 group cursor-pointer" aria-label="Go to homepage">
           <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-brand rounded-lg flex items-center justify-center">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-black">
               <path d="M4 18V9M9 18V6M14 18V3M19 18V12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
@@ -44,7 +47,7 @@ const Header: React.FC = () => {
             <span className="font-bold text-base sm:text-xl tracking-tight uppercase leading-none">Infinity Growth</span>
             <span className="text-[10px] text-green-400 font-bold tracking-widest uppercase mt-0.5">Tech</span>
           </div>
-        </div>
+        </a>
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
           {navLinks.map((link) => (

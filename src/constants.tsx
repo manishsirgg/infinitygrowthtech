@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
 ];
 
 export const CONTACT: ContactInfo = {
-  email: 'infoinfinitygrowthtech@gmail.com',
+  email: 'manishsirgg@gmail.com',
   phone: '+91-8989601701',
   address: 'First Floor, E53/54, Sector 3, Noida, Uttar Pradesh, 201301'
 };

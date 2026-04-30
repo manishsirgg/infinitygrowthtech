@@ -34,7 +34,7 @@ const Services: React.FC = () => {
         </div>
         <div className="mt-10 text-center">
           <a
-            href="/pricing"
+            href="/?page=pricing"
             className="inline-flex items-center rounded-xl border border-green-400/40 bg-green-400/10 px-6 py-3 text-sm font-semibold text-green-400 transition-all hover:scale-105 hover:bg-green-400/20"
           >
             Explore Full Pricing
