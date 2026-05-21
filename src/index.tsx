@@ -17,6 +17,6 @@ const isPricingRoute = window.location.pathname === '/pricing' || params.get('pa
 root.render(
   <React.StrictMode>
     {isPricingRoute ? <PricingPage /> : <App />}
-    <Analytics />
+    <Analytics mode="production" />
   </React.StrictMode>
 );
