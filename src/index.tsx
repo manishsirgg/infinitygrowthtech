@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import PricingPage from './PricingPage';
+import { Analytics } from '@vercel/analytics/react';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -16,5 +17,6 @@ const isPricingRoute = window.location.pathname === '/pricing' || params.get('pa
 root.render(
   <React.StrictMode>
     {isPricingRoute ? <PricingPage /> : <App />}
+    <Analytics />
   </React.StrictMode>
 );
