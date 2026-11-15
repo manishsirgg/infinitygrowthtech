@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 const links = [
   { href: '/services', label: 'Services' },
   { href: '/work', label: 'Our work' },
-  { href: '/#approach', label: 'Approach' },
+  { href: '/about', label: 'About' },
 ] as const;
 
 export function SiteHeader() {
