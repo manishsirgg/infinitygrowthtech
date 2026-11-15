@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 const links = [
-  { href: '/#solutions', label: 'Solutions' },
-  { href: '/#work', label: 'Our work' },
+  { href: '/services', label: 'Services' },
+  { href: '/work', label: 'Our work' },
   { href: '/#approach', label: 'Approach' },
 ] as const;
 
