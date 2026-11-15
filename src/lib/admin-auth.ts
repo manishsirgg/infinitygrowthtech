@@ -80,9 +80,9 @@ export async function queryLeads(page = 1): Promise<LeadPage> {
   if (!response.ok) throw new Error('Unable to load leads');
   const leads = await response.json() as Lead[];
   const range = response.headers.get('content-range');
-  const countMatch = range?.match(/\\/(\\d+)$/);
-  if (!countMatch) throw new Error('Missing lead count');
-  const total = Number(countMatch[1]);
+  const totalText = range?.split('/')[1];
+  const total = Number(totalText);
+  if (!totalText || !Number.isSafeInteger(total) || total < 0) throw new Error('Missing lead count');
   return { leads, page, pageSize: LEADS_PAGE_SIZE, total, totalPages: Math.max(1, Math.ceil(total / LEADS_PAGE_SIZE)) };
 }
 
