@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, CheckCircle2, Code2, Megaphone, Workflow } from 'lucide-react';
-import { featuredWork, services } from '@/lib/site';
+import { services } from '@/lib/site';
+import { portfolioProjects } from '@/lib/content';
 
 const icons = [Code2, Megaphone, Workflow] as const;
 
@@ -13,7 +14,7 @@ export default function HomePage() {
         <p className="muted mt-8 max-w-2xl text-lg leading-8 md:text-xl">We create websites, digital platforms, marketing systems and practical automations for ambitious businesses ready to strengthen their online presence.</p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link href="/contact" className="button-primary">Discuss your project <ArrowUpRight size={18} aria-hidden="true" /></Link>
-          <Link href="/#work" className="button-outline">Explore our work <ArrowRight size={18} aria-hidden="true" /></Link>
+          <Link href="/work" className="button-outline">Explore our work <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
         <div className="mt-24 flex flex-col gap-4 border-t border-white/10 pt-7 text-sm text-[#9bacb3] md:flex-row md:items-center md:gap-8">
           <span className="font-bold uppercase tracking-widest text-[#dce6e9]">End-to-end capabilities</span>
@@ -41,6 +42,7 @@ export default function HomePage() {
             </article>;
           })}
         </div>
+        <div className="mt-9"><Link href="/services" className="button-outline">Explore all services <ArrowRight size={18} aria-hidden="true" /></Link></div>
       </div>
     </section>
 
@@ -50,12 +52,13 @@ export default function HomePage() {
         <h2 className="mt-4 max-w-2xl text-4xl font-extrabold tracking-tight md:text-5xl">Real platforms. Real execution.</h2>
         <p className="muted mt-5 max-w-2xl leading-7">These are ventures developed and operated within our own portfolio—not external client case studies. Explore examples of our technical and product capabilities.</p>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {featuredWork.map(work=><article key={work.slug} className="panel flex flex-col p-7">
-            <p className="eyebrow">{work.category}</p><h3 className="mt-7 text-2xl font-bold">{work.name}</h3>
-            <p className="muted mt-4 flex-1 leading-7">{work.description}</p>
-            <a className="mt-9 inline-flex items-center gap-2 font-bold text-[#4ade80] hover:text-[#a2fac0]" href={work.href} target="_blank" rel="noopener noreferrer">View project <ArrowUpRight size={17} aria-hidden="true" /><span className="sr-only">(opens in a new tab)</span></a>
+          {portfolioProjects.map(work=><article key={work.slug} className="panel flex flex-col p-7">
+            <p className="eyebrow">{work.type}</p><h3 className="mt-7 text-2xl font-bold">{work.name}</h3>
+            <p className="muted mt-4 flex-1 leading-7">{work.summary}</p>
+            <Link className="mt-9 inline-flex items-center gap-2 font-bold text-[#4ade80] hover:text-[#a2fac0]" href={`/work/${work.slug}`}>View project <ArrowUpRight size={17} aria-hidden="true" /></Link>
           </article>)}
         </div>
+        <div className="mt-9"><Link href="/work" className="button-outline">See all selected work <ArrowRight size={18} aria-hidden="true" /></Link></div>
       </div>
     </section>
 
