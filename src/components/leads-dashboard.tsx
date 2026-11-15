@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import type { Lead, StaffOption } from '@/lib/admin-auth';
 
 const choices = ['new', 'contacted', 'qualified', 'proposal', 'won', 'lost', 'spam'] as const;
@@ -88,7 +89,7 @@ function LeadEditor({ lead, onSaved, staffOptions }: { lead: Lead; onSaved: (nex
   </div>;
 }
 
-export function LeadsDashboard({ leads: initial, staffOptions }: { leads: Lead[]; staffOptions: StaffOption[] }) {
+export function LeadsDashboard({ leads: initial, staffOptions, page, total, totalPages }: { leads: Lead[]; staffOptions: StaffOption[]; page: number; total: number; totalPages: number }) {
   const [leads, setLeads] = useState(initial);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
@@ -115,8 +116,9 @@ export function LeadsDashboard({ leads: initial, staffOptions }: { leads: Lead[]
       [x.full_name,x.email,x.service_interest,x.source].some(value=>value.toLowerCase().includes(search.toLowerCase().trim()));
   }),[leads,filter,dueFilter,ownerFilter,search]);
   return <div>
+    <p className="muted mb-5 text-sm">Page {page} of {totalPages} · {total} enquiries overall. Search and filters apply to this page only.</p>
     <div className="mb-9 grid grid-cols-2 gap-4 md:grid-cols-4">
-      {([['Total (latest 100)',counts.total],['New',counts.new],['In progress',counts.active],['Due / overdue',counts.due]] as const).map(([label,value])=><div key={label} className="panel p-5"><p className="text-sm text-[#a7b7bd]">{label}</p><p className="mt-3 text-3xl font-extrabold">{value}</p></div>)}
+      {([['On this page',counts.total],['New',counts.new],['In progress',counts.active],['Due / overdue',counts.due]] as const).map(([label,value])=><div key={label} className="panel p-5"><p className="text-sm text-[#a7b7bd]">{label}</p><p className="mt-3 text-3xl font-extrabold">{value}</p></div>)}
     </div>
     <div className="mb-6 flex flex-col gap-3 sm:flex-row">
       <label className="flex-1"><span className="sr-only">Search leads</span><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search name, email, service…" className="w-full rounded-lg border border-[#40515a] bg-[#111a20] p-3" /></label>
@@ -146,5 +148,13 @@ export function LeadsDashboard({ leads: initial, staffOptions }: { leads: Lead[]
         </article>;
       })}
     </div>
+    <nav aria-label="Lead pages" className="mt-9 flex items-center justify-between gap-4 border-t border-white/10 pt-7">
+      <div className="text-sm text-[#b6c7cc]">Showing {total === 0 ? 0 : (page-1)*25+1}–{Math.min(page*25,total)} of {total}</div>
+      <div className="flex items-center gap-3">
+        {page > 1 ? <Link href={`/admin?page=${page-1}`} className="button-outline">Previous</Link> : <span className="rounded-md border border-white/10 p-3 text-[#6e8188]">Previous</span>}
+        <span className="text-sm text-[#b6c7cc]">{page} / {totalPages}</span>
+        {page < totalPages ? <Link href={`/admin?page=${page+1}`} className="button-outline">Next</Link> : <span className="rounded-md border border-white/10 p-3 text-[#6e8188]">Next</span>}
+      </div>
+    </nav>
   </div>;
 }
