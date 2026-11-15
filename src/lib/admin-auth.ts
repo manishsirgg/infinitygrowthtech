@@ -60,15 +60,30 @@ export type Lead = {
   internal_notes: string | null; updated_at: string; follow_up_at: string | null; assigned_to: string | null;
 };
 
-export async function queryLeads() {
+export const LEADS_PAGE_SIZE = 25;
+export type LeadPage = { leads: Lead[]; page: number; pageSize: number; total: number; totalPages: number };
+
+export async function queryLeads(page = 1): Promise<LeadPage> {
   const cfg = getSupabaseConfig();
   if (!cfg) throw new Error('Admin not configured');
-  const response = await fetch(
-    `${cfg.base}/rest/v1/leads?select=id,created_at,full_name,email,phone,service_interest,message,source,status,internal_notes,updated_at,follow_up_at,assigned_to&order=created_at.desc&limit=100`,
-    { headers: { apikey: cfg.secret }, ...{ cache: 'no-store' as const }, signal: AbortSignal.timeout(10000) }
-  );
+  if (!Number.isSafeInteger(page) || page < 1 || page > 10000) throw new Error('Invalid page');
+  const offset = (page - 1) * LEADS_PAGE_SIZE;
+  const url = new URL('/rest/v1/leads', cfg.base);
+  url.searchParams.set('select', 'id,created_at,full_name,email,phone,service_interest,message,source,status,internal_notes,updated_at,follow_up_at,assigned_to');
+  url.searchParams.set('order', 'created_at.desc,id.desc');
+  url.searchParams.set('limit', String(LEADS_PAGE_SIZE));
+  url.searchParams.set('offset', String(offset));
+  const response = await fetch(url, {
+    headers: { apikey: cfg.secret, Prefer: 'count=exact' },
+    cache: 'no-store', signal: AbortSignal.timeout(10000),
+  });
   if (!response.ok) throw new Error('Unable to load leads');
-  return response.json() as Promise<Lead[]>;
+  const leads = await response.json() as Lead[];
+  const range = response.headers.get('content-range');
+  const countMatch = range?.match(/\\/(\\d+)$/);
+  if (!countMatch) throw new Error('Missing lead count');
+  const total = Number(countMatch[1]);
+  return { leads, page, pageSize: LEADS_PAGE_SIZE, total, totalPages: Math.max(1, Math.ceil(total / LEADS_PAGE_SIZE)) };
 }
 
 export { headersNoStore };
