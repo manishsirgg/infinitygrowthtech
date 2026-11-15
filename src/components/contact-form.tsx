@@ -1,42 +1,65 @@
 'use client';
 
-import { useState, type FormEvent } from 'react';
+import Script from 'next/script';
+import { useRef, useState, type FormEvent } from 'react';
 
 export function ContactForm() {
-  const [state, setState] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [notice, setNotice] = useState('');
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = event.currentTarget;
-    const data = new FormData(form);
-    setState('sending');
+    if (!siteKey || status === 'sending') return;
+    const form = formRef.current;
+    if (!form) return;
+
+    const values = new FormData(form);
+    const campaign = new URLSearchParams(window.location.search);
+    setStatus('sending');
+    setNotice('');
+
     try {
-      const response = await fetch('https://formsubmit.co/ajax/manishsirgg@gmail.com', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-          subject: data.get('subject'),
-          message: data.get('message'),
+          name: values.get('name'),
+          email: values.get('email'),
+          phone: values.get('phone'),
+          subject: values.get('subject'),
+          message: values.get('message'),
+          website: values.get('website'),
+          turnstileToken: values.get('cf-turnstile-response'),
+          source: 'website-contact',
+          utm_source: campaign.get('utm_source') ?? '',
+          utm_medium: campaign.get('utm_medium') ?? '',
+          utm_campaign: campaign.get('utm_campaign') ?? '',
         }),
       });
-      if (!response.ok) throw new Error('Submission failed');
-      setState('success');
+      const result = await response.json() as { message?: string };
+      if (!response.ok) throw new Error(result.message || 'Submission unsuccessful.');
+      setStatus('success');
+      setNotice('Thank you. Your enquiry has been received.');
       form.reset();
-    } catch {
-      setState('error');
+    } catch (error) {
+      setStatus('error');
+      setNotice(error instanceof Error ? error.message : 'Unable to send your enquiry.');
     }
   }
 
-  return <form onSubmit={submit} className="panel space-y-5 p-6 sm:p-8">
-    <div><label htmlFor="contact-name" className="mb-2 block text-sm font-semibold">Name</label><input id="contact-name" name="name" required autoComplete="name" maxLength={120} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
+  return <form ref={formRef} onSubmit={submit} className="panel space-y-5 p-6 sm:p-8">
+    {siteKey && <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />}
+    <div><label htmlFor="contact-name" className="mb-2 block text-sm font-semibold">Name</label><input id="contact-name" name="name" required autoComplete="name" minLength={2} maxLength={120} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
     <div><label htmlFor="contact-email" className="mb-2 block text-sm font-semibold">Email</label><input id="contact-email" name="email" type="email" required autoComplete="email" maxLength={240} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
-    <div><label htmlFor="contact-subject" className="mb-2 block text-sm font-semibold">What can we help with?</label><select id="contact-subject" name="subject" required className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white"><option>Website or Digital Platform</option><option>Marketing & Growth</option><option>Automation</option><option>Other</option></select></div>
+    <div><label htmlFor="contact-phone" className="mb-2 block text-sm font-semibold">Phone (optional)</label><input id="contact-phone" name="phone" type="tel" autoComplete="tel" maxLength={30} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
+    <div><label htmlFor="contact-subject" className="mb-2 block text-sm font-semibold">What can we help with?</label><select id="contact-subject" name="subject" required className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white"><option>Website or Digital Platform</option><option>Marketing &amp; Growth</option><option>Automation</option><option>Other</option></select></div>
     <div><label htmlFor="contact-message" className="mb-2 block text-sm font-semibold">Project details</label><textarea id="contact-message" name="message" required minLength={10} maxLength={5000} rows={5} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
-    <p className="text-sm text-[#a0b0b8]">Your details are used to respond to your enquiry. Please do not submit sensitive personal information.</p>
-    <button type="submit" disabled={state === 'sending'} className="button-primary disabled:opacity-50">{state === 'sending' ? 'Sending…' : 'Send enquiry'}</button>
-    {state === 'success' && <p role="status" className="text-sm text-[#4ade80]">Your enquiry has been submitted.</p>}
-    {state === 'error' && <p role="alert" className="text-sm text-red-300">We could not send your enquiry. Please try again later.</p>}
+    <div className="absolute left-[-9999px]" aria-hidden="true"><label htmlFor="contact-website">Leave this field empty</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" /></div>
+    <p className="text-sm text-[#a0b0b8]">We use the information provided to review and respond to your enquiry. Please do not include sensitive financial or personal information.</p>
+    {siteKey ? <div className="cf-turnstile" data-sitekey={siteKey} data-theme="dark" /> : <p role="alert" className="text-sm text-amber-200">Online enquiries are being configured. Please return shortly.</p>}
+    <button type="submit" disabled={!siteKey || status === 'sending' || status === 'success'} className="button-primary disabled:opacity-50">{status === 'sending' ? 'Sending…' : status === 'success' ? 'Enquiry received' : 'Send enquiry'}</button>
+    {notice && <p role={status === 'error' ? 'alert' : 'status'} className={status === 'error' ? 'text-sm text-red-300' : 'text-sm text-[#4ade80]'}>{notice}</p>}
   </form>;
 }
