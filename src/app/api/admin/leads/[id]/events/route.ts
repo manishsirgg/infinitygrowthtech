@@ -10,7 +10,7 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
   if (!/^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(id))
     return NextResponse.json({ error: 'Invalid id' }, { status: 400 });
   try {
-    const path = `/rest/v1/igt_lead_events?lead_id=eq.${encodeURIComponent(id)}&select=id,occurred_at,old_status,new_status,old_follow_up_at,new_follow_up_at,notes_changed&order=occurred_at.desc&limit=30`;
+    const path = `/rest/v1/igt_lead_events?lead_id=eq.${encodeURIComponent(id)}&select=id,occurred_at,old_status,new_status,old_follow_up_at,new_follow_up_at,notes_changed,old_assigned_to,new_assigned_to&order=occurred_at.desc&limit=30`;
     const response = await fetch(new URL(path, cfg.base), {
       headers: { apikey: cfg.secret }, cache: 'no-store', signal: AbortSignal.timeout(8000),
     });
