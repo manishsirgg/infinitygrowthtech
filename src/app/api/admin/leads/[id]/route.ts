@@ -5,12 +5,13 @@ const choices = new Set(['new','contacted','qualified','proposal','won','lost','
 
 export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!sameOrigin(request)) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
-  if (!(await currentStaff())) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  const staff = await currentStaff();
+  if (!staff) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const cfg = getSupabaseConfig();
   if (!cfg) return NextResponse.json({ error: 'Unavailable' }, { status: 503 });
   const { id } = await params;
   if (!/^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(id)) return NextResponse.json({ error: 'Invalid id' }, { status: 400 });
-  let input: { status?: unknown; internal_notes?: unknown };
+  let input: { status?: unknown; internal_notes?: unknown; follow_up_at?: unknown };
   try {
     const raw = await request.text();
     if (raw.length > 6000) throw new Error('large');
@@ -19,10 +20,14 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
   if (!choices.has(input.status as string) || typeof input.internal_notes !== 'string' || input.internal_notes.length > 5000) {
     return NextResponse.json({ error: 'Invalid update' }, { status: 400 });
   }
+  const due = input.follow_up_at;
+  if (due !== null && (typeof due !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$/.test(due) || !Number.isFinite(Date.parse(due)) || new Date(due).toISOString() !== due)) {
+    return NextResponse.json({ error: 'Invalid follow-up date' }, { status: 400 });
+  }
   try {
     const r = await fetch(`${cfg.base}/rest/v1/leads?id=eq.${id}`, { method: 'PATCH',
       headers: { apikey: cfg.secret, 'Content-Type': 'application/json', Prefer: 'return=representation' },
-      body: JSON.stringify({ status: input.status, internal_notes: input.internal_notes, updated_at: new Date().toISOString() }),
+      body: JSON.stringify({ status: input.status, internal_notes: input.internal_notes, follow_up_at: due, last_updated_by: staff.id, updated_at: new Date().toISOString() }),
       cache: 'no-store', signal: AbortSignal.timeout(10000),
     });
     if (!r.ok) return NextResponse.json({ error: 'Update failed' }, { status: 502 });
