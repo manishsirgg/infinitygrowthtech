@@ -57,14 +57,14 @@ export async function currentStaff() {
 export type Lead = {
   id: string; created_at: string; full_name: string; email: string; phone: string | null;
   service_interest: string; message: string; source: string; status: string;
-  internal_notes: string | null; updated_at: string;
+  internal_notes: string | null; updated_at: string; follow_up_at: string | null;
 };
 
 export async function queryLeads() {
   const cfg = getSupabaseConfig();
   if (!cfg) throw new Error('Admin not configured');
   const response = await fetch(
-    `${cfg.base}/rest/v1/leads?select=id,created_at,full_name,email,phone,service_interest,message,source,status,internal_notes,updated_at&order=created_at.desc&limit=100`,
+    `${cfg.base}/rest/v1/leads?select=id,created_at,full_name,email,phone,service_interest,message,source,status,internal_notes,updated_at,follow_up_at&order=created_at.desc&limit=100`,
     { headers: { apikey: cfg.secret }, ...{ cache: 'no-store' as const }, signal: AbortSignal.timeout(10000) }
   );
   if (!response.ok) throw new Error('Unable to load leads');
