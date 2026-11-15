@@ -20,7 +20,11 @@ const json = (message: string, status: number) => NextResponse.json({ message },
 export async function POST(request: NextRequest) {
   // Require same-origin browser requests; this is defense-in-depth, not anti-bot protection.
   const origin = request.headers.get('origin');
-  if (!origin || new URL(origin).host !== request.nextUrl.host) {
+  try {
+    if (!origin || new URL(origin).origin !== request.nextUrl.origin) {
+      return json('Invalid request origin.', 403);
+    }
+  } catch {
     return json('Invalid request origin.', 403);
   }
 
