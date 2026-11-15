@@ -35,3 +35,25 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .grid-halo { background: radial-gradient(circle at 74% 25%, #1d584044 0, transparent 40%), radial-gradient(circle at 10% 80%, #115a6640 0, transparent 35%); }
 .rule { border-top: 1px solid var(--border); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+/* Purpose-built, lightweight visual treatments: no client-side animation library. */
+.hero-field {
+  background:
+    radial-gradient(ellipse at 77% 35%, rgba(74, 222, 128, .13), transparent 45%),
+    radial-gradient(ellipse at 12% 85%, rgba(45, 212, 191, .06), transparent 46%),
+    #070a0d;
+}
+.hero-diagram {
+  background:
+    linear-gradient(160deg, rgba(20, 35, 31, .97), rgba(9, 15, 19, .98));
+  box-shadow: 0 25px 90px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+.portfolio-surface {
+  background:
+    linear-gradient(148deg, rgba(74, 222, 128, .11), rgba(45, 212, 191, .015) 65%),
+    repeating-linear-gradient(90deg, transparent 0, transparent 43px, rgba(255,255,255,.035) 44px),
+    #111c1f;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-surface { transition: background-position .3s ease; }
+}
