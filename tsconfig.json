@@ -33,6 +33,7 @@
     "src/app/**/*.ts",
     "src/app/**/*.tsx",
     "src/components/site-*.tsx",
+    "src/components/contact-form.tsx",
     "src/lib/**/*.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
