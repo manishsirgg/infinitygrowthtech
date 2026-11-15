@@ -1,9 +1,9 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import type { Lead } from '@/lib/admin-auth';
+import type { Lead, StaffOption } from '@/lib/admin-auth';
 
 const choices = ['new', 'contacted', 'qualified', 'proposal', 'won', 'lost', 'spam'] as const;
-type LeadEvent = { id: number; occurred_at: string; old_status: string | null; new_status: string | null; old_follow_up_at: string | null; new_follow_up_at: string | null; notes_changed: boolean };
+type LeadEvent = { id: number; occurred_at: string; old_status: string | null; new_status: string | null; old_follow_up_at: string | null; new_follow_up_at: string | null; notes_changed: boolean; old_assigned_to: string | null; new_assigned_to: string | null };
 function isOpen(status: string) { return !['won','lost','spam'].includes(status); }
 function toInputDate(iso: string) {
   const date = new Date(iso);
@@ -29,12 +29,14 @@ function LeadHistory({ id, refresh }: { id: string; refresh: number }) {
       {item.old_status !== item.new_status && <p>Status: {item.old_status} → {item.new_status}</p>}
       {item.old_follow_up_at !== item.new_follow_up_at && <p>Follow-up date changed</p>}
       {item.notes_changed && <p>Internal notes updated</p>}
+      {item.old_assigned_to !== item.new_assigned_to && <p>Assignment changed: {item.old_assigned_to?.slice(0,8) || 'Unassigned'} → {item.new_assigned_to?.slice(0,8) || 'Unassigned'}</p>}
     </li>)}</ol>
   </section>;
 }
-function LeadEditor({ lead, onSaved }: { lead: Lead; onSaved: (next: Lead) => void }) {
+function LeadEditor({ lead, onSaved, staffOptions }: { lead: Lead; onSaved: (next: Lead) => void; staffOptions: StaffOption[] }) {
   const [status, setStatus] = useState(lead.status);
   const [notes, setNotes] = useState(lead.internal_notes || '');
+  const [assignedTo, setAssignedTo] = useState(lead.assigned_to || '');
   const [followUp, setFollowUp] = useState(lead.follow_up_at ? toInputDate(lead.follow_up_at) : '');
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState('');
@@ -45,11 +47,11 @@ function LeadEditor({ lead, onSaved }: { lead: Lead; onSaved: (next: Lead) => vo
       const follow_up_at = followUp ? new Date(followUp).toISOString() : null;
       const r = await fetch(`/api/admin/leads/${encodeURIComponent(lead.id)}`, {
         method: 'PATCH', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status, internal_notes: notes, follow_up_at }),
+        body: JSON.stringify({ status, internal_notes: notes, follow_up_at, assigned_to: assignedTo || null }),
       });
       if (r.status === 401 || r.status === 403) { window.location.assign('/admin/login'); return; }
       if (!r.ok) throw new Error('Unable to save changes');
-      onSaved({ ...lead, status, internal_notes: notes, follow_up_at });
+      onSaved({ ...lead, status, internal_notes: notes, follow_up_at, assigned_to: assignedTo || null });
       setRefresh(n => n+1); setMessage('Saved');
     } catch { setMessage('Save failed. Please try again.'); } finally { setBusy(false); }
   }
@@ -71,6 +73,13 @@ function LeadEditor({ lead, onSaved }: { lead: Lead; onSaved: (next: Lead) => vo
       </div>
     </div>
     <div>
+      <label className="mb-2 block text-sm font-semibold" htmlFor={`owner-${lead.id}`}>Assigned staff member</label>
+      <select id={`owner-${lead.id}`} value={assignedTo} onChange={e => setAssignedTo(e.target.value)} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3">
+        <option value="">Unassigned</option>
+        {staffOptions.map(staff => <option key={staff.user_id} value={staff.user_id}>Staff {staff.user_id.slice(0,8)}</option>)}
+      </select>
+    </div>
+    <div>
       <label className="mb-2 block text-sm font-semibold" htmlFor={`notes-${lead.id}`}>Internal notes</label>
       <textarea id={`notes-${lead.id}`} value={notes} maxLength={5000} rows={3} onChange={e=>setNotes(e.target.value)} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3" />
     </div>
@@ -79,10 +88,12 @@ function LeadEditor({ lead, onSaved }: { lead: Lead; onSaved: (next: Lead) => vo
   </div>;
 }
 
-export function LeadsDashboard({ leads: initial }: { leads: Lead[] }) {
+export function LeadsDashboard({ leads: initial, staffOptions }: { leads: Lead[]; staffOptions: StaffOption[] }) {
   const [leads, setLeads] = useState(initial);
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState('all');
+  const [dueFilter, setDueFilter] = useState('all');
+  const [ownerFilter, setOwnerFilter] = useState('all');
   const [expanded, setExpanded] = useState<string | null>(null);
   const counts = useMemo(() => ({
     total: leads.length,
@@ -90,8 +101,19 @@ export function LeadsDashboard({ leads: initial }: { leads: Lead[] }) {
     active: leads.filter(x=>['contacted','qualified','proposal'].includes(x.status)).length,
     due: leads.filter(x=>x.follow_up_at && isOpen(x.status) && new Date(x.follow_up_at).getTime() <= Date.now()).length,
   }), [leads]);
-  const shown = useMemo(() => leads.filter(x=>(filter==='all'||x.status===filter) &&
-    [x.full_name,x.email,x.service_interest,x.source].some(value=>value.toLowerCase().includes(search.toLowerCase().trim()))),[leads,filter,search]);
+  const shown = useMemo(() => leads.filter(x => {
+    const time = x.follow_up_at ? Date.parse(x.follow_up_at) : null;
+    const now = Date.now();
+    const todayEnd = new Date(); todayEnd.setHours(23,59,59,999);
+    const dueMatch = dueFilter==='all' ||
+      (dueFilter==='overdue' && time!==null && time<now && isOpen(x.status)) ||
+      (dueFilter==='today' && time!==null && time<=todayEnd.getTime() && isOpen(x.status)) ||
+      (dueFilter==='upcoming' && time!==null && time>now && isOpen(x.status)) ||
+      (dueFilter==='unscheduled' && time===null && isOpen(x.status));
+    const ownerMatch = ownerFilter==='all' || (ownerFilter==='unassigned' ? !x.assigned_to : x.assigned_to===ownerFilter);
+    return (filter==='all' || x.status===filter) && dueMatch && ownerMatch &&
+      [x.full_name,x.email,x.service_interest,x.source].some(value=>value.toLowerCase().includes(search.toLowerCase().trim()));
+  }),[leads,filter,dueFilter,ownerFilter,search]);
   return <div>
     <div className="mb-9 grid grid-cols-2 gap-4 md:grid-cols-4">
       {([['Total (latest 100)',counts.total],['New',counts.new],['In progress',counts.active],['Due / overdue',counts.due]] as const).map(([label,value])=><div key={label} className="panel p-5"><p className="text-sm text-[#a7b7bd]">{label}</p><p className="mt-3 text-3xl font-extrabold">{value}</p></div>)}
@@ -99,6 +121,15 @@ export function LeadsDashboard({ leads: initial }: { leads: Lead[] }) {
     <div className="mb-6 flex flex-col gap-3 sm:flex-row">
       <label className="flex-1"><span className="sr-only">Search leads</span><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search name, email, service…" className="w-full rounded-lg border border-[#40515a] bg-[#111a20] p-3" /></label>
       <label><span className="sr-only">Filter by status</span><select className="w-full rounded-lg border border-[#40515a] bg-[#111a20] p-3" value={filter} onChange={e=>setFilter(e.target.value)}><option value="all">All statuses</option>{choices.map(choice=><option key={choice} value={choice}>{choice}</option>)}</select></label>
+    </div>
+    <div className="mb-6 flex flex-wrap gap-3">
+      <label><span className="sr-only">Filter follow-up</span><select className="rounded-lg border border-[#40515a] bg-[#111a20] p-3" value={dueFilter} onChange={e=>setDueFilter(e.target.value)}>
+        <option value="all">All follow-ups</option><option value="today">Due by today</option><option value="overdue">Overdue</option><option value="upcoming">Upcoming</option><option value="unscheduled">Unscheduled</option>
+      </select></label>
+      <label><span className="sr-only">Filter assignment</span><select className="rounded-lg border border-[#40515a] bg-[#111a20] p-3" value={ownerFilter} onChange={e=>setOwnerFilter(e.target.value)}>
+        <option value="all">All owners</option><option value="unassigned">Unassigned</option>
+        {staffOptions.map(staff=><option key={staff.user_id} value={staff.user_id}>Staff {staff.user_id.slice(0,8)}</option>)}
+      </select></label>
     </div>
     <div className="space-y-4">
       {shown.length===0 && <p className="muted py-10">No enquiries match these filters.</p>}
@@ -111,7 +142,7 @@ export function LeadsDashboard({ leads: initial }: { leads: Lead[] }) {
               {due && <span className={due.getTime() <= Date.now() ? 'text-xs text-amber-300' : 'text-xs text-[#a0b0b8]'}>{due.getTime()<=Date.now()?'Overdue: ':'Follow up: '}{due.toLocaleString('en-IN',{dateStyle:'medium',timeStyle:'short'})}</span>}
             </span>
           </button>
-          {expanded===lead.id && <LeadEditor lead={lead} onSaved={next=>setLeads(current=>current.map(item=>item.id===next.id?next:item))}/>}
+          {expanded===lead.id && <LeadEditor lead={lead} staffOptions={staffOptions} onSaved={next=>setLeads(current=>current.map(item=>item.id===next.id?next:item))}/>}
         </article>;
       })}
     </div>
