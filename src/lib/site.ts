@@ -5,6 +5,21 @@ export const site = {
   email: 'hello@infinitygrowthtech.com', // Confirm inbox before enabling published contact details.
 } as const;
 
+export const offices = [
+  {
+    city: 'Indore',
+    label: 'Indore Office',
+    address: 'C.S. Residency, 525, MR-6, Mahalaxmi Nagar',
+    region: 'Indore, Madhya Pradesh 452010, India',
+  },
+  {
+    city: 'Noida',
+    label: 'Noida Office',
+    address: 'A-84, Sector 3',
+    region: 'Noida, Uttar Pradesh 201301, India',
+  },
+] as const;
+
 export const services = [
   { number: '01', name: 'Build', slug: 'build', title: 'Digital experiences that work.', description: 'High-performance websites, landing pages, commerce and custom digital platforms.', items: ['Websites & landing pages', 'E-commerce & LMS', 'Custom software'] },
   { number: '02', name: 'Grow', slug: 'grow', title: 'Marketing with a clear purpose.', description: 'Audience acquisition, search visibility and conversion-focused digital campaigns.', items: ['SEO & content', 'Performance marketing', 'Brand & creative'] },
