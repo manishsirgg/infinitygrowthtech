@@ -10,9 +10,11 @@ export function getSupabaseConfig() {
   const publicKey = process.env.SUPABASE_PUBLISHABLE_KEY;
   const secret = process.env.SUPABASE_SECRET_KEY;
   if (!raw || !publicKey || !secret) return null;
-  const url = new URL(raw);
-  if (url.protocol !== 'https:' || !url.hostname.endsWith('.supabase.co')) return null;
-  return { base: url.origin, publicKey, secret };
+  try {
+    const url = new URL(raw);
+    if (url.protocol !== 'https:' || !url.hostname.endsWith('.supabase.co')) return null;
+    return { base: url.origin, publicKey, secret };
+  } catch { return null; }
 }
 
 export function sameOrigin(request: Request): boolean {
