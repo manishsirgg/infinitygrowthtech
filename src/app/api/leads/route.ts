@@ -40,7 +40,14 @@ export async function POST(request: NextRequest) {
 
   let body: Submission;
   try {
-    body = await request.json() as Submission;
+    // Enforce a byte budget even when Content-Length is absent or untrusted.
+    const raw = await request.text();
+    if (new TextEncoder().encode(raw).byteLength > 16_384) return json('Request too large.', 413);
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+      return json('Invalid form data.', 400);
+    }
+    body = parsed as Submission;
   } catch {
     return json('Invalid form data.', 400);
   }
