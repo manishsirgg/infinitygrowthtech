@@ -11,7 +11,7 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
   if (!cfg) return NextResponse.json({ error: 'Unavailable' }, { status: 503 });
   const { id } = await params;
   if (!/^[a-f\d]{8}(-[a-f\d]{4}){3}-[a-f\d]{12}$/i.test(id)) return NextResponse.json({ error: 'Invalid id' }, { status: 400 });
-  let input: { status?: unknown; internal_notes?: unknown; follow_up_at?: unknown };
+  let input: { status?: unknown; internal_notes?: unknown; follow_up_at?: unknown; assigned_to?: unknown };
   try {
     const raw = await request.text();
     if (raw.length > 6000) throw new Error('large');
@@ -24,10 +24,26 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
   if (due !== null && (typeof due !== 'string' || !/^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}Z$/.test(due) || !Number.isFinite(Date.parse(due)) || new Date(due).toISOString() !== due)) {
     return NextResponse.json({ error: 'Invalid follow-up date' }, { status: 400 });
   }
+  const assignee = input.assigned_to;
+  if (assignee !== null && (typeof assignee !== 'string' || !/^[a-f\\d]{8}(-[a-f\\d]{4}){3}-[a-f\\d]{12}$/i.test(assignee))) {
+    return NextResponse.json({ error: 'Invalid assignee' }, { status: 400 });
+  }
+  if (typeof assignee === 'string') {
+    try {
+      const lookup = await fetch(
+        `${cfg.base}/rest/v1/igt_staff_users?user_id=eq.${encodeURIComponent(assignee)}&active=eq.true&select=user_id&limit=1`,
+        { headers: { apikey: cfg.secret }, cache: 'no-store', signal: AbortSignal.timeout(8000) }
+      );
+      if (!lookup.ok) return NextResponse.json({ error: 'Assignee lookup unavailable' }, { status: 503 });
+      const users = await lookup.json() as Array<{user_id:string}>;
+      if (!Array.isArray(users) || users[0]?.user_id !== assignee)
+        return NextResponse.json({ error: 'Assignee is not an active staff member' }, { status: 400 });
+    } catch { return NextResponse.json({ error: 'Assignee lookup unavailable' }, { status: 503 }); }
+  }
   try {
     const r = await fetch(`${cfg.base}/rest/v1/leads?id=eq.${id}`, { method: 'PATCH',
       headers: { apikey: cfg.secret, 'Content-Type': 'application/json', Prefer: 'return=representation' },
-      body: JSON.stringify({ status: input.status, internal_notes: input.internal_notes, follow_up_at: due, last_updated_by: staff.id, updated_at: new Date().toISOString() }),
+      body: JSON.stringify({ status: input.status, internal_notes: input.internal_notes, follow_up_at: due, assigned_to: assignee, last_updated_by: staff.id, updated_at: new Date().toISOString() }),
       cache: 'no-store', signal: AbortSignal.timeout(10000),
     });
     if (!r.ok) return NextResponse.json({ error: 'Update failed' }, { status: 502 });
