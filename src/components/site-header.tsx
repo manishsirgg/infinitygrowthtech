@@ -12,7 +12,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070a0d]/95 backdrop-blur-xl">
       <div className="container-shell flex min-h-20 flex-wrap items-center justify-between gap-4 py-4">
         <Link href="/" aria-label="Infinity Growth Tech homepage" className="flex items-center gap-3">
-          <span aria-hidden="true" className="grid h-10 w-10 place-items-center rounded-lg border border-[#4ade80]/40 bg-[#4ade80]/10 text-xl font-black text-[#4ade80]">∞</span>
+          <img src="/brand-mark.svg" alt="" aria-hidden="true" width={48} height={48} className="h-12 w-12 shrink-0 rounded-lg object-contain" />
           <span className="text-sm font-extrabold uppercase tracking-[.11em] sm:text-base">Infinity <span className="text-[#4ade80]">Growth Tech</span></span>
         </Link>
         <nav aria-label="Primary" className="order-3 flex w-full flex-wrap items-center gap-5 text-sm text-[#c0ccd1] sm:order-none sm:w-auto lg:gap-8">
