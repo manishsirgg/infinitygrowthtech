@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { offices } from '@/lib/site';
+import { offices, site } from '@/lib/site';
 
 export function SiteFooter() {
   return <footer className="rule py-10">
@@ -7,6 +7,11 @@ export function SiteFooter() {
       <div>
         <p className="font-bold text-white">Infinity Growth Tech</p>
         <p className="mt-1">Build smarter. Grow faster. Operate better.</p>
+        <div className="mt-4 flex flex-col gap-2">
+          <a className="break-all hover:text-[#4ade80]" href={"mailto:" + site.email}>{site.email}</a>
+          <a className="hover:text-[#4ade80]" href={"tel:" + site.tel}>{site.phone} · Call / SMS</a>
+          <a className="hover:text-[#4ade80]" href={site.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+        </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         {offices.map(office => (
