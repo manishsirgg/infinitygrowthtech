@@ -2,7 +2,10 @@ export const site = {
   name: 'Infinity Growth Tech',
   url: 'https://infinitygrowthtech.com',
   description: 'Websites, digital platforms, marketing and automation designed for growing businesses.',
-  email: 'hello@infinitygrowthtech.com', // Confirm inbox before enabling published contact details.
+  email: 'infinitygrowthtech@gmail.com',
+  phone: '+91 8989601701',
+  tel: '+918989601701',
+  whatsapp: 'https://wa.me/918989601701',
 } as const;
 
 export const offices = [
