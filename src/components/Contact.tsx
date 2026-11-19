@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const response = await fetch('https://formsubmit.co/ajax/manishsirgg@gmail.com', {
+    const response = await fetch('https://formsubmit.co/ajax/infinitygrowthtech@gmail.com', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -74,13 +74,17 @@ const Contact: React.FC = () => {
                   📞
                 </div>
                 <div>
-                  <h4 className="font-bold text-white mb-1">Call/WhatsApp</h4>
+                  <h4 className="font-bold text-white mb-1">Call / WhatsApp / Text</h4>
                   <a
                     href={`tel:${CONTACT.phone.replace(/\-/g, '')}`}
                     className="text-gray-400 hover:text-green-400 transition-colors"
                   >
                     {CONTACT.phone}
                   </a>
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    <a href="https://wa.me/918989601701" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300">WhatsApp</a>
+                    <a href="sms:+918989601701" className="text-green-400 hover:text-green-300">Send SMS</a>
+                  </div>
                 </div>
               </div>
 
