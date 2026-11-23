@@ -15,6 +15,7 @@ const industries = [
   { title: 'Education & Training', description: 'Websites, course discovery, admissions enquiries and learning platforms.', Icon: GraduationCap },
   { title: 'Real Estate', description: 'Property discovery experiences, enquiry capture and business websites.', Icon: Building2 },
   { title: 'Professional Services', description: 'Credible online presence, lead journeys and operational workflows.', Icon: Layers3 },
+  { title: 'Marketplace Sellers', description: 'Amazon and Flipkart seller onboarding, listings and ongoing account care.', Icon: Building2 },
 ] as const;
 
 const steps = [
@@ -38,9 +39,9 @@ export default function HomePage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link href="/contact" className="button-primary">Discuss your project <ArrowUpRight size={18} aria-hidden="true" /></Link>
-              <Link href="/work" className="button-outline">Explore our work <ArrowRight size={18} aria-hidden="true" /></Link>
+              <Link href="/packages" className="button-outline">View packages &amp; prices <ArrowRight size={18} aria-hidden="true" /></Link>
             </div>
-            <p className="mt-7 text-sm text-[#b2c2c8]">A practical conversation about your goals. No inflated promises or one-size-fits-all packages.</p>
+            <p className="mt-7 text-sm text-[#b2c2c8]">Transparent starting prices, clear scopes and tailored advice for businesses across India.</p>
           </div>
           <div aria-label="Illustrative overview of three connected business capabilities" className="hero-diagram panel relative isolate min-h-[360px] overflow-hidden p-5 sm:min-h-[430px] sm:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,rgba(74,222,128,.13),transparent_60%)]" aria-hidden="true" />
@@ -143,7 +144,7 @@ export default function HomePage() {
         <div className="container-shell">
           <div className="panel hero-field grid items-center gap-10 overflow-hidden p-8 md:grid-cols-[1fr_auto] md:p-14">
             <div><p className="eyebrow">What's next for your business?</p><h2 className="mt-5 max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl">Bring us the challenge.<br /><span className="gradient-text">We'll help shape the starting point.</span></h2><p className="muted mt-6 max-w-2xl leading-7">Tell us what you're building or trying to improve. We can discuss what makes sense technically and commercially before proposing a project.</p></div>
-            <Link href="/contact" className="button-primary whitespace-nowrap">Start a conversation <ArrowUpRight size={18} aria-hidden="true" /></Link>
+            <Link href="/packages" className="button-primary whitespace-nowrap">Explore our pricing <ArrowUpRight size={18} aria-hidden="true" /></Link>
           </div>
           <p className="mt-8 flex items-center gap-2 text-sm text-[#a5b5bb]"><BookOpenText size={18} aria-hidden="true" /> Looking for a specific capability? <Link href="/services" className="text-[#4ade80] hover:underline">Browse all services <ArrowRight size={15} className="inline" aria-hidden="true" /></Link></p>
         </div>
