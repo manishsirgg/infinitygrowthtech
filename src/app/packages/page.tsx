@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const slugify = (text: string) => encodeURIComponent(text);
 
 export default function PackagesPage() {
-  return <main>
+  return <div>
     <section className="hero-field border-b border-white/10 py-16 md:py-24">
       <div className="container-shell">
         <p className="eyebrow">2027 services and pricing</p>
@@ -79,5 +79,5 @@ export default function PackagesPage() {
         <Link href="/contact?subject=Package%20Consultation" className="button-primary mt-7">Request a proposal <ArrowUpRight size={17} aria-hidden="true"/></Link>
       </div>
     </section>
-  </main>;
+  </div>;
 }
