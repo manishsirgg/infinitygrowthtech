@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const marketplace = packageGroups.find(group => group.id === 'marketplaces');
 export default function MarketplacePage() {
   if (!marketplace) return null;
-  return <main className="container-shell py-16 md:py-24">
+  return <div className="container-shell py-16 md:py-24">
     <p className="eyebrow">Amazon & Flipkart solutions</p>
     <h1 className="mt-5 max-w-5xl text-5xl font-black tracking-tight md:text-7xl">Your products. <span className="gradient-text">Better managed.</span></h1>
     <p className="muted mt-7 max-w-3xl text-lg leading-8">From account onboarding guidance to catalogue optimisation and ongoing marketplace coordination, choose the support your selling operations need. Services are available to eligible businesses across India.</p>
@@ -39,5 +39,5 @@ export default function MarketplacePage() {
       <div className="flex items-center gap-3"><ShieldCheck aria-hidden="true" className="text-[#4ade80]"/><h2 className="text-2xl font-bold">Responsible seller support</h2></div>
       <p className="muted max-w-4xl leading-7">Seller eligibility, registration approval, tax documentation, applicable platform fees, shipping, inventory, order fulfilment and customer obligations remain subject to marketplace requirements and the client's responsibilities. We do not promise account approval, sales volumes or rankings. Ad spend and paid tools are separate.</p>
     </section>
-  </main>;
+  </div>;
 }
