@@ -22,7 +22,7 @@ export function SiteFooter() {
         ))}
       </div>
       <nav aria-label="Footer" className="flex flex-wrap content-start gap-x-5 gap-y-2 md:col-span-2 lg:col-span-1 lg:flex-col">
-        <Link href="/services">Services</Link><Link href="/packages">Packages &amp; Pricing</Link><Link href="/marketplaces">Amazon &amp; Flipkart</Link><Link href="/work">Our work</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link>
+        <Link href="/services">Services</Link><Link href="/packages">Packages &amp; Pricing</Link><Link href="/work">Our work</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link>
       </nav>
     </div>
     <div className="container-shell mt-8 border-t border-white/10 pt-5 text-xs text-[#82969e]">

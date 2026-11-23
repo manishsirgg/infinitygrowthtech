@@ -37,7 +37,6 @@ export default function PackagesPage() {
         <p className="eyebrow">Solution {String(index+1).padStart(2,'0')}</p>
         <div className="mt-3 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div><h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">{group.title}</h2><p className="muted mt-3 text-lg">{group.subtitle}</p></div>
-          {group.id==='marketplaces' && <Link href="/marketplaces" className="inline-flex items-center gap-2 font-semibold text-[#4ade80]">Explore seller solutions <ArrowUpRight size={17} aria-hidden="true"/></Link>}
         </div>
         <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-6">
@@ -57,7 +56,7 @@ export default function PackagesPage() {
         </div>
         {group.id==='marketplaces' && <div className="mt-7 panel flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div><p className="font-bold">Also available individually</p><p className="muted mt-1 text-sm">{marketplaceExtras.map(extra=>`${extra.title}: ${extra.price}`).join(' · ')}</p></div>
-          <Link href="/marketplaces" className="shrink-0 font-semibold text-[#4ade80]">Marketplace details <ArrowUpRight className="inline" size={16} aria-hidden="true"/></Link>
+          <Link href="/contact?subject=Marketplace%20Services" className="shrink-0 font-semibold text-[#4ade80]">Discuss seller services <ArrowUpRight className="inline" size={16} aria-hidden="true"/></Link>
         </div>}
       </div>
     </section>)}
