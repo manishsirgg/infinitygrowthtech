@@ -13,6 +13,10 @@ export default function ServicesPage() {
     <p className="eyebrow">What we can build together</p>
     <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight md:text-7xl">Digital solutions, <span className="gradient-text">designed around your goals.</span></h1>
     <p className="muted mt-7 max-w-3xl text-lg leading-8">From launching a strong digital presence to improving customer acquisition and business workflows, explore the capabilities we can tailor to your next project.</p>
+    <div className="mt-9 flex flex-wrap gap-3">
+      <Link href="/packages" className="button-primary">View packages &amp; starting prices <ArrowUpRight size={17} aria-hidden="true"/></Link>
+      <Link href="/marketplaces" className="button-outline">Amazon &amp; Flipkart seller services <ArrowUpRight size={17} aria-hidden="true"/></Link>
+    </div>
     <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {serviceCatalog.map(service => <article className="panel flex flex-col p-7" key={service.slug}>
         <p className="eyebrow">{service.category}</p>
