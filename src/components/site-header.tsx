@@ -4,7 +4,6 @@ import { ArrowUpRight } from 'lucide-react';
 const links = [
   { href: '/services', label: 'Services' },
   { href: '/packages', label: 'Packages & Pricing' },
-  { href: '/marketplaces', label: 'Amazon & Flipkart' },
   { href: '/work', label: 'Our work' },
   { href: '/about', label: 'About' },
 ] as const;
