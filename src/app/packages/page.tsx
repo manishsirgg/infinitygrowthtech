@@ -17,8 +17,8 @@ export default function PackagesPage() {
     <section className="hero-field border-b border-white/10 py-16 md:py-24">
       <div className="container-shell">
         <p className="eyebrow">2027 services and pricing</p>
-        <h1 className="mt-5 max-w-5xl text-5xl font-black tracking-tight md:text-7xl">Find the right starting point. <span className="gradient-text">Build for what comes next.</span></h1>
-        <p className="muted mt-7 max-w-3xl text-lg leading-8">Transparent starting prices and clearly defined services for businesses across India. Choose a focused package or discuss an integrated growth partnership.</p>
+        <h1 className="mt-5 max-w-5xl text-5xl font-black tracking-tight md:text-7xl">Digital growth for every business. <span className="gradient-text">Start small. Scale confidently.</span></h1>
+        <p className="muted mt-7 max-w-3xl text-lg leading-8">Choose an affordable industry-specific growth bundle, a focused individual service or a custom partnership. Clear deliverables for Indian SMEs, with room to scale as your business grows.</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/contact?subject=Package%20Consultation" className="button-primary">Discuss a package <ArrowUpRight size={18} aria-hidden="true"/></Link>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="button-outline">Ask on WhatsApp <MessageCircle size={18} aria-hidden="true"/></a>
@@ -27,7 +27,7 @@ export default function PackagesPage() {
       </div>
     </section>
     <section className="container-shell py-10" aria-label="Package categories">
-      <h2 className="text-lg font-bold">Explore by service</h2>
+      <h2 className="text-lg font-bold">Explore growth bundles and individual services</h2>
       <nav className="mt-5 flex flex-wrap gap-2">
         {packageGroups.map(group => <a key={group.id} href={`#${group.id}`} className="rounded-full border border-white/20 px-4 py-2 text-sm text-[#d0dcde] transition-colors hover:border-[#4ade80] hover:text-[#4ade80]">{group.title}</a>)}
       </nav>
@@ -64,10 +64,10 @@ export default function PackagesPage() {
       <div className="panel p-7 md:p-10">
         <div className="flex items-center gap-3"><ShieldCheck className="text-[#4ade80]" size={26} aria-hidden="true"/><h2 className="text-2xl font-bold">Clear scope. Transparent terms.</h2></div>
         <div className="mt-7 grid gap-5 text-sm leading-7 text-[#c5d5d8] md:grid-cols-2 lg:grid-cols-3">
-          <p>All fees are in INR excluding applicable GST. Listed prices are starting prices for defined standard scopes.</p>
+          <p>All fees are in INR excluding applicable GST. Fixed prices cover the stated standard scope; prices marked + are starting estimates.</p>
           <p>Advertising spend, marketplace fees, hosting, messaging, software and AI usage are charged separately.</p>
           <p>Client-supplied materials are assumed unless production is contracted. One consolidated revision round is included unless stated otherwise.</p>
-          <p>Monthly work is billed in advance; ongoing engagements typically start with a three-month commitment.</p>
+          <p>Monthly work is billed in advance; initial engagement and renewal terms are agreed in writing.</p>
           <p>Client accounts, domains, data and advertising budgets stay client-owned; deliverable rights follow the agreement.</p>
           <p>Sales, leads, rankings, followers, ad outcomes and marketplace approvals are not guaranteed.</p>
         </div>
