@@ -9,113 +9,66 @@ export type PackageGroup = {
 export const packageGroups: PackageGroup[] = [
   {
     "id": "industry-growth",
-    "title": "Industry-Specific Growth Packages",
-    "subtitle": "Integrated marketing for Indian small and medium businesses",
+    "title": "Integrated Business Growth Packages",
+    "subtitle": "One growth partner. Every industry. Every stage. Standardised deliverables, strategies tailored to your business.",
     "packages": [
       {
-        "title": "Restaurant Essential",
+        "title": "Growth Essential",
         "price": "₹9,999",
         "unit": "month",
-        "description": "Cafés, cloud kitchens and local restaurants",
+        "description": "Establish your digital presence",
         "features": [
-          "Instagram and Facebook cross-posting",
-          "8 creatives and 2 supplied-footage Reels",
-          "Basic Google Business Profile updates",
-          "Calendar, scheduling and monthly report"
+          "Up to 2 relevant social platforms (cross-posted content)",
+          "8 branded creatives and 2 short-form edits from supplied footage",
+          "Content planning, captions and scheduling",
+          "Basic Google Business Profile updates where applicable (2 updates/month)",
+          "Monthly performance report"
         ],
-        "note": "One outlet; no filming or ads management."
+        "note": "One brand/location; filming and paid advertising excluded."
       },
       {
-        "title": "Restaurant Growth",
+        "title": "Growth Professional",
         "price": "₹19,999",
         "unit": "month",
-        "description": "Established independent restaurants",
+        "description": "Strengthen your brand and grow consistently",
         "features": [
-          "Instagram and Facebook: 12 creatives and 6 Reels",
+          "Up to 2 relevant social platforms",
+          "12 branded creatives and 6 edited short-form videos",
           "1 local mobile shoot up to 4 hours",
-          "Google Business Profile management and local keywords",
-          "Promotional calendar and monthly report"
+          "Google Business Profile management (4 updates/month) or equivalent agreed visibility activities",
+          "Content strategy, promotional planning and monthly performance review"
         ],
-        "note": "One outlet; extra travel, ads and professional crew excluded."
+        "note": "One brand/location; ad management, extra travel and professional production excluded."
       },
       {
-        "title": "Restaurant Growth Plus",
+        "title": "Growth Premium",
         "price": "₹29,999",
         "unit": "month",
-        "description": "Integrated acquisition and retention",
+        "description": "Integrated customer acquisition and retention",
         "features": [
-          "Instagram and Facebook: 12 creatives and 8 Reels",
+          "Up to 2 relevant social platforms",
+          "12 branded creatives and 8 edited short-form videos",
           "1 local mobile shoot up to 4 hours",
-          "Google Business Profile management",
-          "Up to 2 active Meta campaigns",
-          "2 WhatsApp campaigns and integrated report"
+          "Local SEO and visibility management (one profile or agreed equivalent)",
+          "Meta OR Google Ads: up to 2 active campaigns",
+          "2 WhatsApp marketing campaigns",
+          "Acquisition and retention strategy and integrated monthly report"
         ],
-        "note": "One outlet; consented WhatsApp list up to 2,000 recipients/campaign; ad budget up to ₹15,000; media, platform and setup extra."
+        "note": "One brand/location; ad budget up to ₹15,000/month; existing official WhatsApp platform and consented list up to 2,000 recipients per campaign required. Media, platform, setup, extra travel and professional production excluded."
       },
       {
-        "title": "Local Business Essential",
-        "price": "₹9,999",
-        "unit": "month",
-        "description": "Shops, salons and local service businesses",
+        "title": "Growth Enterprise",
+        "price": "Custom pricing",
+        "unit": "agreement",
+        "description": "Build, transform and scale",
         "features": [
-          "Instagram and Facebook cross-posting",
-          "8 creatives and 2 supplied-footage Reels",
-          "Basic Google Business Profile updates",
-          "Monthly calendar and report"
+          "Custom multi-channel digital growth strategy",
+          "Advanced SEO and paid advertising",
+          "Website and application development options",
+          "CRM, automation and AI solutions",
+          "Advanced analytics and defined account management"
         ],
-        "note": "One location; filming and ads excluded."
-      },
-      {
-        "title": "Local Business Growth",
-        "price": "₹17,999",
-        "unit": "month",
-        "description": "Local discovery and enquiries",
-        "features": [
-          "Instagram and Facebook: 10 creatives and 4 supplied-footage Reels",
-          "Google Business Profile management",
-          "1 active Meta campaign using existing assets",
-          "Monthly report"
-        ],
-        "note": "One location; ad budget up to ₹10,000; media and setup extra."
-      },
-      {
-        "title": "Education Growth",
-        "price": "₹19,999",
-        "unit": "month",
-        "description": "Coaching centres and institutes",
-        "features": [
-          "Instagram and Facebook: 12 creatives and 4 supplied-footage Reels",
-          "Up to 2 active Meta lead campaigns",
-          "Admissions campaign calendar",
-          "Monthly lead report"
-        ],
-        "note": "One institute; ad budget up to ₹15,000; media, CRM and filming extra."
-      },
-      {
-        "title": "Professional & B2B Growth",
-        "price": "₹19,999",
-        "unit": "month",
-        "description": "Consultants and small B2B companies",
-        "features": [
-          "LinkedIn and one additional social channel",
-          "8 creatives and 2 supplied-footage Reels",
-          "1 active Google Search campaign",
-          "Monthly report"
-        ],
-        "note": "One business; ad budget up to ₹15,000; media and tracking setup extra."
-      },
-      {
-        "title": "Retail & Seller Growth",
-        "price": "₹19,999",
-        "unit": "month",
-        "description": "Retailers selling on Amazon or Flipkart",
-        "features": [
-          "One marketplace account and up to 20 listing updates",
-          "Instagram and Facebook: 8 creatives and 2 supplied-footage Reels",
-          "1 marketplace advertising campaign",
-          "Monthly consolidated report"
-        ],
-        "note": "One marketplace; ad spend, fulfilment, photography and platform fees extra."
+        "note": "Services selected and quoted after discovery; scope, timelines, fees and support agreed in writing."
       }
     ]
   },
@@ -645,8 +598,8 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "branding-growth",
-    "title": "Branding & Growth Partnerships",
-    "subtitle": "Build for the long term",
+    "title": "Branding & Visual Identity",
+    "subtitle": "Build a distinctive and consistent brand",
     "packages": [
       {
         "title": "Brand Starter",
@@ -673,32 +626,6 @@ export const packageGroups: PackageGroup[] = [
           "Core brand assets"
         ],
         "note": "Trademarks and licensing extra."
-      },
-      {
-        "title": "Business Growth Partner",
-        "price": "₹29,999",
-        "unit": "month",
-        "description": "Integrated digital operations",
-        "features": [
-          "Meta and Google Search management",
-          "1 organic social channel and 8 posts",
-          "2 Reel edits and basic SEO",
-          "Consolidated report and review"
-        ],
-        "note": "Ad spend and setup excluded."
-      },
-      {
-        "title": "Custom Growth Partnership",
-        "price": "Custom quotation",
-        "unit": "project",
-        "description": "Complex multi-team needs",
-        "features": [
-          "Cross-channel growth strategy",
-          "Custom technology and analytics",
-          "Automation or commerce options",
-          "Defined reporting and ownership"
-        ],
-        "note": "Scope and fee agreed after discovery."
       }
     ]
   }
