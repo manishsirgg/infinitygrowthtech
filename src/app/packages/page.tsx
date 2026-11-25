@@ -22,10 +22,10 @@ export default function PackagesPage() {
         <h1 className="mt-5 max-w-5xl text-5xl font-black tracking-tight md:text-7xl">Digital growth for every business. <span className="gradient-text">Start small. Scale confidently.</span></h1>
         <p className="muted mt-7 max-w-3xl text-lg leading-8">From emerging businesses to established enterprises, choose an integrated growth plan, a focused individual service or a custom technology partnership. We tailor the strategy to your business, whatever your industry.</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/contact?subject=Package%20Consultation" className="button-primary">Discuss a package <ArrowUpRight size={18} aria-hidden="true"/></Link>
+          <Link href="/contact?subject=Package%20Consultation" className="button-primary">Request a consultation <ArrowUpRight size={18} aria-hidden="true"/></Link>
           <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="button-outline">Ask on WhatsApp <MessageCircle size={18} aria-hidden="true"/></a>
         </div>
-        <p className="mt-6 text-sm text-[#b5c4c8]">All prices are in INR, exclude applicable GST and cover a defined standard scope. Advertising budgets, platform fees and third-party costs are separate.</p>
+        <p className="mt-6 text-sm text-[#b5c4c8]">Published prices are in INR for standard scopes, excluding applicable GST, ad spend and third-party fees. International, multi-location and customised projects are quoted separately based on scope and support needs.</p>
       </div>
     </section>
     <section className="container-shell py-10" aria-label="Package categories">
@@ -66,6 +66,15 @@ export default function PackagesPage() {
       <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">One Growth Partner. Every Industry. Every Stage.</h2>
       <p className="muted mt-4 max-w-3xl leading-7">Our packages define the deliverables; your business goals shape the strategy. Explore the sectors we can support, or discuss a tailored solution for your industry.</p>
       <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">{industries.map(industry => <div key={industry} className="panel flex items-center gap-2 p-4 text-sm font-medium"><CheckCircle2 size={16} className="shrink-0 text-[#4ade80]" aria-hidden="true"/><span>{industry}</span></div>)}</div>
+      <div className="hero-field mt-10 rounded-2xl border border-[#4ade80]/25 p-6 sm:p-8 md:p-10">
+        <p className="eyebrow">Personalised business solutions</p>
+        <h2 className="mt-3 text-2xl font-extrabold md:text-3xl">Not sure which package is right for your business?</h2>
+        <p className="muted mt-4 max-w-2xl leading-7">Tell us about your business, goals and budget. We'll recommend a suitable strategy and scope without unnecessary services or expenses.</p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/contact?subject=Package%20Consultation" className="button-primary">Request a consultation <ArrowUpRight size={17} aria-hidden="true"/></Link>
+          <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="button-outline">Discuss on WhatsApp <MessageCircle size={17} aria-hidden="true"/></a>
+        </div>
+      </div>
       <h2 className="mt-12 text-2xl font-extrabold">Individual Service Packages</h2>
       <p className="muted mt-2">Choose only the services your business needs.</p>
     </section>}</div>)}
@@ -73,7 +82,7 @@ export default function PackagesPage() {
       <div className="panel p-7 md:p-10">
         <div className="flex items-center gap-3"><ShieldCheck className="text-[#4ade80]" size={26} aria-hidden="true"/><h2 className="text-2xl font-bold">Clear scope. Transparent terms.</h2></div>
         <div className="mt-7 grid gap-5 text-sm leading-7 text-[#c5d5d8] md:grid-cols-2 lg:grid-cols-3">
-          <p>All fees are in INR excluding applicable GST. Fixed prices cover the stated standard scope; prices marked + are starting estimates.</p>
+          <p>Fixed prices cover the stated standard scope; prices marked + are starting estimates. International, multi-location and customised engagements are quoted separately based on scope and support needs. All fees exclude applicable GST.</p>
           <p>Advertising spend, marketplace fees, hosting, messaging, software and AI usage are charged separately.</p>
           <p>Client-supplied materials are assumed unless production is contracted. One consolidated revision round is included unless stated otherwise.</p>
           <p>Monthly work is billed in advance; initial engagement and renewal terms are agreed in writing.</p>
