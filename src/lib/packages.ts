@@ -5,8 +5,120 @@ export type ServicePackage = {
 export type PackageGroup = {
   id: string; title: string; subtitle: string; packages: ServicePackage[];
 };
-/** Public client-facing package data transcribed from the approved 2027 PDF catalogue. */
+/** Public 2027 catalogue: focused services and SME bundles. */
 export const packageGroups: PackageGroup[] = [
+  {
+    "id": "industry-growth",
+    "title": "Industry-Specific Growth Packages",
+    "subtitle": "Integrated marketing for Indian small and medium businesses",
+    "packages": [
+      {
+        "title": "Restaurant Essential",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Cafés, cloud kitchens and local restaurants",
+        "features": [
+          "Instagram and Facebook cross-posting",
+          "8 creatives and 2 supplied-footage Reels",
+          "Basic Google Business Profile updates",
+          "Calendar, scheduling and monthly report"
+        ],
+        "note": "One outlet; no filming or ads management."
+      },
+      {
+        "title": "Restaurant Growth",
+        "price": "₹19,999",
+        "unit": "month",
+        "description": "Established independent restaurants",
+        "features": [
+          "Instagram and Facebook: 12 creatives and 6 Reels",
+          "1 local mobile shoot up to 4 hours",
+          "Google Business Profile management and local keywords",
+          "Promotional calendar and monthly report"
+        ],
+        "note": "One outlet; extra travel, ads and professional crew excluded."
+      },
+      {
+        "title": "Restaurant Growth Plus",
+        "price": "₹29,999",
+        "unit": "month",
+        "description": "Integrated acquisition and retention",
+        "features": [
+          "Instagram and Facebook: 12 creatives and 8 Reels",
+          "1 local mobile shoot up to 4 hours",
+          "Google Business Profile management",
+          "Up to 2 active Meta campaigns",
+          "2 WhatsApp campaigns and integrated report"
+        ],
+        "note": "One outlet; consented WhatsApp list up to 2,000 recipients/campaign; ad budget up to ₹15,000; media, platform and setup extra."
+      },
+      {
+        "title": "Local Business Essential",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Shops, salons and local service businesses",
+        "features": [
+          "Instagram and Facebook cross-posting",
+          "8 creatives and 2 supplied-footage Reels",
+          "Basic Google Business Profile updates",
+          "Monthly calendar and report"
+        ],
+        "note": "One location; filming and ads excluded."
+      },
+      {
+        "title": "Local Business Growth",
+        "price": "₹17,999",
+        "unit": "month",
+        "description": "Local discovery and enquiries",
+        "features": [
+          "Instagram and Facebook: 10 creatives and 4 supplied-footage Reels",
+          "Google Business Profile management",
+          "1 active Meta campaign using existing assets",
+          "Monthly report"
+        ],
+        "note": "One location; ad budget up to ₹10,000; media and setup extra."
+      },
+      {
+        "title": "Education Growth",
+        "price": "₹19,999",
+        "unit": "month",
+        "description": "Coaching centres and institutes",
+        "features": [
+          "Instagram and Facebook: 12 creatives and 4 supplied-footage Reels",
+          "Up to 2 active Meta lead campaigns",
+          "Admissions campaign calendar",
+          "Monthly lead report"
+        ],
+        "note": "One institute; ad budget up to ₹15,000; media, CRM and filming extra."
+      },
+      {
+        "title": "Professional & B2B Growth",
+        "price": "₹19,999",
+        "unit": "month",
+        "description": "Consultants and small B2B companies",
+        "features": [
+          "LinkedIn and one additional social channel",
+          "8 creatives and 2 supplied-footage Reels",
+          "1 active Google Search campaign",
+          "Monthly report"
+        ],
+        "note": "One business; ad budget up to ₹15,000; media and tracking setup extra."
+      },
+      {
+        "title": "Retail & Seller Growth",
+        "price": "₹19,999",
+        "unit": "month",
+        "description": "Retailers selling on Amazon or Flipkart",
+        "features": [
+          "One marketplace account and up to 20 listing updates",
+          "Instagram and Facebook: 8 creatives and 2 supplied-footage Reels",
+          "1 marketplace advertising campaign",
+          "Monthly consolidated report"
+        ],
+        "note": "One marketplace; ad spend, fulfilment, photography and platform fees extra."
+      }
+    ]
+  },
   {
     "id": "social-media",
     "title": "Social Media Management",
@@ -27,7 +139,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Social Growth",
-        "price": "₹12,999",
+        "price": "₹9,999",
         "unit": "month",
         "description": "Cross-platform content",
         "features": [
@@ -40,7 +152,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Social Pro",
-        "price": "₹18,999",
+        "price": "₹14,999",
         "unit": "month",
         "description": "Content-led brand building",
         "features": [
@@ -53,16 +165,16 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Lead Accelerator",
-        "price": "₹18,999",
+        "price": "₹14,999",
         "unit": "month",
         "description": "Content and paid lead campaigns",
         "features": [
-          "1 managed organic social channel",
-          "8 static creatives per month",
-          "Meta Ads: up to 2 campaigns",
-          "2 ad creatives and lead report"
+          "1 organic social channel",
+          "6 static creatives per month",
+          "1 active Meta campaign",
+          "1 ad creative and monthly report"
         ],
-        "note": "Ad spend and initial setup are extra."
+        "note": "Ad spend and tracking setup extra; media budget up to ₹15,000/month."
       }
     ]
   },
@@ -73,7 +185,7 @@ export const packageGroups: PackageGroup[] = [
     "packages": [
       {
         "title": "Reel Creator",
-        "price": "₹8,499",
+        "price": "₹5,999",
         "unit": "4 videos",
         "description": "Edited short-form content",
         "features": [
@@ -86,7 +198,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Reel Shoot Day",
-        "price": "₹11,999",
+        "price": "₹8,999",
         "unit": "project",
         "description": "One session, four Reels",
         "features": [
@@ -99,7 +211,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "YouTube Growth",
-        "price": "₹12,999",
+        "price": "₹8,999",
         "unit": "month",
         "description": "Channel content optimisation",
         "features": [
@@ -131,8 +243,34 @@ export const packageGroups: PackageGroup[] = [
     "subtitle": "Attention into action",
     "packages": [
       {
+        "title": "Meta Ads Lite",
+        "price": "₹4,999",
+        "unit": "month",
+        "description": "One focused local campaign",
+        "features": [
+          "1 account and 1 active campaign",
+          "Existing approved creatives",
+          "Basic weekly optimisation",
+          "Monthly report"
+        ],
+        "note": "Ad budget up to ₹10,000; media and setup extra."
+      },
+      {
+        "title": "Google Search Lite",
+        "price": "₹5,999",
+        "unit": "month",
+        "description": "Focused search visibility",
+        "features": [
+          "1 account and 1 Search campaign",
+          "Up to 2 ad groups",
+          "Keyword refinement and ad copy",
+          "Monthly report"
+        ],
+        "note": "Ad budget up to ₹10,000; media and tracking setup extra."
+      },
+      {
         "title": "Meta Ads Essential",
-        "price": "₹9,999",
+        "price": "₹7,999",
         "unit": "month",
         "description": "Facebook and Instagram ads",
         "features": [
@@ -141,11 +279,11 @@ export const packageGroups: PackageGroup[] = [
           "2 image ad creatives each month",
           "Monthly performance report"
         ],
-        "note": "Ad spend and initial setup extra."
+        "note": "Ad spend and initial setup extra; media budget up to ₹30,000/month."
       },
       {
         "title": "Google Search Essential",
-        "price": "₹10,999",
+        "price": "₹8,999",
         "unit": "month",
         "description": "Reach search-intent buyers",
         "features": [
@@ -154,11 +292,11 @@ export const packageGroups: PackageGroup[] = [
           "Copy for up to 4 ad groups",
           "Monthly optimisation report"
         ],
-        "note": "Ad spend and tracking setup extra."
+        "note": "Ad spend and tracking setup extra; media budget up to ₹30,000/month."
       },
       {
         "title": "Dual-Channel Ads",
-        "price": "₹18,999+",
+        "price": "₹14,999+",
         "unit": "month",
         "description": "Coordinated Google and Meta",
         "features": [
@@ -171,7 +309,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Advanced Performance",
-        "price": "₹29,999+",
+        "price": "₹24,999+",
         "unit": "month",
         "description": "Higher-complexity campaigns",
         "features": [
@@ -190,8 +328,21 @@ export const packageGroups: PackageGroup[] = [
     "subtitle": "Be found where intent begins",
     "packages": [
       {
+        "title": "Google Maps Lite",
+        "price": "₹3,999",
+        "unit": "month",
+        "description": "Essential local presence",
+        "features": [
+          "One verified profile",
+          "2 profile posts per month",
+          "Basic business information updates",
+          "Monthly visibility summary"
+        ],
+        "note": "Verification and multi-location work extra."
+      },
+      {
         "title": "Google Maps Visibility",
-        "price": "₹6,999",
+        "price": "₹5,999",
         "unit": "month",
         "description": "Local search discovery",
         "features": [
@@ -204,20 +355,20 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "SEO Foundation",
-        "price": "₹11,999",
+        "price": "₹8,999",
         "unit": "month",
         "description": "Healthy search baseline",
         "features": [
-          "Ongoing basic SEO work",
-          "Priority on-page improvements",
+          "One website",
+          "Up to 4 priority page optimisations per month",
           "Keyword and issue monitoring",
           "Monthly progress report"
         ],
-        "note": "New articles quoted separately."
+        "note": "New articles and major development extra."
       },
       {
         "title": "SEO Growth",
-        "price": "₹19,999",
+        "price": "₹14,999",
         "unit": "month",
         "description": "Improve depth and coverage",
         "features": [
@@ -230,7 +381,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "SEO Authority",
-        "price": "₹34,999",
+        "price": "₹29,999+",
         "unit": "month",
         "description": "Advanced search optimisation",
         "features": [
@@ -263,7 +414,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Business Starter",
-        "price": "₹12,999",
+        "price": "₹9,999",
         "unit": "project",
         "description": "Professional online foundation",
         "features": [
@@ -276,7 +427,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Business Professional",
-        "price": "₹24,999",
+        "price": "₹19,999",
         "unit": "project",
         "description": "A stronger enquiry journey",
         "features": [
@@ -289,7 +440,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Premium & E-commerce",
-        "price": "₹49,999+",
+        "price": "₹39,999+",
         "unit": "project",
         "description": "Corporate sites and stores",
         "features": [
@@ -309,7 +460,7 @@ export const packageGroups: PackageGroup[] = [
     "packages": [
       {
         "title": "Seller Account Launch",
-        "price": "₹5,999",
+        "price": "₹4,999",
         "unit": "one-time",
         "description": "Amazon OR Flipkart",
         "features": [
@@ -322,7 +473,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Marketplace Account Care",
-        "price": "₹7,999",
+        "price": "₹5,999",
         "unit": "month",
         "description": "Amazon OR Flipkart",
         "features": [
@@ -335,7 +486,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Marketplace Growth",
-        "price": "₹14,999",
+        "price": "₹11,999",
         "unit": "month",
         "description": "Amazon OR Flipkart",
         "features": [
@@ -348,7 +499,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Amazon + Flipkart Partner",
-        "price": "₹22,999",
+        "price": "₹17,999",
         "unit": "month",
         "description": "Manage both marketplaces",
         "features": [
@@ -367,17 +518,30 @@ export const packageGroups: PackageGroup[] = [
     "subtitle": "Permission-based communication",
     "packages": [
       {
+        "title": "WhatsApp Lite",
+        "price": "₹2,999",
+        "unit": "month",
+        "description": "One focused customer campaign",
+        "features": [
+          "1 approved campaign per month",
+          "Copywriting using existing assets",
+          "Scheduling and execution",
+          "Basic delivery report"
+        ],
+        "note": "Existing official platform and consented list required; up to 1,000 recipients; messaging fees extra."
+      },
+      {
         "title": "WhatsApp Campaign Care",
-        "price": "₹6,999",
+        "price": "₹4,999",
         "unit": "month",
         "description": "Consent-based communication",
         "features": [
-          "2 approved campaign messages",
-          "Copywriting and scheduling",
-          "Basic campaign coordination",
+          "2 approved campaigns per month",
+          "Copywriting and basic segmentation",
+          "Scheduling and execution",
           "Monthly report"
         ],
-        "note": "Platform messaging fees extra."
+        "note": "Existing official platform and consented list required; up to 2,000 recipients per campaign; messaging and platform fees extra."
       },
       {
         "title": "WhatsApp Platform Setup",
@@ -385,16 +549,16 @@ export const packageGroups: PackageGroup[] = [
         "unit": "one-time",
         "description": "Platform onboarding",
         "features": [
-          "Account setup guidance",
-          "Template submission support",
-          "Basic messaging configuration",
-          "Operational handover"
+          "Official provider selection and onboarding",
+          "Business number configuration assistance",
+          "Up to 3 initial template submissions",
+          "Testing and operational handover"
         ],
-        "note": "Provider approval not guaranteed."
+        "note": "Provider fees extra; approval not guaranteed."
       },
       {
         "title": "Email Marketing Essentials",
-        "price": "₹8,999",
+        "price": "₹5,999",
         "unit": "month",
         "description": "Stay in touch with your audience",
         "features": [
@@ -403,7 +567,7 @@ export const packageGroups: PackageGroup[] = [
           "Campaign setup and scheduling",
           "Monthly performance report"
         ],
-        "note": "Sending software and list costs extra."
+        "note": "Up to 2,000 consented recipients per campaign; software fees extra."
       },
       {
         "title": "Nurture & Automation",
@@ -427,7 +591,7 @@ export const packageGroups: PackageGroup[] = [
     "packages": [
       {
         "title": "CRM Starter",
-        "price": "₹14,999",
+        "price": "₹9,999",
         "unit": "one-time",
         "description": "Organise opportunities",
         "features": [
@@ -440,7 +604,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Lead Automation",
-        "price": "₹19,999+",
+        "price": "₹14,999+",
         "unit": "one-time",
         "description": "Reduce manual follow-ups",
         "features": [
@@ -453,7 +617,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Website AI Assistant",
-        "price": "₹19,999+",
+        "price": "₹14,999+",
         "unit": "project",
         "description": "Answer common questions",
         "features": [
@@ -466,7 +630,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Business Automation",
-        "price": "₹49,999+",
+        "price": "₹39,999+",
         "unit": "project",
         "description": "Connect operational systems",
         "features": [
@@ -486,7 +650,7 @@ export const packageGroups: PackageGroup[] = [
     "packages": [
       {
         "title": "Brand Starter",
-        "price": "₹5,999",
+        "price": "₹4,999",
         "unit": "project",
         "description": "Consistent visual beginning",
         "features": [
@@ -499,7 +663,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Brand Identity Pro",
-        "price": "₹11,999",
+        "price": "₹9,999",
         "unit": "project",
         "description": "Distinctive brand identity",
         "features": [
@@ -512,7 +676,7 @@ export const packageGroups: PackageGroup[] = [
       },
       {
         "title": "Business Growth Partner",
-        "price": "₹34,999",
+        "price": "₹29,999",
         "unit": "month",
         "description": "Integrated digital operations",
         "features": [
