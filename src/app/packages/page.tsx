@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-react';
 import { packageGroups, marketplaceExtras } from '@/lib/packages';
 import { site } from '@/lib/site';
+import { SocialPackageSelector } from '@/components/social-package-selector';
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
@@ -58,6 +59,7 @@ export default function PackagesPage() {
               <p className="mt-3 text-xs leading-5 text-[#c5d5d8]">KPIs: {platform.metrics}</p>
             </article>)}
           </div>
+          <SocialPackageSelector />
         </div>}
         <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-6">
