@@ -18,13 +18,13 @@ export const packageGroups: PackageGroup[] = [
         "unit": "month",
         "description": "Establish your digital presence",
         "features": [
-          "Up to 2 relevant social platforms (cross-posted content)",
-          "8 branded creatives and 2 short-form edits from supplied footage",
+          "Instagram + Facebook OR one LinkedIn company page/personal profile",
+          "8 branded creatives and 2 short-form edits from supplied footage for Meta OR 8 LinkedIn posts for LinkedIn",
           "Content planning, captions and scheduling",
           "Basic Google Business Profile updates where applicable (2 updates/month)",
           "Monthly performance report"
         ],
-        "note": "One brand/location; filming and paid advertising excluded."
+        "note": "One brand/location; LinkedIn personal publishing via client-approved workflow; filming and paid advertising excluded."
       },
       {
         "title": "Growth Professional",
@@ -32,13 +32,13 @@ export const packageGroups: PackageGroup[] = [
         "unit": "month",
         "description": "Strengthen your brand and grow consistently",
         "features": [
-          "Up to 2 relevant social platforms",
+          "Instagram and Facebook management",
           "12 branded creatives and 6 edited short-form videos",
           "1 local mobile shoot up to 4 hours",
           "Google Business Profile management (4 updates/month) or equivalent agreed visibility activities",
           "Content strategy, promotional planning and monthly performance review"
         ],
-        "note": "One brand/location; ad management, extra travel and professional production excluded."
+        "note": "One brand/location; ad management, extra travel and professional production excluded. LinkedIn or YouTube substitutions/additions quoted separately."
       },
       {
         "title": "Growth Premium",
@@ -46,7 +46,7 @@ export const packageGroups: PackageGroup[] = [
         "unit": "month",
         "description": "Integrated customer acquisition and retention",
         "features": [
-          "Up to 2 relevant social platforms",
+          "Instagram and Facebook management",
           "12 branded creatives and 8 edited short-form videos",
           "1 local mobile shoot up to 4 hours",
           "Local SEO and visibility management (one profile or agreed equivalent)",
@@ -54,7 +54,7 @@ export const packageGroups: PackageGroup[] = [
           "2 WhatsApp marketing campaigns",
           "Acquisition and retention strategy and integrated monthly report"
         ],
-        "note": "One brand/location; ad budget up to ₹15,000/month; existing official WhatsApp platform and consented list up to 2,000 recipients per campaign required. Media, platform, setup, extra travel and professional production excluded."
+        "note": "One brand/location; ad budget up to ₹15,000/month; existing official WhatsApp platform and consented list up to 2,000 recipients per campaign required. Media, platform, setup, extra travel and professional production excluded. LinkedIn or YouTube substitutions/additions quoted separately."
       },
       {
         "title": "Growth Enterprise",
@@ -62,7 +62,7 @@ export const packageGroups: PackageGroup[] = [
         "unit": "agreement",
         "description": "Build, transform and scale",
         "features": [
-          "Custom multi-channel digital growth strategy",
+          "Custom strategy across Instagram, Facebook, LinkedIn and/or YouTube",
           "Advanced SEO and paid advertising",
           "Website and application development options",
           "CRM, automation and AI solutions",
@@ -74,47 +74,53 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "social-media",
-    "title": "Social Media Management",
-    "subtitle": "Content that stays consistent",
+    "title": "Instagram & Facebook Management",
+    "subtitle": "Meta organic marketing: discovery, engagement, local community and enquiries",
     "packages": [
       {
-        "title": "Social Starter",
-        "price": "₹7,999",
+        "title": "Meta Starter",
+        "price": "₹5,999",
         "unit": "month",
-        "description": "Essential brand visibility",
+        "description": "Establish a consistent digital presence",
         "features": [
-          "1 social media platform",
-          "6 static creatives per month",
-          "Content calendar and scheduling",
-          "Monthly activity report"
+          "Instagram and Facebook management",
+          "8 branded static creatives",
+          "Initial profile and bio optimisation",
+          "Captions, hashtags, calendar and scheduling",
+          "Monthly performance report"
         ],
-        "note": "Client supplies brand assets."
+        "note": "Unique monthly assets shared across Instagram and Facebook, adapted by platform; client supplies footage; filming and paid ads excluded unless specified."
       },
       {
-        "title": "Social Growth",
+        "title": "Meta Growth",
         "price": "₹9,999",
         "unit": "month",
-        "description": "Cross-platform content",
+        "description": "Build reach and audience engagement",
         "features": [
-          "Instagram and Facebook",
-          "8 static creatives per month",
-          "2 edited Reels from supplied footage",
-          "Monthly calendar and report"
+          "Instagram and Facebook management",
+          "12 static creatives or carousels",
+          "4 edited Reels from supplied footage",
+          "Platform-specific content strategy",
+          "8 Story adaptations",
+          "Scheduling, publishing and monthly analytics"
         ],
-        "note": "Organic content management only."
+        "note": "Unique monthly assets shared across Instagram and Facebook, adapted by platform; client supplies footage; filming and paid ads excluded unless specified."
       },
       {
-        "title": "Social Pro",
+        "title": "Meta Pro",
         "price": "₹14,999",
         "unit": "month",
-        "description": "Content-led brand building",
+        "description": "Accelerate brand visibility",
         "features": [
-          "Instagram and Facebook",
-          "12 static creatives per month",
-          "4 edited Reels from supplied footage",
-          "Monthly content report"
+          "Instagram and Facebook management",
+          "16 static creatives or carousels",
+          "6 edited Reels from supplied footage",
+          "12 Story adaptations",
+          "Advanced content research, Reel concepts and short scripts",
+          "Basic comment monitoring",
+          "Monthly strategy review and reporting"
         ],
-        "note": "Paid advertising is excluded."
+        "note": "Unique monthly assets shared across Instagram and Facebook, adapted by platform; client supplies footage; filming and paid ads excluded unless specified."
       },
       {
         "title": "Lead Accelerator",
@@ -122,7 +128,7 @@ export const packageGroups: PackageGroup[] = [
         "unit": "month",
         "description": "Content and paid lead campaigns",
         "features": [
-          "1 organic social channel",
+          "Instagram OR Facebook organic management",
           "6 static creatives per month",
           "1 active Meta campaign",
           "1 ad creative and monthly report"
@@ -132,9 +138,174 @@ export const packageGroups: PackageGroup[] = [
     ]
   },
   {
+    "id": "linkedin-marketing",
+    "title": "LinkedIn Marketing & Management",
+    "subtitle": "Thought leadership, professional credibility and B2B visibility",
+    "packages": [
+      {
+        "title": "LinkedIn Essential",
+        "price": "₹5,999",
+        "unit": "month",
+        "description": "Establish professional credibility",
+        "features": [
+          "1 company page OR personal profile",
+          "Initial profile optimisation",
+          "8 professional posts per month",
+          "Industry research, copywriting and graphic design",
+          "Publishing and monthly report"
+        ],
+        "note": "One company page OR personal profile; client-approved publishing and permitted access only. Ads, outreach and Sales Navigator excluded."
+      },
+      {
+        "title": "LinkedIn Growth",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Build industry authority",
+        "features": [
+          "1 company page OR personal profile",
+          "12 professional posts per month",
+          "Up to 4 document carousels within post allocation",
+          "Thought leadership, industry insights and case studies",
+          "Keyword and hashtag optimisation",
+          "Monthly performance analysis"
+        ],
+        "note": "One company page OR personal profile; client-approved publishing and permitted access only. Ads, outreach and Sales Navigator excluded."
+      },
+      {
+        "title": "LinkedIn Authority",
+        "price": "₹14,999",
+        "unit": "month",
+        "description": "Corporate and leadership visibility",
+        "features": [
+          "Company page AND one founder profile",
+          "16 posts shared across both accounts",
+          "Up to 4 document carousels within post allocation",
+          "Founder thought leadership and 1 long-form article",
+          "Case studies, storytelling and basic engagement monitoring",
+          "Monthly strategy review"
+        ],
+        "note": "Client-approved publishing and permitted access only. Ads, outreach and Sales Navigator excluded."
+      }
+    ]
+  },
+  {
+    "id": "youtube-marketing",
+    "title": "YouTube Channel Management & Growth",
+    "subtitle": "Content discovery, click-through rate, watch time and audience retention",
+    "packages": [
+      {
+        "title": "YouTube Essential",
+        "price": "₹5,999",
+        "unit": "month",
+        "description": "Professional channel management",
+        "features": [
+          "1 YouTube channel and initial channel optimisation",
+          "8 researched content topics per month",
+          "SEO for 4 supplied finished videos",
+          "4 custom thumbnails",
+          "Titles, descriptions, publishing and monthly analytics"
+        ],
+        "note": "Client supplies finished long-form videos; filming, advanced animation and paid promotion excluded."
+      },
+      {
+        "title": "YouTube Growth",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Improve discovery and subscriber potential",
+        "features": [
+          "1 YouTube channel and 12 researched topics",
+          "4 long-form scripts up to 1,200 words each",
+          "SEO and thumbnails for 4 supplied finished videos",
+          "4 edited Shorts from supplied footage",
+          "Playlist and end-screen optimisation",
+          "CTR, retention and monthly reporting"
+        ],
+        "note": "Client supplies finished long-form videos; filming, advanced animation and paid promotion excluded."
+      },
+      {
+        "title": "YouTube Pro",
+        "price": "₹19,999",
+        "unit": "month",
+        "description": "End-to-end content development from supplied footage",
+        "features": [
+          "1 YouTube channel and 16 researched topics",
+          "4 long-form scripts up to 1,200 words each",
+          "4 standard long-form edits up to 10 minutes each",
+          "4 custom thumbnails and 8 edited Shorts",
+          "SEO, chapters and publishing",
+          "Content packaging, retention strategy and monthly review"
+        ],
+        "note": "Client supplies footage. Filming, presenters, advanced motion graphics and paid promotion excluded."
+      }
+    ]
+  },
+  {
+    "id": "combined-social",
+    "title": "Combined Social Media Growth",
+    "subtitle": "Separate platform strategies, shared production efficiencies and consolidated reporting",
+    "packages": [
+      {
+        "title": "Social Authority",
+        "price": "₹14,999",
+        "unit": "month",
+        "description": "Instagram + Facebook + LinkedIn",
+        "features": [
+          "10 Meta creatives and 4 edited Reels",
+          "8 dedicated LinkedIn posts",
+          "Separate platform strategies",
+          "Profile optimisation, publishing and consolidated report"
+        ],
+        "note": "One brand; client supplies footage and finished long-form videos where applicable. Filming, long-form editing, paid ads and daily inbox management excluded."
+      },
+      {
+        "title": "Social & Video Growth",
+        "price": "₹17,999",
+        "unit": "month",
+        "description": "Instagram + Facebook + YouTube",
+        "features": [
+          "10 Meta creatives",
+          "6 unique short-form edits adapted as Reels and Shorts",
+          "4 long-form YouTube scripts up to 1,200 words each",
+          "SEO and thumbnails for 4 supplied finished videos",
+          "Platform-specific strategies, publishing and consolidated reporting"
+        ],
+        "note": "One brand; client supplies footage and finished long-form videos where applicable. Filming, long-form editing, paid ads and daily inbox management excluded."
+      },
+      {
+        "title": "Professional Influence",
+        "price": "₹17,999",
+        "unit": "month",
+        "description": "LinkedIn + YouTube",
+        "features": [
+          "12 LinkedIn posts",
+          "4 long-form YouTube scripts up to 1,200 words each",
+          "SEO and thumbnails for 4 supplied finished videos",
+          "4 edited YouTube Shorts",
+          "Thought leadership strategy, publishing and consolidated reporting"
+        ],
+        "note": "One brand; client supplies footage and finished long-form videos where applicable. Filming, long-form editing, paid ads and daily inbox management excluded."
+      },
+      {
+        "title": "360° Social Growth",
+        "price": "₹24,999",
+        "unit": "month",
+        "description": "Instagram + Facebook + LinkedIn + YouTube",
+        "features": [
+          "12 Meta creatives and 12 dedicated LinkedIn posts",
+          "8 unique short-form edits adapted as Reels and Shorts",
+          "4 long-form YouTube scripts up to 1,200 words each",
+          "SEO and thumbnails for 4 supplied finished videos",
+          "Individual platform strategies and unified calendar",
+          "Cross-platform analytics and strategy review"
+        ],
+        "note": "One brand; client supplies footage and finished long-form videos where applicable. Filming, long-form editing, paid ads and daily inbox management excluded."
+      }
+    ]
+  },
+  {
     "id": "video-youtube",
-    "title": "Reels, Video & YouTube",
-    "subtitle": "Stories worth watching",
+    "title": "Content & Video Production",
+    "subtitle": "Independent creative production, filming, scripts and editing",
     "packages": [
       {
         "title": "Reel Creator",
@@ -163,19 +334,6 @@ export const packageGroups: PackageGroup[] = [
         "note": "Crew and travel subject to quote."
       },
       {
-        "title": "YouTube Growth",
-        "price": "₹8,999",
-        "unit": "month",
-        "description": "Channel content optimisation",
-        "features": [
-          "Channel management",
-          "Optimise 4 supplied videos",
-          "4 premium thumbnails",
-          "10 topics and monthly analytics"
-        ],
-        "note": "Finished videos supplied by client."
-      },
-      {
         "title": "Video Campaign",
         "price": "₹24,999+",
         "unit": "project",
@@ -187,12 +345,57 @@ export const packageGroups: PackageGroup[] = [
           "Milestone-based delivery"
         ],
         "note": "Final price after production brief."
+      },
+      {
+        "title": "YouTube Thumbnail Pack",
+        "price": "₹1,999",
+        "unit": "4 thumbnails",
+        "description": "Custom thumbnail design",
+        "features": [
+          "4 custom thumbnails",
+          "Client supplies images or approved assets"
+        ],
+        "note": "One consolidated revision round; no channel management."
+      },
+      {
+        "title": "YouTube Script Pack",
+        "price": "₹3,999",
+        "unit": "4 scripts",
+        "description": "Research-led long-form scripts",
+        "features": [
+          "4 scripts up to 1,200 words each",
+          "Hooks and structured narrative"
+        ],
+        "note": "Client-approved topics; no filming or editing."
+      },
+      {
+        "title": "YouTube Video Editing",
+        "price": "₹2,499+",
+        "unit": "video",
+        "description": "Standard long-form editing",
+        "features": [
+          "1 edit up to 10 minutes",
+          "Client-supplied footage",
+          "Basic cuts, audio and text overlays"
+        ],
+        "note": "Advanced animation, extensive raw footage and complex edits quoted separately."
+      },
+      {
+        "title": "LinkedIn Carousel Pack",
+        "price": "₹2,999",
+        "unit": "4 carousels",
+        "description": "Professional document carousels",
+        "features": [
+          "4 document carousels up to 6 slides each",
+          "Copy and branded design"
+        ],
+        "note": "Client supplies source material; no publishing."
       }
     ]
   },
   {
     "id": "paid-advertising",
-    "title": "Google & Meta Advertising",
+    "title": "Paid Advertising — Meta, Google, LinkedIn & YouTube",
     "subtitle": "Attention into action",
     "packages": [
       {
@@ -246,6 +449,32 @@ export const packageGroups: PackageGroup[] = [
           "Monthly optimisation report"
         ],
         "note": "Ad spend and tracking setup extra; media budget up to ₹30,000/month."
+      },
+      {
+        "title": "YouTube Ads Essential",
+        "price": "₹6,999",
+        "unit": "month",
+        "description": "Video advertising management",
+        "features": [
+          "1 Google Ads account and 1 active YouTube campaign",
+          "Audience targeting and optimisation",
+          "Approved client-supplied video assets",
+          "Monthly performance report"
+        ],
+        "note": "Media budget and tracking setup agreed separately."
+      },
+      {
+        "title": "LinkedIn Ads Essential",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Professional audience advertising",
+        "features": [
+          "1 LinkedIn Ads account and 1 active campaign",
+          "Professional audience targeting and optimisation",
+          "Approved client-supplied ad assets",
+          "Monthly performance report"
+        ],
+        "note": "Media budget and tracking setup agreed separately."
       },
       {
         "title": "Dual-Channel Ads",

@@ -3,14 +3,22 @@ import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-react';
 import { packageGroups, marketplaceExtras } from '@/lib/packages';
 import { site } from '@/lib/site';
+import { SocialPackageSelector } from '@/components/social-package-selector';
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
-  description: 'Explore transparent packages for social media, video, YouTube, Google and Meta Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
+  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, content production, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
   alternates: { canonical: '/packages' },
 };
 
 const industries = ['Food & Hospitality', 'Retail & E-commerce', 'Education & Training', 'Real Estate', 'Healthcare & Wellness', 'Professional Services', 'Manufacturing & Industrial', 'Travel & Tourism', 'Beauty & Lifestyle', 'Technology & SaaS', 'Personal Brands', 'Local Businesses', 'Logistics & Distribution', 'B2B Enterprises', 'Startups & Emerging Brands'];
+
+const platformStrategies = [
+  { name: 'Instagram', focus: 'Discovery & engagement', detail: 'Reels, carousels, visual storytelling and audience engagement.', metrics: 'Reach, shares, saves, watch time and enquiries' },
+  { name: 'Facebook', focus: 'Community & conversion', detail: 'Local promotions, customer stories, offers and community content.', metrics: 'Local reach, engagement, traffic and enquiries' },
+  { name: 'LinkedIn', focus: 'Authority & professional growth', detail: 'Thought leadership, industry insights, case studies and professional carousels.', metrics: 'Relevant followers, engagement and business enquiries' },
+  { name: 'YouTube', focus: 'Discoverability & retention', detail: 'Topic research, hooks, thumbnails, SEO, Shorts and retention strategy.', metrics: 'Views, subscribers, CTR, watch time and retention' },
+];
 
 const slugify = (text: string) => encodeURIComponent(text);
 
@@ -40,6 +48,19 @@ export default function PackagesPage() {
         <div className="mt-3 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div><h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">{group.title}</h2><p className="muted mt-3 text-lg">{group.subtitle}</p></div>
         </div>
+        {group.id==='social-media' && <div className="mt-7">
+          <h3 className="text-2xl font-bold">Different platforms. Different strategies. One growth partner.</h3>
+          <p className="muted mt-3 max-w-3xl leading-7">Platform-specific planning, content and measurement — not identical posts everywhere. Choose a dedicated channel package or combine platforms with a defined monthly scope.</p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            {platformStrategies.map(platform => <article key={platform.name} className="panel p-5">
+              <p className="text-lg font-bold text-[#4ade80]">{platform.name}</p>
+              <h4 className="mt-2 font-semibold">{platform.focus}</h4>
+              <p className="muted mt-2 text-sm leading-6">{platform.detail}</p>
+              <p className="mt-3 text-xs leading-5 text-[#c5d5d8]">KPIs: {platform.metrics}</p>
+            </article>)}
+          </div>
+          <SocialPackageSelector />
+        </div>}
         <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-6">
             <div className="flex-1">
@@ -97,7 +118,7 @@ export default function PackagesPage() {
         <div className="mt-7 grid gap-5 text-sm leading-7 text-[#c5d5d8] md:grid-cols-2 lg:grid-cols-3">
           <p>Fixed prices cover the stated standard scope; prices marked + are starting estimates. International, multi-location and customised engagements are quoted separately based on scope and support needs. All fees exclude applicable GST.</p>
           <p>Advertising spend, marketplace fees, hosting, messaging, software and AI usage are charged separately.</p>
-          <p>Client-supplied materials are assumed unless production is contracted. One consolidated revision round is included unless stated otherwise.</p>
+          <p>Client-supplied materials are assumed unless production is contracted. Content quantities are monthly totals, not per platform, unless stated otherwise. One consolidated revision round is included unless stated otherwise.</p>
           <p>Development projects require an agreed written scope. Standard websites: 50% advance and 50% before handover. Larger commerce and software projects: proposed 40/30/20/10 milestone payments, confirmed in the agreement.</p>
           <p>Development fees exclude domain, hosting, premium software, payment gateway fees, copywriting and photography unless included. Post-launch bug support covers agreed functionality only; ongoing care and new features are separate. Commerce and custom project revisions and support are agreed in writing.</p>
           <p>Monthly work is billed in advance; initial engagement and renewal terms are agreed in writing.</p>
