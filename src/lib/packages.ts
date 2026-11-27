@@ -1332,30 +1332,55 @@ export const packageGroups: PackageGroup[] = [
     "subtitle": "Build a distinctive and consistent brand",
     "packages": [
       {
-        "title": "Brand Starter",
+        "title": "Premium Logo Design",
         "price": "₹4,999",
         "unit": "project",
-        "description": "Consistent visual beginning",
+        "description": "A distinctive logo for your business",
         "features": [
-          "Basic professional logo design",
-          "Brand colour palette",
-          "Common logo export formats",
-          "Defined revision round"
+          "Brand discovery consultation",
+          "Up to 3 logo concepts with variations",
+          "3 realistic mockups of approved logo",
+          "High-resolution square profile image",
+          "Editable logo source and final export files",
+          "Indicative delivery: 3–4 working days"
         ],
-        "note": "Strategy workshop not included."
+        "note": "Five consolidated revision rounds on the selected concept; further revisions quoted separately. Final original design rights assigned after full payment, subject to third-party licences. Printing, trademark registration and paid assets excluded. Delivery estimates depend on complete brief, timely feedback and agreed scope."
       },
       {
-        "title": "Brand Identity Pro",
-        "price": "₹9,999",
+        "title": "Premium Logo & Stationery",
+        "price": "₹7,499",
         "unit": "project",
-        "description": "Distinctive brand identity",
+        "description": "Coordinated business identity for print and digital",
         "features": [
-          "Professional logo identity",
-          "Typography and colour system",
-          "Mini brand identity guide",
-          "Core brand assets"
+          "Brand discovery consultation",
+          "Up to 3 logo concepts with variations",
+          "3 realistic mockups of approved logo",
+          "High-resolution square profile image",
+          "Editable logo source and final export files",
+          "Business card, letterhead and envelope designs",
+          "Indicative delivery: 4–5 working days"
         ],
-        "note": "Trademarks and licensing extra."
+        "note": "Five consolidated revision rounds on the selected concept; further revisions quoted separately. Final original design rights assigned after full payment, subject to third-party licences. Printing, trademark registration and paid assets excluded. Delivery estimates depend on complete brief, timely feedback and agreed scope."
+      },
+      {
+        "title": "Startup Brand Identity Kit",
+        "price": "₹13,999",
+        "unit": "project",
+        "description": "A coordinated identity for launching your brand",
+        "features": [
+          "Industry and competitor research; brand consultation",
+          "Up to 4 logo concepts with variations",
+          "Detailed visual identity guidelines",
+          "1080p logo intro animation",
+          "3 realistic logo mockups",
+          "25+ favicon, web and app icon exports",
+          "5 editable Canva social templates and square profile image",
+          "Facebook, X and YouTube cover designs",
+          "Business card, letterhead and envelope designs",
+          "Editable source and final export files",
+          "Indicative delivery: 6–7 working days"
+        ],
+        "note": "Five consolidated revision rounds on the selected concept; further revisions quoted separately. Final original design rights assigned after full payment, subject to third-party licences. Printing, trademark registration and paid assets excluded. Delivery estimates depend on complete brief, timely feedback and agreed scope."
       }
     ]
   }
