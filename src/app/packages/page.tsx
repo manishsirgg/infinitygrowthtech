@@ -8,7 +8,7 @@ import { ProductionPackageBrowser } from '@/components/production-package-browse
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
-  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, strategic content and media production, photography, videography, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
+  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, strategic content and media production, photography, videography, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI, brand strategy and visual identity across India.',
   alternates: { canonical: '/packages' },
 };
 
@@ -61,6 +61,20 @@ export default function PackagesPage() {
             </article>)}
           </div>
           <SocialPackageSelector />
+        </div>}
+        {group.id === 'branding-growth' && <div className="mt-8 panel p-5 sm:p-7">
+          <h3 className="text-2xl font-bold">Beyond the logo. Build a brand people recognise.</h3>
+          <p className="muted mt-3 max-w-3xl leading-7">From new ventures to established businesses, we develop identities that connect positioning, design and consistent brand application. Choose a defined identity package or a customised strategic engagement.</p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['01', 'Discover', 'Understand your business, audience and competitive context.'],
+              ['02', 'Define', 'Agree the creative direction and identity objectives.'],
+              ['03', 'Design', 'Develop logo concepts and the agreed visual system.'],
+              ['04', 'Deliver', 'Hand over approved assets, source files and guidelines as included.']
+            ].map(([step, title, detail]) => <div key={step} className="rounded-lg border border-white/10 p-4"><p className="text-sm font-semibold text-[#4ade80]">{step}</p><h4 className="mt-2 font-bold">{title}</h4><p className="muted mt-2 text-sm leading-6">{detail}</p></div>)}
+          </div>
+          <p className="muted mt-5 text-sm leading-6">Delivery estimates depend on a complete brief, timely feedback and approvals. Package-specific revision limits supersede the standard revision policy. Additional concepts, revisions, naming, trademark checks, printing, packaging and paid licences are separately scoped unless included.</p>
+          <Link href="/contact?subject=Brand%20Strategy%20Consultation" className="button-outline mt-5">Discuss your brand requirements <ArrowUpRight size={16} aria-hidden="true"/></Link>
         </div>}
         {group.id === 'video-youtube' ? <ProductionPackageBrowser packages={group.packages} /> : <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-6">
