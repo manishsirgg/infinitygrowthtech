@@ -9,14 +9,14 @@ import { ProductionPackageBrowser } from '@/components/production-package-browse
 
 const families = [
   { title: 'Social media & content', ids: ['social-media','linkedin-marketing','youtube-marketing','combined-social','video-youtube'] },
-  { title: 'Advertising & discovery', ids: ['paid-advertising','seo-discovery','customer-communication'] },
+  { title: 'Advertising & discovery', ids: ['paid-advertising','seo-discovery','ai-search-visibility','customer-communication'] },
   { title: 'Websites & technology', ids: ['web-development','ecommerce-development','web-applications','website-care','crm-automation'] },
   { title: 'Commerce & brand', ids: ['marketplaces','branding-growth'] },
 ];
 const shortNames: Record<string,string> = {
   'social-media':'Instagram & Facebook', 'linkedin-marketing':'LinkedIn', 'youtube-marketing':'YouTube',
   'combined-social':'Combined social plans', 'video-youtube':'Content & media production',
-  'paid-advertising':'Paid advertising', 'seo-discovery':'SEO & Google Maps', 'customer-communication':'WhatsApp & email',
+  'paid-advertising':'Paid advertising', 'seo-discovery':'SEO & Google Maps', 'ai-search-visibility':'AI Search (AEO & GEO)', 'customer-communication':'WhatsApp & email',
   'web-development':'Business websites', 'ecommerce-development':'E-commerce websites', 'web-applications':'Web apps & SaaS',
   'website-care':'Website & app care', 'crm-automation':'CRM, AI & automation', 'marketplaces':'Amazon & Flipkart', 'branding-growth':'Branding & identity'
 };
@@ -33,6 +33,13 @@ const slugify = (text: string) => encodeURIComponent(text);
 
 export function PackageDetails({ group }: { group: PackageGroup }) {
   return <div>
+        {group.id === 'ai-search-visibility' && <div className="panel mt-5 p-5">
+          <p className="eyebrow">AI search discovery</p>
+          <h4 className="mt-2 text-xl font-bold">Be discoverable beyond traditional search.</h4>
+          <p className="muted mt-3 text-sm leading-7">Answer Engine Optimisation (AEO) focuses on useful, answer-ready content. Generative Engine Optimisation (GEO) focuses on brand discoverability and credibility in AI-generated responses. Our managed service combines monitoring, evidence-led recommendations and, on Growth plans, content and editorial opportunity workflows.</p>
+          <p className="muted mt-3 text-sm leading-7">Weekly and daily options differ in data refresh frequency, not guaranteed outcomes. AI visibility is a sampled measure, not a universal ranking. New engagements are subject to platform onboarding and readiness.</p>
+          <Link href="/contact?subject=AI%20Visibility%20Audit" className="button-outline mt-4">Request an AI visibility audit <ArrowUpRight size={16} aria-hidden="true"/></Link>
+        </div>}
         {group.id==='social-media' && <details className="mt-5 panel p-4 sm:p-5"><summary className="cursor-pointer font-semibold">Explore platform strategies and build a custom social plan</summary><div className="mt-5">
           <h3 className="text-2xl font-bold">Different platforms. Different strategies. One growth partner.</h3>
           <p className="muted mt-3 max-w-3xl leading-7">Platform-specific planning, content and measurement — not identical posts everywhere. Choose a dedicated channel package or combine platforms with a defined monthly scope.</p>

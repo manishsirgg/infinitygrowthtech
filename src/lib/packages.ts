@@ -876,6 +876,83 @@ export const packageGroups: PackageGroup[] = [
     ]
   },
   {
+    "id": "ai-search-visibility",
+    "title": "AI Search Visibility — AEO & GEO",
+    "subtitle": "Understand how AI answers discover, describe and recommend your brand. Monitoring and strategic optimisation for ChatGPT and Google AI.",
+    "packages": [
+      {
+        "title": "AI Visibility Track — Weekly",
+        "price": "₹7,999",
+        "unit": "brand / month",
+        "description": "Measure your brand's presence in AI answers",
+        "features": [
+          "Weekly visibility data refresh",
+          "100 brand-specific search prompts monitored",
+          "ChatGPT and Google AI visibility tracking",
+          "Brand mentions, share of voice and competitor analysis",
+          "Sentiment and citation source analysis",
+          "Actionable recommendations and monthly IGT review"
+        ],
+        "note": "One brand; service commencement subject to platform onboarding. AI answers vary; mentions, citations, rankings and sales are not guaranteed. Website implementation, paid editorial placements, third-party publishing, additional human editing and outreach execution quoted separately."
+      },
+      {
+        "title": "AI Visibility Track — Daily",
+        "price": "₹10,999",
+        "unit": "brand / month",
+        "description": "More frequent monitoring for competitive markets",
+        "features": [
+          "Daily visibility data refresh",
+          "100 brand-specific search prompts monitored",
+          "ChatGPT and Google AI visibility tracking",
+          "Brand mentions, share of voice and competitor analysis",
+          "Sentiment and citation source analysis",
+          "Actionable recommendations and monthly IGT review"
+        ],
+        "note": "One brand; service commencement subject to platform onboarding. AI answers vary; mentions, citations, rankings and sales are not guaranteed. Website implementation, paid editorial placements, third-party publishing, additional human editing and outreach execution quoted separately."
+      },
+      {
+        "title": "AI Visibility Growth — Weekly",
+        "price": "₹19,999",
+        "unit": "brand / month",
+        "description": "Monitoring plus content and authority-building workflows",
+        "features": [
+          "Weekly visibility data refresh",
+          "100 brand-specific search prompts monitored",
+          "ChatGPT and Google AI visibility tracking",
+          "Brand mentions, share of voice and competitor analysis",
+          "Sentiment and citation source analysis",
+          "Actionable recommendations and monthly IGT review",
+          "AI-assisted content workflow: up to 25 draft content pieces per month across agreed formats",
+          "Human review of up to 4 priority content drafts per month",
+          "Editorial opportunity research and outreach planning",
+          "News monitoring and content recommendations",
+          "Monthly AEO/GEO optimisation roadmap"
+        ],
+        "note": "One brand; service commencement subject to platform onboarding. AI answers vary; mentions, citations, rankings and sales are not guaranteed. Website implementation, paid editorial placements, third-party publishing, additional human editing and outreach execution quoted separately."
+      },
+      {
+        "title": "AI Visibility Growth — Daily",
+        "price": "₹24,999",
+        "unit": "brand / month",
+        "description": "Continuous monitoring with strategic content support",
+        "features": [
+          "Daily visibility data refresh",
+          "100 brand-specific search prompts monitored",
+          "ChatGPT and Google AI visibility tracking",
+          "Brand mentions, share of voice and competitor analysis",
+          "Sentiment and citation source analysis",
+          "Actionable recommendations and monthly IGT review",
+          "AI-assisted content workflow: up to 25 draft content pieces per month across agreed formats",
+          "Human review of up to 4 priority content drafts per month",
+          "Editorial opportunity research and outreach planning",
+          "News monitoring and content recommendations",
+          "Monthly AEO/GEO optimisation roadmap"
+        ],
+        "note": "One brand; service commencement subject to platform onboarding. AI answers vary; mentions, citations, rankings and sales are not guaranteed. Website implementation, paid editorial placements, third-party publishing, additional human editing and outreach execution quoted separately."
+      }
+    ]
+  },
+  {
     "id": "web-development",
     "title": "Business & Corporate Websites",
     "subtitle": "Standard content pages, defined design scope and conversion-focused websites.",

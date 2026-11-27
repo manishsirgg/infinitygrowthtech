@@ -7,7 +7,7 @@ import { PackageCatalogue } from '@/components/package-catalogue';
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
-  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, strategic content and media production, photography, videography, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
+  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, strategic content and media production, photography, videography, Google, Meta and LinkedIn Ads, SEO, AEO, GEO, AI search visibility, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
   alternates: { canonical: '/packages' },
 };
 
