@@ -6,7 +6,7 @@ import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
-  description: 'Explore transparent packages for social media, video, YouTube, Google and Meta Ads, SEO, websites, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
+  description: 'Explore transparent packages for social media, video, YouTube, Google and Meta Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
   alternates: { canonical: '/packages' },
 };
 
@@ -56,6 +56,19 @@ export default function PackagesPage() {
             </div>
           </article>)}
         </div>
+        {group.id==='web-development' && <div className="mt-8 panel p-6 md:p-8">
+          <h3 className="text-xl font-bold">What counts as a page?</h3>
+          <p className="muted mt-3 leading-7">A standard content page is one URL with an agreed number of content sections. Home, About, Services and Contact are typical examples. Multiple sections on the same URL are not separate pages. A five-page site might include Home, About, Services, Portfolio and Contact. Dynamic product, article and listing templates are scoped by module and content-entry allowance; login, checkout, dashboards and custom business logic are scoped by functionality.</p>
+          <p className="muted mt-3 leading-7">Standard privacy, terms, cookie policy, disclaimer, 404 and enquiry confirmation pages are outside the page allowance where applicable, using client-approved content. Legal drafting and custom functionality are excluded.</p>
+          <h4 className="mt-6 font-bold">Optional development add-ons</h4>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+            {[
+              ['Additional standard content page','₹1,499+'],['Additional customised page','₹2,499+'],['Premium custom-designed page','₹3,999+'],['Additional standard section','₹499+'],['Advertising landing page','₹4,999+'],['Blog and standard CMS integration','₹7,999+'],['Advanced enquiry form','₹2,499+'],['Appointment booking integration','₹4,999+'],['Multilingual website setup','₹7,999+'],['Custom dashboard, authentication, database or API integration','Scope-based']
+            ].map(([name, price]) => <div key={name} className="rounded-lg border border-white/10 p-3"><p>{name}</p><p className="mt-1 font-semibold text-[#4ade80]">{price}</p></div>)}
+          </div>
+          <p className="muted mt-4 text-sm">Add-ons apply only where not already included. Software, licences and subscriptions are extra.</p>
+          <Link href="/contact?subject=Website%20Scope%20Consultation" className="button-outline mt-6">Discuss your website scope <ArrowUpRight size={16} aria-hidden="true"/></Link>
+        </div>}
         {group.id==='marketplaces' && <div className="mt-7 panel flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div><p className="font-bold">Also available individually</p><p className="muted mt-1 text-sm">{marketplaceExtras.map(extra=>`${extra.title}: ${extra.price}`).join(' · ')}</p></div>
           <Link href="/contact?subject=Marketplace%20Services" className="shrink-0 font-semibold text-[#4ade80]">Discuss seller services <ArrowUpRight className="inline" size={16} aria-hidden="true"/></Link>
@@ -85,6 +98,8 @@ export default function PackagesPage() {
           <p>Fixed prices cover the stated standard scope; prices marked + are starting estimates. International, multi-location and customised engagements are quoted separately based on scope and support needs. All fees exclude applicable GST.</p>
           <p>Advertising spend, marketplace fees, hosting, messaging, software and AI usage are charged separately.</p>
           <p>Client-supplied materials are assumed unless production is contracted. One consolidated revision round is included unless stated otherwise.</p>
+          <p>Development projects require an agreed written scope. Standard websites: 50% advance and 50% before handover. Larger commerce and software projects: proposed 40/30/20/10 milestone payments, confirmed in the agreement.</p>
+          <p>Development fees exclude domain, hosting, premium software, payment gateway fees, copywriting and photography unless included. Post-launch bug support covers agreed functionality only; ongoing care and new features are separate. Commerce and custom project revisions and support are agreed in writing.</p>
           <p>Monthly work is billed in advance; initial engagement and renewal terms are agreed in writing.</p>
           <p>Client accounts, domains, data and advertising budgets stay client-owned; deliverable rights follow the agreement.</p>
           <p>Sales, leads, rankings, followers, ad outcomes and marketplace approvals are not guaranteed.</p>
