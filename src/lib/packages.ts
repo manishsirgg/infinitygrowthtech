@@ -349,60 +349,262 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "web-development",
-    "title": "Website & E-commerce Development",
-    "subtitle": "Make the first click count",
+    "title": "Business & Corporate Websites",
+    "subtitle": "Standard content pages, defined design scope and conversion-focused websites.",
     "packages": [
       {
         "title": "Digital One-Page",
         "price": "₹4,999",
         "unit": "project",
-        "description": "Clean online introduction",
+        "description": "Establish your online presence",
         "features": [
-          "Single responsive web page",
-          "Core business details and CTA",
-          "Client-provided content",
-          "Basic deployment assistance"
+          "1 responsive content page; up to 6 standard sections",
+          "Standard design framework",
+          "Business details, WhatsApp and basic contact form",
+          "Basic on-page SEO and deployment assistance",
+          "1 design revision round; 15 days bug support"
         ],
-        "note": "Domain and hosting extra."
+        "note": "Client supplies content and assets. Analytics, CMS and custom functionality extra."
       },
       {
         "title": "Business Starter",
         "price": "₹9,999",
         "unit": "project",
-        "description": "Professional online foundation",
+        "description": "Professional digital foundation",
         "features": [
-          "Up to 5 responsive pages",
-          "Contact and WhatsApp CTA",
-          "Basic on-page SEO setup",
-          "Standard design framework"
+          "Up to 5 responsive standard content pages; up to 6 sections per page",
+          "Standard branded design",
+          "Contact form and WhatsApp CTA",
+          "Basic on-page and technical SEO, basic analytics",
+          "2 revision rounds; 15 days bug support"
         ],
-        "note": "Content and assets supplied by client."
+        "note": "Client supplies content and assets. CMS and custom functionality extra."
       },
       {
         "title": "Business Professional",
         "price": "₹19,999",
         "unit": "project",
-        "description": "A stronger enquiry journey",
+        "description": "Build credibility and generate enquiries",
         "features": [
-          "Up to 10 responsive pages",
-          "Customised visual presentation",
-          "Enquiry forms and analytics",
-          "Technical SEO fundamentals"
+          "Up to 10 responsive standard content pages; up to 8 sections per page",
+          "Customised design and conversion-focused structure",
+          "Enhanced enquiry forms and analytics",
+          "Technical SEO, structured data and performance optimisation",
+          "2 revision rounds; 30 days bug support"
         ],
-        "note": "Complex CMS and integrations extra."
+        "note": "CMS, advanced integrations and custom functionality extra."
       },
       {
-        "title": "Premium & E-commerce",
+        "title": "Corporate Premium",
         "price": "₹39,999+",
         "unit": "project",
-        "description": "Corporate sites and stores",
+        "description": "Premium digital brand experience",
         "features": [
-          "Corporate or store development",
-          "Defined page or product scope",
-          "Standard payment/store integration",
-          "Planning, QA and handover"
+          "Up to 20 responsive standard content pages; up to 10 sections per page",
+          "Premium customised UI/UX",
+          "Standard CMS and blog integration",
+          "Enhanced analytics, technical SEO and structured data",
+          "Performance optimisation, training and handover",
+          "3 revision rounds; 30 days bug support"
         ],
-        "note": "Custom platforms from ₹99,999."
+        "note": "Complex CMS, custom modules and integrations separately quoted."
+      }
+    ]
+  },
+  {
+    "id": "ecommerce-development",
+    "title": "E-commerce Development",
+    "subtitle": "Launch a store or build a tailored commerce platform.",
+    "packages": [
+      {
+        "title": "E-commerce Starter",
+        "price": "₹49,999+",
+        "unit": "project",
+        "description": "Launch your first online store",
+        "features": [
+          "Shopify or WooCommerce; responsive theme customisation",
+          "Up to 25 standard product listings",
+          "Cart, checkout, one payment gateway and COD",
+          "Standard shipping, inventory and order management",
+          "Basic product SEO and store management training"
+        ],
+        "note": "Platform subscriptions, themes, plugins and transaction fees extra."
+      },
+      {
+        "title": "E-commerce Professional",
+        "price": "₹79,999+",
+        "unit": "project",
+        "description": "Grow your retail or D2C brand",
+        "features": [
+          "Everything in Starter; up to 100 standard product listings",
+          "Enhanced storefront, product search, filters and variants",
+          "Coupons, customer accounts and standard shipping integration",
+          "E-commerce analytics, conversion tracking and abandoned cart configuration",
+          "Performance optimisation"
+        ],
+        "note": "Subject to platform and paid app limitations; complex integrations extra."
+      },
+      {
+        "title": "Custom Commerce",
+        "price": "₹1,49,999+",
+        "unit": "project",
+        "description": "Build a tailored commerce solution",
+        "features": [
+          "Custom storefront, database and authentication",
+          "Administrative dashboard and role-based permissions",
+          "Product, inventory, payment and order workflows",
+          "Scoped API integrations",
+          "Security and functional testing, documentation and handover"
+        ],
+        "note": "Starting price for a limited single-vendor MVP; final quotation after discovery."
+      }
+    ]
+  },
+  {
+    "id": "web-applications",
+    "title": "Web Applications & SaaS",
+    "subtitle": "Scope-based software engineering, priced by modules and business logic rather than page count.",
+    "packages": [
+      {
+        "title": "Custom Web Application MVP",
+        "price": "₹99,999+",
+        "unit": "project",
+        "description": "Turn an idea into a working product",
+        "features": [
+          "Defined core modules and user journeys",
+          "Scoped database and application architecture",
+          "Testing and technical handover"
+        ],
+        "note": "Limited MVP; final scope and price after discovery."
+      },
+      {
+        "title": "Custom CRM & Business Automation",
+        "price": "₹1,49,999+",
+        "unit": "project",
+        "description": "Tailored operational software",
+        "features": [
+          "Custom workflows, data models and user roles",
+          "Scoped dashboards and integrations",
+          "Testing and documentation"
+        ],
+        "note": "Custom-built solution; distinct from standard CRM setup services."
+      },
+      {
+        "title": "Education & LMS Platforms",
+        "price": "₹1,49,999+",
+        "unit": "project",
+        "description": "Digital learning infrastructure",
+        "features": [
+          "Scoped course and learner modules",
+          "User roles and administrative workflows",
+          "Testing and handover"
+        ],
+        "note": "Payments, assessments and advanced modules quoted by scope."
+      },
+      {
+        "title": "Real Estate & Listing Portals",
+        "price": "₹1,49,999+",
+        "unit": "project",
+        "description": "Database-driven listing platforms",
+        "features": [
+          "Scoped listing templates, search and filters",
+          "Administrative listing management",
+          "Testing and handover"
+        ],
+        "note": "Advanced integrations and user workflows quoted separately."
+      },
+      {
+        "title": "Multi-vendor Marketplaces",
+        "price": "₹2,49,999+",
+        "unit": "project",
+        "description": "Connect sellers and buyers",
+        "features": [
+          "Scoped vendor and buyer modules",
+          "Catalogue and transaction workflows",
+          "Role-based administration and testing"
+        ],
+        "note": "Limited initial scope; settlement and compliance requirements assessed separately."
+      },
+      {
+        "title": "SaaS & Subscription Platforms",
+        "price": "₹2,49,999+",
+        "unit": "project",
+        "description": "Build a subscription-based product",
+        "features": [
+          "Scoped account and subscription workflows",
+          "Application modules and database architecture",
+          "Testing and documentation"
+        ],
+        "note": "Final price depends on tenancy, billing and integration requirements."
+      },
+      {
+        "title": "Enterprise Digital Solutions",
+        "price": "Custom quotation",
+        "unit": "project",
+        "description": "Complex business requirements",
+        "features": [
+          "Discovery and architecture planning",
+          "Agreed modules, integrations and security requirements",
+          "Milestone-based delivery and handover"
+        ],
+        "note": "Written scope and commercial proposal after consultation."
+      }
+    ]
+  },
+  {
+    "id": "website-care",
+    "title": "Website & Application Care",
+    "subtitle": "Optional recurring maintenance; support hours, response times and exclusions agreed before engagement.",
+    "packages": [
+      {
+        "title": "Website Essential Care",
+        "price": "₹999",
+        "unit": "month",
+        "description": "Basic website monitoring",
+        "features": [
+          "Basic monitoring and limited technical support"
+        ],
+        "note": "New functionality and third-party fees extra."
+      },
+      {
+        "title": "Business Website Care",
+        "price": "₹2,499",
+        "unit": "month",
+        "description": "Maintain your business website",
+        "features": [
+          "Agreed updates, backups and limited content changes"
+        ],
+        "note": "Support allowance agreed in writing."
+      },
+      {
+        "title": "E-commerce Care",
+        "price": "₹4,999+",
+        "unit": "month",
+        "description": "Store maintenance",
+        "features": [
+          "Scoped store maintenance and technical support"
+        ],
+        "note": "Third-party fees and new features extra."
+      },
+      {
+        "title": "Advanced Commerce Care",
+        "price": "₹9,999+",
+        "unit": "month",
+        "description": "Extended commerce support",
+        "features": [
+          "Extended technical support and agreed optimisation"
+        ],
+        "note": "Final scope confirmed after review."
+      },
+      {
+        "title": "Custom Application Support",
+        "price": "₹14,999+",
+        "unit": "month",
+        "description": "Scoped application maintenance",
+        "features": [
+          "Agreed maintenance and technical support"
+        ],
+        "note": "New modules and development separately quoted."
       }
     ]
   },
