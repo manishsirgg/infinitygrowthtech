@@ -1328,34 +1328,103 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "branding-growth",
-    "title": "Branding & Visual Identity",
-    "subtitle": "Build a distinctive and consistent brand",
+    "title": "Brand Strategy & Visual Identity",
+    "subtitle": "Build a recognisable brand, not just a logo. Research-led identity, consistent brand assets and professional handover.",
     "packages": [
       {
         "title": "Brand Starter",
         "price": "₹4,999",
         "unit": "project",
-        "description": "Consistent visual beginning",
+        "description": "Professional logo and visual foundation",
         "features": [
-          "Basic professional logo design",
-          "Brand colour palette",
-          "Common logo export formats",
-          "Defined revision round"
+          "Brand discovery consultation and design brief",
+          "2 original logo concepts; 2 consolidated revision rounds on selected direction",
+          "Primary logo, monochrome variant and basic colour palette",
+          "2 realistic mockups and square social profile image",
+          "Editable vector source (SVG or equivalent), PDF and PNG/JPG exports",
+          "Indicative delivery: 4–6 working days after complete brief"
         ],
-        "note": "Strategy workshop not included."
+        "note": "Final selected original design rights assigned after full payment under written terms; third-party fonts/assets subject to licences. Trademark registration, printing and paid licences excluded."
+      },
+      {
+        "title": "Brand Business",
+        "price": "₹7,499",
+        "unit": "project",
+        "description": "Logo and coordinated business stationery",
+        "features": [
+          "Brand discovery and basic competitor review",
+          "3 logo concepts; 3 consolidated revision rounds on selected direction",
+          "Logo variations, colour palette and typography pairing",
+          "Business card, letterhead and envelope design",
+          "3 brand mockups and square profile image",
+          "Editable logo source and print-ready stationery PDFs",
+          "Indicative delivery: 6–8 working days after complete brief"
+        ],
+        "note": "Final selected original design rights assigned after full payment under written terms; third-party fonts/assets subject to licences. Trademark registration, printing and paid licences excluded."
       },
       {
         "title": "Brand Identity Pro",
         "price": "₹9,999",
         "unit": "project",
-        "description": "Distinctive brand identity",
+        "description": "A consistent visual system across business touchpoints",
         "features": [
-          "Professional logo identity",
-          "Typography and colour system",
-          "Mini brand identity guide",
-          "Core brand assets"
+          "Brand discovery and competitor visual review",
+          "3 logo concepts; 3 consolidated revision rounds on selected direction",
+          "Logo lockups, colour palette and typography system",
+          "Mini brand guidelines up to 8 pages",
+          "Business card, letterhead, envelope and email signature design",
+          "Social profile image and up to 2 platform cover designs",
+          "3 mockups; editable logo source and final print/digital exports",
+          "Indicative delivery: 8–10 working days after complete brief"
         ],
-        "note": "Trademarks and licensing extra."
+        "note": "Final selected original design rights assigned after full payment under written terms; third-party fonts/assets subject to licences. Trademark registration, printing and paid licences excluded."
+      },
+      {
+        "title": "Brand Launch Kit",
+        "price": "₹13,999",
+        "unit": "project",
+        "description": "Complete startup identity and launch assets",
+        "features": [
+          "Industry and competitor research; positioning and audience workshop",
+          "Up to 4 logo concepts; 4 consolidated revision rounds on selected direction",
+          "Logo family, colour and typography system, favicon and app icon exports",
+          "Brand guidelines up to 15 pages",
+          "Business card, letterhead, envelope and email signature",
+          "5 editable social templates, profile image and up to 3 platform covers",
+          "Simple logo animation up to 5 seconds in MP4; 3 mockups",
+          "Editable original design sources and print/digital exports",
+          "Indicative delivery: 10–15 working days after complete brief"
+        ],
+        "note": "Final selected original design rights assigned after full payment under written terms; third-party fonts/assets subject to licences. Trademark registration, printing and paid licences excluded. Canva or other third-party template assets remain subject to applicable licences."
+      },
+      {
+        "title": "Brand Strategy & Rebranding",
+        "price": "₹24,999+",
+        "unit": "project",
+        "description": "Strategic repositioning for established businesses",
+        "features": [
+          "Brand audit and stakeholder discovery",
+          "Competitor and target audience analysis",
+          "Positioning, value proposition, messaging and tone of voice",
+          "Visual identity redesign and agreed brand architecture",
+          "Extended brand guidelines and rollout priorities",
+          "Agreed core print and digital identity assets and editable sources"
+        ],
+        "note": "Custom scope, timeline, research depth, revision rounds and rights agreed before work. Naming clearance, legal advice, trademark registration, rollout production and third-party licences excluded."
+      },
+      {
+        "title": "Enterprise Brand Partnership",
+        "price": "Custom quotation",
+        "unit": "project",
+        "description": "Comprehensive identity and brand experience",
+        "features": [
+          "Custom brand strategy and identity system",
+          "Multi-brand or multi-location architecture where needed",
+          "Brand governance, touchpoint design and rollout support",
+          "Agreed digital, print and packaging design options",
+          "Defined deliverables, reviews and handover"
+        ],
+        "note": "Scope, fees, implementation responsibilities, timelines, licences and ownership agreed in writing."
       }
     ]
   }
