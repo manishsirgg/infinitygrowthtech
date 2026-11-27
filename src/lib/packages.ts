@@ -304,9 +304,53 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "video-youtube",
-    "title": "Content & Video Production",
-    "subtitle": "Independent creative production, filming, scripts and editing",
+    "title": "Strategic Content & Media Production",
+    "subtitle": "Beyond content. Built for impact. Human strategy, AI efficiency and professional execution.",
     "packages": [
+      {
+        "title": "Single Reel Edit",
+        "price": "₹999+",
+        "unit": "video",
+        "description": "Standard short-form edit",
+        "features": [
+          "1 edit up to 60 seconds",
+          "Basic cuts, captions and audio"
+        ],
+        "note": "Client supplies usable footage; standard cuts, captions and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
+      {
+        "title": "Reel Editing Starter",
+        "price": "₹2,999",
+        "unit": "4 videos",
+        "description": "Batch short-form editing",
+        "features": [
+          "4 standard edits up to 60 seconds each",
+          "Captions and basic audio"
+        ],
+        "note": "Client supplies usable footage; standard cuts, captions and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
+      {
+        "title": "Reel Editing Growth",
+        "price": "₹5,999",
+        "unit": "8 videos",
+        "description": "Consistent short-form output",
+        "features": [
+          "8 standard edits up to 60 seconds each",
+          "Captions and basic audio"
+        ],
+        "note": "Client supplies usable footage; standard cuts, captions and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
+      {
+        "title": "Reel Editing Pro",
+        "price": "₹8,999",
+        "unit": "12 videos",
+        "description": "High-volume short-form output",
+        "features": [
+          "12 standard edits up to 60 seconds each",
+          "Captions and basic audio"
+        ],
+        "note": "Client supplies usable footage; standard cuts, captions and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
       {
         "title": "Reel Creator",
         "price": "₹5,999",
@@ -334,28 +378,27 @@ export const packageGroups: PackageGroup[] = [
         "note": "Crew and travel subject to quote."
       },
       {
-        "title": "Video Campaign",
-        "price": "₹24,999+",
+        "title": "Content Shoot Pro",
+        "price": "₹14,999",
         "unit": "project",
-        "description": "A polished promotional story",
+        "description": "Batch on-location mobile production",
         "features": [
-          "Concept and production planning",
-          "Professional shoot and editing",
-          "1 hero video with agreed derivatives",
-          "Milestone-based delivery"
+          "1 mobile shoot up to 4 hours",
+          "8 concepts and standard edited Reels up to 60 seconds each",
+          "Basic captions"
         ],
-        "note": "Final price after production brief."
+        "note": "One agreed location and shot list; travel, studio, models, specialist crew and equipment beyond agreed scope extra."
       },
       {
-        "title": "YouTube Thumbnail Pack",
-        "price": "₹1,999",
-        "unit": "4 thumbnails",
-        "description": "Custom thumbnail design",
+        "title": "YouTube Script",
+        "price": "₹999",
+        "unit": "script",
+        "description": "Research-led script",
         "features": [
-          "4 custom thumbnails",
-          "Client supplies images or approved assets"
+          "1 script up to 1,200 words",
+          "Topic research, hook and structure"
         ],
-        "note": "One consolidated revision round; no channel management."
+        "note": "Client-approved topic; no editing or filming."
       },
       {
         "title": "YouTube Script Pack",
@@ -367,6 +410,18 @@ export const packageGroups: PackageGroup[] = [
           "Hooks and structured narrative"
         ],
         "note": "Client-approved topics; no filming or editing."
+      },
+      {
+        "title": "YouTube Thumbnail Pack",
+        "price": "₹1,999",
+        "unit": "4 thumbnails",
+        "description": "Custom thumbnail design",
+        "features": [
+          "4 custom thumbnails",
+          "Audience and title alignment, CTR-oriented design",
+          "Client supplies approved images or assets"
+        ],
+        "note": "One consolidated revision; no channel management or guaranteed CTR."
       },
       {
         "title": "YouTube Video Editing",
@@ -381,15 +436,259 @@ export const packageGroups: PackageGroup[] = [
         "note": "Advanced animation, extensive raw footage and complex edits quoted separately."
       },
       {
+        "title": "Advanced Video Editing",
+        "price": "₹4,999+",
+        "unit": "video",
+        "description": "Enhanced storytelling and visual support",
+        "features": [
+          "1 video with agreed duration",
+          "Enhanced graphics, visual support and audio treatment"
+        ],
+        "note": "Complex animation, raw footage volume and licensing quoted separately."
+      },
+      {
+        "title": "YouTube Editing Bundle",
+        "price": "₹8,999",
+        "unit": "4 videos",
+        "description": "Standard long-form editing",
+        "features": [
+          "4 standard edits up to 10 minutes each",
+          "Basic cuts, audio and text overlays"
+        ],
+        "note": "Client supplies usable footage; standard cuts, text overlays and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
+      {
+        "title": "Podcast Editing",
+        "price": "₹3,999+",
+        "unit": "episode",
+        "description": "Single-camera episode editing",
+        "features": [
+          "1 episode up to 30 minutes",
+          "Basic cuts and audio treatment"
+        ],
+        "note": "Client supplies footage; multicamera and extensive audio restoration extra."
+      },
+      {
+        "title": "Podcast Repurposing",
+        "price": "₹4,999",
+        "unit": "6 clips",
+        "description": "Turn episodes into short-form content",
+        "features": [
+          "6 clips up to 60 seconds each from supplied episode",
+          "Hook selection and captions"
+        ],
+        "note": "Client supplies usable footage; standard cuts, captions and basic audio only; one consolidated revision. Complex effects, excessive raw footage and rush delivery quoted separately."
+      },
+      {
+        "title": "Advertising Creative Campaign",
+        "price": "₹2,999",
+        "unit": "project",
+        "description": "Campaign-focused creative development",
+        "features": [
+          "Audience and offer briefing",
+          "Campaign concept and persuasive copy",
+          "5 static creative variations",
+          "Platform-ready assets"
+        ],
+        "note": "One campaign and one consolidated revision; no publishing, ads management or media spend."
+      },
+      {
         "title": "LinkedIn Carousel Pack",
         "price": "₹2,999",
         "unit": "4 carousels",
         "description": "Professional document carousels",
         "features": [
           "4 document carousels up to 6 slides each",
-          "Copy and branded design"
+          "Topic research based on approved source material",
+          "Professional copy and branded design"
         ],
-        "note": "Client supplies source material; no publishing."
+        "note": "No publishing or account management."
+      },
+      {
+        "title": "AI Promotional Video",
+        "price": "₹2,999+",
+        "unit": "video",
+        "description": "AI-assisted campaign storytelling",
+        "features": [
+          "1 simple video up to 30 seconds",
+          "Concept, basic editing and human quality review"
+        ],
+        "note": "Premium AI credits, voice licensing and complex sequences extra; approved assets required."
+      },
+      {
+        "title": "AI Product Showcase",
+        "price": "₹3,999+",
+        "unit": "video",
+        "description": "Product-focused visual storytelling",
+        "features": [
+          "1 short product video up to 30 seconds",
+          "Concept and approved product visuals"
+        ],
+        "note": "Product accuracy subject to client review; premium AI credits extra."
+      },
+      {
+        "title": "AI Presenter / Explainer",
+        "price": "₹3,999+",
+        "unit": "video",
+        "description": "Scripted virtual-presenter content",
+        "features": [
+          "1 standard avatar video up to 60 seconds",
+          "Script and basic branded presentation"
+        ],
+        "note": "Custom avatars, licensed voices and premium AI credits extra; consent required for likeness use."
+      },
+      {
+        "title": "AI Video Bundle",
+        "price": "₹9,999+",
+        "unit": "4 videos",
+        "description": "Coordinated promotional content",
+        "features": [
+          "4 simple AI-assisted videos up to 30 seconds each",
+          "Concepts and standard editing"
+        ],
+        "note": "Premium credits, custom avatars and complex animation extra."
+      },
+      {
+        "title": "Product Photography",
+        "price": "₹4,999+",
+        "unit": "project",
+        "description": "Commercial product imagery",
+        "features": [
+          "Up to 10 simple products",
+          "Agreed standard shot list and basic retouching"
+        ],
+        "note": "One agreed location and shot list; travel, studio, models, specialist crew and equipment beyond agreed scope extra."
+      },
+      {
+        "title": "Personal Branding Photoshoot",
+        "price": "₹5,999+",
+        "unit": "project",
+        "description": "Professional profile and brand imagery",
+        "features": [
+          "Agreed portrait and lifestyle shot list",
+          "Edited image selection"
+        ],
+        "note": "One agreed location and shot list; travel, studio, models, specialist crew and equipment beyond agreed scope extra."
+      },
+      {
+        "title": "Business Lifestyle Photoshoot",
+        "price": "₹7,999+",
+        "unit": "project",
+        "description": "Authentic business imagery",
+        "features": [
+          "Team, workplace and customer-facing imagery",
+          "Agreed shot list and edited selection"
+        ],
+        "note": "One agreed location and shot list; travel, studio, models, specialist crew and equipment beyond agreed scope extra."
+      },
+      {
+        "title": "Testimonial Video",
+        "price": "₹5,999+",
+        "unit": "project",
+        "description": "Customer stories",
+        "features": [
+          "One agreed testimonial shoot",
+          "Standard edited testimonial video"
+        ],
+        "note": "Starting estimate; duration, shot list, equipment, crew, usage rights and revisions agreed in writing. Travel, talent, studio and licensing extra."
+      },
+      {
+        "title": "Product Demonstration Video",
+        "price": "₹7,999+",
+        "unit": "project",
+        "description": "Explain product value visually",
+        "features": [
+          "Concept and agreed demonstration shot list",
+          "One edited product demonstration"
+        ],
+        "note": "Starting estimate; duration, shot list, equipment, crew, usage rights and revisions agreed in writing. Travel, talent, studio and licensing extra."
+      },
+      {
+        "title": "Business Introduction Video",
+        "price": "₹14,999+",
+        "unit": "project",
+        "description": "Introduce your business and services",
+        "features": [
+          "Concept, script and agreed shoot",
+          "One edited business introduction"
+        ],
+        "note": "Starting estimate; duration, shot list, equipment, crew, usage rights and revisions agreed in writing. Travel, talent, studio and licensing extra."
+      },
+      {
+        "title": "Corporate Profile Film",
+        "price": "₹24,999+",
+        "unit": "project",
+        "description": "Corporate storytelling",
+        "features": [
+          "Production planning and agreed professional shoot",
+          "One corporate profile film"
+        ],
+        "note": "Starting estimate; duration, shot list, equipment, crew, usage rights and revisions agreed in writing. Travel, talent, studio and licensing extra."
+      },
+      {
+        "title": "Professional Advertising Campaign",
+        "price": "₹24,999+",
+        "unit": "project",
+        "description": "A polished promotional story",
+        "features": [
+          "Concept and production planning",
+          "Professional shoot and editing",
+          "1 hero video with agreed derivatives",
+          "Milestone-based delivery"
+        ],
+        "note": "Starting estimate; duration, shot list, equipment, crew, usage rights and revisions agreed in writing. Travel, talent, studio and licensing extra."
+      },
+      {
+        "title": "Content Essential",
+        "price": "₹6,999",
+        "unit": "month",
+        "description": "Consistent production for small brands",
+        "features": [
+          "8 branded static creatives",
+          "4 standard Reel edits up to 60 seconds each",
+          "Basic captions and creative copy",
+          "Monthly content planning and platform-ready files"
+        ],
+        "note": "One brand; client supplies usable footage and approved information. No filming, publishing, account management, paid ads or daily engagement. Premium AI credits and advanced production extra."
+      },
+      {
+        "title": "Content Growth",
+        "price": "₹11,999",
+        "unit": "month",
+        "description": "More content for growing brands",
+        "features": [
+          "12 branded static creatives",
+          "8 standard Reel edits up to 60 seconds each",
+          "4 Story adaptations",
+          "Content concepts, captions and monthly creative calendar"
+        ],
+        "note": "One brand; client supplies usable footage and approved information. No filming, publishing, account management, paid ads or daily engagement. Premium AI credits and advanced production extra."
+      },
+      {
+        "title": "Content Pro",
+        "price": "₹17,999",
+        "unit": "month",
+        "description": "High-volume strategic production",
+        "features": [
+          "16 branded static creatives",
+          "12 standard Reel edits up to 60 seconds each",
+          "8 Story adaptations and 4 short-form scripts",
+          "2 simple AI promotional videos up to 30 seconds each",
+          "Monthly creative strategy and platform-ready files"
+        ],
+        "note": "One brand; client supplies usable footage and approved information. No filming, publishing, account management, paid ads or daily engagement. Premium AI credits and advanced production extra."
+      },
+      {
+        "title": "Content Enterprise",
+        "price": "Custom pricing",
+        "unit": "agreement",
+        "description": "Custom production partnership",
+        "features": [
+          "High-volume creative production and dedicated workflow",
+          "Professional photography, filming and corporate video options",
+          "Advanced AI-assisted production and agreed delivery schedules"
+        ],
+        "note": "Production scope, fees, rights and support agreed in writing; no account management unless contracted."
       }
     ]
   },
@@ -1065,4 +1364,76 @@ export const packageGroups: PackageGroup[] = [
 export const marketplaceExtras = [
   { title: 'Product listing & catalogue optimisation', price: 'From ₹249 / SKU' },
   { title: 'Marketplace advertising management', price: 'From ₹5,999 / month per platform' },
+] as const;
+
+export const productionCategories = [
+  {
+    "id": "short-form",
+    "title": "Reels & Shorts",
+    "packageTitles": [
+      "Single Reel Edit",
+      "Reel Editing Starter",
+      "Reel Editing Growth",
+      "Reel Editing Pro",
+      "Reel Creator",
+      "Reel Shoot Day",
+      "Content Shoot Pro"
+    ]
+  },
+  {
+    "id": "youtube-podcast",
+    "title": "YouTube & Podcast",
+    "packageTitles": [
+      "YouTube Script",
+      "YouTube Script Pack",
+      "YouTube Thumbnail Pack",
+      "YouTube Video Editing",
+      "Advanced Video Editing",
+      "YouTube Editing Bundle",
+      "Podcast Editing",
+      "Podcast Repurposing"
+    ]
+  },
+  {
+    "id": "advertising-content",
+    "title": "Advertising & Promotional Content",
+    "packageTitles": [
+      "Advertising Creative Campaign",
+      "LinkedIn Carousel Pack",
+      "AI Promotional Video",
+      "AI Product Showcase",
+      "AI Presenter / Explainer",
+      "AI Video Bundle"
+    ]
+  },
+  {
+    "id": "photography",
+    "title": "Photography & On-location Video",
+    "packageTitles": [
+      "Product Photography",
+      "Personal Branding Photoshoot",
+      "Business Lifestyle Photoshoot",
+      "Testimonial Video"
+    ]
+  },
+  {
+    "id": "commercial",
+    "title": "Corporate & Commercial Video",
+    "packageTitles": [
+      "Product Demonstration Video",
+      "Business Introduction Video",
+      "Corporate Profile Film",
+      "Professional Advertising Campaign"
+    ]
+  },
+  {
+    "id": "monthly-content",
+    "title": "Monthly Content Partnerships",
+    "packageTitles": [
+      "Content Essential",
+      "Content Growth",
+      "Content Pro",
+      "Content Enterprise"
+    ]
+  }
 ] as const;
