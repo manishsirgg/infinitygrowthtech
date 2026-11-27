@@ -4,10 +4,11 @@ import { ArrowUpRight, CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-r
 import { packageGroups, marketplaceExtras } from '@/lib/packages';
 import { site } from '@/lib/site';
 import { SocialPackageSelector } from '@/components/social-package-selector';
+import { ProductionPackageBrowser } from '@/components/production-package-browser';
 
 export const metadata: Metadata = {
   title: 'Service Packages & Pricing 2027',
-  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, content production, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
+  description: 'Explore transparent packages for Instagram, Facebook, LinkedIn, YouTube, strategic content and media production, photography, videography, Google, Meta and LinkedIn Ads, SEO, websites, e-commerce, custom web applications, SaaS, maintenance, Amazon and Flipkart seller services, WhatsApp, email, CRM, AI and branding across India.',
   alternates: { canonical: '/packages' },
 };
 
@@ -61,7 +62,7 @@ export default function PackagesPage() {
           </div>
           <SocialPackageSelector />
         </div>}
-        <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {group.id === 'video-youtube' ? <ProductionPackageBrowser packages={group.packages} /> : <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-6">
             <div className="flex-1">
               <h3 className="text-xl font-bold">{pkg.title}</h3>
@@ -76,7 +77,7 @@ export default function PackagesPage() {
               <Link href={`/contact?subject=Package%20Consultation&package=${slugify(pkg.title)}`} className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-[#4ade80]/60 px-4 py-3 text-sm font-semibold text-[#4ade80] transition-colors hover:bg-[#4ade80]/10">Request this package <ArrowUpRight size={16} aria-hidden="true"/></Link>
             </div>
           </article>)}
-        </div>
+        </div>}
         {group.id==='web-development' && <div className="mt-8 panel p-6 md:p-8">
           <h3 className="text-xl font-bold">What counts as a page?</h3>
           <p className="muted mt-3 leading-7">A standard content page is one URL with an agreed number of content sections. Home, About, Services and Contact are typical examples. Multiple sections on the same URL are not separate pages. A five-page site might include Home, About, Services, Portfolio and Contact. Dynamic product, article and listing templates are scoped by module and content-entry allowance; login, checkout, dashboards and custom business logic are scoped by functionality.</p>
