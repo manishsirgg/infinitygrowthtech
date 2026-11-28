@@ -17,13 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ServiceDetailPage({ params }: Props) {
   const service = findService((await params).slug);
   if (!service) notFound();
+  const packageIds: Record<string,string> = { "website-development":"web-development","ecommerce-lms":"ecommerce-development","custom-software":"web-applications","seo-content":"seo-discovery","performance-marketing":"paid-advertising","ai-automation":"crm-automation","ai-search-visibility":"ai-search-visibility","social-media-management":"social-media","content-media-production":"video-youtube","customer-engagement":"customer-communication","marketplace-management":"marketplaces","branding-identity":"branding-growth" };
   return <div className="container-shell py-8 sm:py-14 md:py-24">
     <Link href="/services" className="inline-flex items-center gap-2 text-sm text-[#b7c6cb] hover:text-[#4ade80]"><ArrowLeft size={16} aria-hidden="true" /> All services</Link>
     <header className="grid-halo mt-10 rounded-2xl border border-white/10 px-5 py-8 sm:px-7 md:px-14 md:py-16">
       <p className="eyebrow">{service.category} / Digital solutions</p>
       <h1 className="mt-5 max-w-4xl text-3xl font-black tracking-tight sm:text-5xl md:text-7xl">{service.title}</h1>
       <p className="muted mt-7 max-w-3xl text-base leading-7 md:text-lg md:leading-8">{service.summary}</p>
-      <div className="mt-5 flex flex-wrap gap-3"><Link href="/contact" className="button-primary">Discuss this service <ArrowUpRight size={18} aria-hidden="true" /></Link><Link href="/packages" className="button-outline">View pricing <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
+      <div className="mt-5 flex flex-wrap gap-3"><Link href="/contact" className="button-primary">Discuss this service <ArrowUpRight size={18} aria-hidden="true" /></Link><Link href={"/packages#"+(packageIds[service.slug] ?? "service-catalogue")} className="button-outline">View pricing <ArrowUpRight size={16} aria-hidden="true"/></Link></div>
     </header>
     <section className="grid gap-6 py-10 md:gap-10 md:py-20 md:grid-cols-2">
       <div><p className="eyebrow">Who it's for</p><h2 className="mt-4 text-3xl font-bold">Built for your situation.</h2><p className="muted mt-5 leading-8">{service.audience}</p></div>

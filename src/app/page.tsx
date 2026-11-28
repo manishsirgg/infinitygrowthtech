@@ -7,7 +7,7 @@ import { serviceCatalog, portfolioProjects } from '@/lib/content';
 
 const pillars = [
   { title: 'Build', subtitle: 'Digital products engineered to last', description: 'Websites, custom applications and commerce experiences designed around the way your business actually works.', Icon: Code2, slugs: ['website-development', 'ecommerce-lms', 'custom-software'] },
-  { title: 'Grow', subtitle: 'A clearer path to customers', description: 'Search, paid campaigns and content systems aligned with customer intent and measurable commercial objectives.', Icon: Megaphone, slugs: ['seo-content', 'performance-marketing'] },
+  { title: 'Grow', subtitle: 'A clearer path to customers', description: 'Search, paid campaigns and content systems aligned with customer intent and measurable commercial objectives.', Icon: Megaphone, slugs: ['seo-content', 'ai-search-visibility', 'social-media-management', 'performance-marketing'] },
   { title: 'Automate', subtitle: 'Less repetitive work. More clarity.', description: 'Connected lead workflows, practical AI integrations and systems that help teams operate consistently.', Icon: Workflow, slugs: ['ai-automation'] },
 ] as const;
 
@@ -28,20 +28,20 @@ export default function HomePage() {
   return (
     <>
       <section className="hero-field relative overflow-hidden border-b border-white/10">
-        <div className="container-shell grid items-center gap-12 py-10 sm:py-8 sm:py-14 md:py-24 lg:grid-cols-[1.12fr_.88fr] lg:gap-16 lg:py-36">
+        <div className="container-shell grid items-center gap-12 py-10 sm:py-14 md:py-24 lg:grid-cols-[1.12fr_.88fr] lg:gap-16 lg:py-36">
           <div className="relative z-10">
-            <p className="eyebrow mb-6">Technology. Marketing. Business growth.</p>
+            <p className="eyebrow mb-6">Digital Growth, AI & Technology Solutions</p>
             <h1 className="max-w-4xl text-[clamp(2.65rem,6.8vw,6.7rem)] font-black leading-[1.02] tracking-[-.06em]">
               Build smarter.<br /><span className="gradient-text">Grow with purpose.</span>
             </h1>
             <p className="muted mt-7 max-w-2xl text-base leading-7 md:text-lg md:leading-8 md:text-xl">
-              We design and develop digital platforms, marketing systems and practical automation for businesses ready to turn ideas into better experiences and more efficient operations.
+              From websites and software to social media, search visibility, branding and intelligent automation, we connect technology and marketing to help businesses build, market, optimise and scale.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link href="/contact" className="button-primary">Discuss your project <ArrowUpRight size={18} aria-hidden="true" /></Link>
               <Link href="/packages" className="button-outline">View packages &amp; prices <ArrowRight size={18} aria-hidden="true" /></Link>
             </div>
-            <p className="mt-7 text-sm text-[#b2c2c8]">Transparent starting prices, clear scopes and tailored advice for businesses across India.</p>
+            <p className="mt-7 text-sm text-[#b2c2c8]">Architecting Digital Growth. Transparent pricing, clear deliverables and tailored solutions for businesses in India and beyond.</p>
           </div>
           <div aria-label="Illustrative overview of three connected business capabilities" className="hero-diagram panel relative isolate min-h-[250px] overflow-hidden p-5 sm:min-h-[430px] sm:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_42%,rgba(74,222,128,.13),transparent_60%)]" aria-hidden="true" />
@@ -63,7 +63,7 @@ export default function HomePage() {
       </section>
 
       <section className="container-shell pt-7" aria-label="Popular solutions"><p className="eyebrow">Find what you need</p><div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">{[['Websites & apps','web-development'],['Social media','social-media'],['AI search · AEO & GEO','ai-search-visibility'],['CRM & automation','crm-automation']].map(([label,id])=><Link key={id} href={'/packages#'+id} className="panel flex min-h-16 items-center justify-between gap-2 p-3 text-sm font-semibold hover:border-[#4ade80]">{label}<ArrowUpRight size={16} className="shrink-0 text-[#4ade80]" aria-hidden="true"/></Link>)}</div></section>
-      <section id="solutions" className="py-10 sm:py-8 sm:py-14 md:py-24">
+      <section id="solutions" className="py-10 sm:py-14 md:py-24">
         <div className="container-shell">
           <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
             <div><p className="eyebrow">Our capabilities</p><h2 className="mt-4 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Three disciplines.<br />One connected strategy.</h2></div>
@@ -89,7 +89,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="work" className="border-y border-white/10 bg-[#0c1216] py-10 sm:py-8 sm:py-14 md:py-24">
+      <section id="work" className="border-y border-white/10 bg-[#0c1216] py-10 sm:py-14 md:py-24">
         <div className="container-shell">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div><p className="eyebrow">Selected work</p><h2 className="mt-4 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Platforms we've developed.<br /><span className="text-[#a8b7bc]">Ideas we've put into practice.</span></h2></div>
@@ -115,7 +115,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="industries" className="py-10 sm:py-8 sm:py-14 md:py-24">
+      <section id="industries" className="py-10 sm:py-14 md:py-24">
         <div className="container-shell">
           <p className="eyebrow">Industry understanding</p>
           <h2 className="mt-4 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Technology works better when it understands the business.</h2>
@@ -128,7 +128,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="approach" className="border-y border-white/10 bg-[#0c1216] py-10 sm:py-8 sm:py-14 md:py-24">
+      <section id="approach" className="border-y border-white/10 bg-[#0c1216] py-10 sm:py-14 md:py-24">
         <div className="container-shell">
           <p className="eyebrow">Our approach</p>
           <h2 className="mt-4 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Clear scope. Thoughtful execution.</h2>
@@ -141,7 +141,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-10 sm:py-8 sm:py-14 md:py-24">
+      <section className="py-10 sm:py-14 md:py-24">
         <div className="container-shell">
           <div className="panel hero-field grid items-center gap-5 overflow-hidden p-5 md:grid-cols-[1fr_auto] md:p-14">
             <div><p className="eyebrow">What's next for your business?</p><h2 className="mt-5 max-w-3xl text-2xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">Bring us the challenge.<br /><span className="gradient-text">We'll help shape the starting point.</span></h2><p className="muted mt-6 max-w-2xl leading-7">Tell us what you're building or trying to improve. We can discuss what makes sense technically and commercially before proposing a project.</p></div>

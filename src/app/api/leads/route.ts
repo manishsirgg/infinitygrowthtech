@@ -9,7 +9,7 @@ type Submission = {
   utm_campaign?: unknown;
 };
 
-const allowedSubjects = new Set(['Website or Digital Platform', 'Marketing & Growth', 'Automation', 'Other']);
+const allowedSubjects = new Set(['Website or Digital Platform', 'Marketing & Growth', 'Package Consultation', 'Marketplace Services', 'Automation', 'AI Visibility Audit', 'Social Media Consultation', 'Content Production', 'Content Production Consultation', 'Brand Strategy Consultation', 'Website Scope Consultation', 'Other']);
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const limited = (value: unknown, max: number) => typeof value === 'string' ? value.trim().slice(0, max) : '';
 const json = (message: string, status: number) => NextResponse.json({ message }, {

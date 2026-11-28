@@ -5,14 +5,14 @@ import { serviceCatalog } from '@/lib/content';
 
 export const metadata: Metadata = {
   title: 'Digital & Technology Services',
-  description: 'Explore website development, digital marketing, custom software, SEO and practical automation solutions from Infinity Growth Tech.',
+  description: 'Explore website development, software, digital marketing, SEO, AEO/GEO, branding, marketplace management and intelligent automation.',
 };
 
 export default function ServicesPage() {
-  return <div className="container-shell py-10 sm:py-8 sm:py-14 md:py-24">
+  return <div className="container-shell py-10 sm:py-14 md:py-24">
     <p className="eyebrow">What we can build together</p>
     <h1 className="mt-5 max-w-4xl text-3xl font-black tracking-tight sm:text-5xl md:text-7xl">Digital solutions, <span className="gradient-text">designed around your goals.</span></h1>
-    <p className="muted mt-7 max-w-3xl text-base leading-7 md:text-lg md:leading-8">From launching a strong digital presence to improving customer acquisition and business workflows, explore the capabilities we can tailor to your next project.</p>
+    <p className="muted mt-7 max-w-3xl text-base leading-7 md:text-lg md:leading-8">Build your digital presence, reach customers through the right channels, improve organic and AI search visibility, and connect your business systems. Explore specialist services or compare transparent package scopes.</p>
     <div className="mt-9 flex flex-wrap gap-3">
       <Link href="/packages" className="button-primary">View packages &amp; starting prices <ArrowUpRight size={17} aria-hidden="true"/></Link>
       <Link href="/packages#marketplaces" className="button-outline">Amazon &amp; Flipkart seller packages <ArrowUpRight size={17} aria-hidden="true"/></Link>
