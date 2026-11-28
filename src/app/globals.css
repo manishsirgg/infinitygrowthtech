@@ -57,3 +57,13 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 @media (prefers-reduced-motion: no-preference) {
   .portfolio-surface { transition: background-position .3s ease; }
 }
+
+/* Pricing catalogue: comfortable mobile reading and touch targets. */
+@media (max-width: 639px) {
+  .packages-page .container-shell { width: calc(100% - 28px); }
+  .packages-page .panel { border-radius: 14px; min-width: 0; }
+  .packages-page .button-primary, .packages-page .button-outline { min-height: 44px; max-width: 100%; padding: .7rem .9rem; font-size: .875rem; gap: .45rem; text-align: center; white-space: normal; }
+  .packages-page summary { min-height: 44px; align-content: center; overflow-wrap: anywhere; }
+  .packages-page select, .packages-page input[type=search] { min-width: 0; max-width: 100%; font-size: 16px; }
+  .packages-page h1, .packages-page h2, .packages-page h3, .packages-page h4 { overflow-wrap: anywhere; }
+}
