@@ -3,20 +3,20 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2, Search } from 'lucide-react';
-import { packageGroups, marketplaceExtras, type PackageGroup } from '@/lib/packages';
+import { packageGroups, marketplaceExtras, serviceSubcategories, type PackageGroup } from '@/lib/packages';
 import { SocialPackageSelector } from '@/components/social-package-selector';
 import { ProductionPackageBrowser } from '@/components/production-package-browser';
 
 const families = [
   { title: 'Social media & content', ids: ['social-media','linkedin-marketing','youtube-marketing','combined-social','video-youtube'] },
-  { title: 'Advertising & discovery', ids: ['paid-advertising','seo-discovery','ai-search-visibility','customer-communication'] },
+  { title: 'Advertising & discovery', ids: ['paid-advertising','seo-discovery','ai-search-visibility','unified-search','customer-communication'] },
   { title: 'Websites & technology', ids: ['web-development','ecommerce-development','web-applications','website-care','crm-automation'] },
   { title: 'Commerce & brand', ids: ['marketplaces','branding-growth'] },
 ];
 const shortNames: Record<string,string> = {
   'social-media':'Instagram & Facebook', 'linkedin-marketing':'LinkedIn', 'youtube-marketing':'YouTube',
   'combined-social':'Combined social plans', 'video-youtube':'Content & media production',
-  'paid-advertising':'Paid advertising', 'seo-discovery':'SEO & Google Maps', 'ai-search-visibility':'AI Search (AEO & GEO)', 'customer-communication':'WhatsApp & email',
+  'paid-advertising':'Paid advertising', 'seo-discovery':'SEO & Google Maps', 'ai-search-visibility':'AI Search (AEO & GEO)', 'unified-search':'Unified SEO + AEO/GEO', 'customer-communication':'Customer engagement',
   'web-development':'Business websites', 'ecommerce-development':'E-commerce websites', 'web-applications':'Web apps & SaaS',
   'website-care':'Website & app care', 'crm-automation':'CRM, AI & automation', 'marketplaces':'Amazon & Flipkart', 'branding-growth':'Branding & identity'
 };
@@ -31,8 +31,17 @@ const platformStrategies = [
 const slugify = (text: string) => encodeURIComponent(text);
 
 
-export function PackageDetails({ group }: { group: PackageGroup }) {
+export function PackageDetails({ group, initialPackage }: { group: PackageGroup; initialPackage?: string }) {
+  const filters = serviceSubcategories[group.id] ?? [];
+  const [filter, setFilter] = useState(() => filters.find(f => initialPackage && f.names.includes(initialPackage))?.title ?? filters[0]?.title ?? '');
+  const selectedFilter = filters.find(f => f.title === filter);
+  const visiblePackages = selectedFilter ? group.packages.filter(p => selectedFilter.names.includes(p.title)) : group.packages;
   return <div>
+        {filters.length > 0 && <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter service packages">
+          {filters.map(f => <button key={f.title} type="button" aria-pressed={filter === f.title} onClick={()=>setFilter(f.title)} className={`rounded-lg border px-3 py-2 text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4ade80] ${filter===f.title?'border-[#4ade80] bg-[#4ade80]/10 text-[#4ade80]':'border-white/20 text-[#dce7e8] hover:border-[#4ade80]'}`}>{f.title}</button>)}
+        </div>}
+        {group.id === 'unified-search' && <div className="mt-5 panel p-5"><h4 className="font-bold">One search strategy, two complementary capabilities.</h4><p className="muted mt-2 text-sm leading-7">Combine organic website optimisation with sampled AI visibility monitoring. Subscription fees are monthly; weekly and daily refer only to the AI data refresh frequency. AI service activation is subject to onboarding.</p><div className="mt-3 flex flex-wrap gap-3"><a href="#seo-discovery" className="text-sm font-semibold text-[#4ade80]">Compare standalone SEO</a><a href="#ai-search-visibility" className="text-sm font-semibold text-[#4ade80]">Compare AI visibility plans</a></div></div>}
+        {group.id === 'crm-automation' && <details className="mt-5 panel p-5"><summary className="cursor-pointer font-semibold">Standard integrations or custom software?</summary><p className="muted mt-3 text-sm leading-7">These packages configure and connect existing tools. Custom-built CRM systems, databases, applications and SaaS products are separately scoped under Web Applications &amp; SaaS. Software subscriptions, AI usage and messaging costs are not included.</p><a href="#web-applications" className="mt-3 inline-block text-sm font-semibold text-[#4ade80]">Explore custom software packages</a></details>}
         {group.id === 'ai-search-visibility' && <div className="panel mt-5 p-5">
           <p className="eyebrow">AI search discovery</p>
           <h4 className="mt-2 text-xl font-bold">Be discoverable beyond traditional search.</h4>
@@ -54,7 +63,7 @@ export function PackageDetails({ group }: { group: PackageGroup }) {
           <SocialPackageSelector />
         </div></details>}
         {group.id === 'video-youtube' ? <ProductionPackageBrowser packages={group.packages} /> : <div className="mt-5 grid gap-4 sm:grid-cols-2">
-          {group.packages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-5">
+          {visiblePackages.map((pkg) => <article key={pkg.title} className="panel flex min-w-0 flex-col p-5">
             <div className="flex-1">
               <h3 className="text-xl font-bold">{pkg.title}</h3>
               <p className="mt-2 text-sm text-[#b3c6c8]">{pkg.description}</p>
@@ -82,10 +91,12 @@ export function PackageDetails({ group }: { group: PackageGroup }) {
           <p className="muted mt-4 text-sm">Add-ons apply only where not already included. Software, licences and subscriptions are extra.</p>
           <Link href="/contact?subject=Website%20Scope%20Consultation" className="button-outline mt-6">Discuss your website scope <ArrowUpRight size={16} aria-hidden="true"/></Link>
         </details>}
-        {group.id==='marketplaces' && <div className="mt-7 panel flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
-          <div><p className="font-bold">Also available individually</p><p className="muted mt-1 text-sm">{marketplaceExtras.map(extra=>`${extra.title}: ${extra.price}`).join(' · ')}</p></div>
-          <Link href="/contact?subject=Marketplace%20Services" className="shrink-0 font-semibold text-[#4ade80]">Discuss seller services <ArrowUpRight className="inline" size={16} aria-hidden="true"/></Link>
-        </div>}
+        {group.id==='marketplaces' && <details className="mt-5 panel p-5">
+          <summary className="cursor-pointer font-bold">Marketplace add-ons &amp; specialist services</summary>
+          <div className="mt-4 divide-y divide-white/10">{marketplaceExtras.map(extra => <div key={extra.title} className="flex flex-wrap items-center justify-between gap-2 py-3 text-sm"><span>{extra.title}</span><span className="font-semibold text-[#4ade80]">{extra.price}</span></div>)}</div>
+          <p className="muted mt-3 text-xs leading-6">Amazon A+ Content and Brand Store work depends on seller eligibility and platform approval. Seller compliance, inventory, fulfilment, returns and marketplace fees remain the client's responsibility. Other marketplaces are considered through consultation, subject to capability and scope.</p>
+          <Link href="/contact?subject=Marketplace%20Services" className="button-outline mt-4">Discuss seller services <ArrowUpRight size={16} aria-hidden="true"/></Link>
+        </details>}
   </div>;
 }
 
@@ -93,10 +104,11 @@ export function PackageCatalogue() {
   const groups = packageGroups.filter(g => g.id !== 'industry-growth');
   const [active, setActive] = useState('social-media');
   const [query, setQuery] = useState('');
+  const [initialPackage, setInitialPackage] = useState<string | undefined>();
   useEffect(() => {
     const sync = () => {
       const hash = window.location.hash.slice(1);
-      if (groups.some(g => g.id === hash)) { setActive(hash); setQuery(''); }
+      if (groups.some(g => g.id === hash)) { setActive(hash); setQuery(''); setInitialPackage(undefined); }
     };
     sync();
     window.addEventListener('hashchange', sync);
@@ -105,7 +117,7 @@ export function PackageCatalogue() {
   // The catalogue is static.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const pick = (id: string) => { setActive(id); setQuery(''); window.history.replaceState(null, '', '#' + id); };
+  const pick = (id: string, packageTitle?: string) => { setActive(id); setQuery(''); setInitialPackage(packageTitle); window.history.replaceState(null, '', '#' + id); };
   const group = groups.find(g => g.id === active) ?? groups[0];
   const term = query.trim().toLowerCase();
   const matches = term ? groups.flatMap(g => g.packages.filter(p => [g.title,p.title,p.description,...p.features].join(' ').toLowerCase().includes(term)).map(p => ({group:g,p}))) : [];
@@ -125,7 +137,7 @@ export function PackageCatalogue() {
         <div className="hidden lg:block">{families.map(f=><div key={f.title} className="mb-5 last:mb-0"><p className="mb-2 px-2 text-xs font-bold uppercase tracking-wide text-[#a4b8bd]">{f.title}</p>{f.ids.map(id=><button key={id} type="button" aria-pressed={!term && active===id} onClick={()=>pick(id)} className={`mb-1 block w-full rounded-lg px-3 py-2.5 text-left text-sm transition-colors ${!term && active===id?'bg-[#4ade80]/10 font-semibold text-[#4ade80]':'text-[#dce7e8] hover:bg-white/5'}`}>{shortNames[id]}</button>)}</div>)}</div>
       </nav>
       <div className="min-w-0" aria-live="polite">
-        {term ? <div><h3 className="text-xl font-bold">{matches.length} matching packages</h3><div className="mt-4 grid gap-3 sm:grid-cols-2">{matches.map(({group:g,p})=><button key={g.id+p.title} type="button" onClick={()=>pick(g.id)} className="panel p-4 text-left hover:border-[#4ade80]"><span className="block text-xs text-[#a4b8bd]">{shortNames[g.id]}</span><span className="mt-1 block font-bold">{p.title}</span><span className="mt-2 block font-semibold text-[#4ade80]">{p.price}{!p.price.startsWith('Custom')?' / '+p.unit:''}</span><span className="mt-2 block text-xs text-[#a4b8bd]">View category and full details</span></button>)}</div>{!matches.length && <p className="muted mt-4">No matches. Try another service or clear your search.</p>}</div> : <section id={group.id} className="scroll-mt-28" key={group.id}><p className="text-xs font-semibold uppercase tracking-wide text-[#4ade80]">{group.packages.length} available packages</p><h3 className="mt-2 text-2xl font-extrabold md:text-3xl">{group.title}</h3><p className="muted mt-2 leading-7">{group.subtitle}</p><PackageDetails group={group}/></section>}
+        {term ? <div><h3 className="text-xl font-bold">{matches.length} matching packages</h3><div className="mt-4 grid gap-3 sm:grid-cols-2">{matches.map(({group:g,p})=><button key={g.id+p.title} type="button" onClick={()=>pick(g.id,p.title)} className="panel p-4 text-left hover:border-[#4ade80]"><span className="block text-xs text-[#a4b8bd]">{shortNames[g.id]}</span><span className="mt-1 block font-bold">{p.title}</span><span className="mt-2 block font-semibold text-[#4ade80]">{p.price}{!p.price.startsWith('Custom')?' / '+p.unit:''}</span><span className="mt-2 block text-xs text-[#a4b8bd]">View category and full details</span></button>)}</div>{!matches.length && <p className="muted mt-4">No matches. Try another service or clear your search.</p>}</div> : <section id={group.id} className="scroll-mt-28" key={group.id}><p className="text-xs font-semibold uppercase tracking-wide text-[#4ade80]">{group.packages.length} available packages</p><h3 className="mt-2 text-2xl font-extrabold md:text-3xl">{group.title}</h3><p className="muted mt-2 leading-7">{group.subtitle}</p><PackageDetails key={group.id + (initialPackage ?? '')} group={group} initialPackage={initialPackage}/></section>}
       </div>
     </div>
   </section>;
