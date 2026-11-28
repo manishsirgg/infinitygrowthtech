@@ -1,7 +1,9 @@
 export const site = {
   name: 'Infinity Growth Tech',
   url: 'https://infinitygrowthtech.com',
-  description: 'Websites, digital platforms, marketing and automation designed for growing businesses.',
+  tagline: 'Architecting Digital Growth.',
+  positioning: 'Digital Growth, AI & Technology Solutions',
+  description: 'Infinity Growth Tech brings together website and software development, digital marketing, SEO, AEO/GEO, branding and intelligent automation for growing businesses.',
   email: 'infinitygrowthtech@gmail.com',
   phone: '+91 8989601701',
   tel: '+918989601701',
