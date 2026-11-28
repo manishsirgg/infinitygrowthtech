@@ -62,18 +62,18 @@ export function ContactForm() {
     }
   }
 
-  return <form ref={formRef} onSubmit={submit} className="panel space-y-5 p-6 sm:p-8">
+  return <form ref={formRef} onSubmit={submit} className="panel space-y-4 p-4 sm:p-8">
     {siteKey && <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />}
     <div><label htmlFor="contact-name" className="mb-2 block text-sm font-semibold">Name</label><input id="contact-name" name="name" required autoComplete="name" minLength={2} maxLength={120} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
     <div><label htmlFor="contact-email" className="mb-2 block text-sm font-semibold">Email</label><input id="contact-email" name="email" type="email" required autoComplete="email" maxLength={240} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
     <div><label htmlFor="contact-phone" className="mb-2 block text-sm font-semibold">Phone (optional)</label><input id="contact-phone" name="phone" type="tel" autoComplete="tel" maxLength={30} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
-    <div><label htmlFor="contact-subject" className="mb-2 block text-sm font-semibold">What can we help with?</label><select id="contact-subject" name="subject" required className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white"><option>Website or Digital Platform</option><option>Marketing &amp; Growth</option><option>Package Consultation</option><option>Marketplace Services</option><option>Automation</option><option>Other</option></select></div>
+    <div><label htmlFor="contact-subject" className="mb-2 block text-sm font-semibold">What can we help with?</label><select id="contact-subject" name="subject" required className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white"><option>Website or Digital Platform</option><option>Marketing &amp; Growth</option><option>Package Consultation</option><option>Marketplace Services</option><option>Automation</option><option>AI Visibility Audit</option><option>Social Media Consultation</option><option>Content Production</option><option>Content Production Consultation</option><option>Brand Strategy Consultation</option><option>Website Scope Consultation</option><option>Other</option></select></div>
     {selectedPackage && <p className="rounded-lg border border-[#4ade80]/30 bg-[#4ade80]/10 px-4 py-3 text-sm text-[#aef7c8]">Enquiring about: <strong>{selectedPackage}</strong></p>}
-    <div><label htmlFor="contact-message" className="mb-2 block text-sm font-semibold">Project details</label><textarea id="contact-message" name="message" required minLength={10} maxLength={5000} rows={5} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
+    <div><label htmlFor="contact-message" className="mb-2 block text-sm font-semibold">Project details</label><textarea id="contact-message" name="message" placeholder="Tell us about your business, goals, budget or timeline." required minLength={10} maxLength={5000} rows={5} className="w-full rounded-lg border border-[#40515a] bg-[#070a0d] p-3 text-white" /></div>
     <div className="absolute left-[-9999px]" aria-hidden="true"><label htmlFor="contact-website">Leave this field empty</label><input id="contact-website" name="website" tabIndex={-1} autoComplete="off" /></div>
     <p className="text-sm text-[#a0b0b8]">We use the information provided to review and respond to your enquiry. Please do not include sensitive financial or personal information.</p>
     {siteKey ? <div className="cf-turnstile" data-sitekey={siteKey} data-theme="dark" /> : <p role="alert" className="text-sm text-amber-200">Online enquiries are being configured. Please return shortly.</p>}
-    <button type="submit" disabled={!siteKey || status === 'sending' || status === 'success'} className="button-primary disabled:opacity-50">{status === 'sending' ? 'Sending…' : status === 'success' ? 'Enquiry received' : 'Send enquiry'}</button>
+    <button type="submit" disabled={!siteKey || status === 'sending' || status === 'success'} className="button-primary w-full disabled:opacity-50 sm:w-auto">{status === 'sending' ? 'Sending…' : status === 'success' ? 'Enquiry received' : 'Send enquiry'}</button>
     {notice && <p role={status === 'error' ? 'alert' : 'status'} className={status === 'error' ? 'text-sm text-red-300' : 'text-sm text-[#4ade80]'}>{notice}</p>}
   </form>;
 }
