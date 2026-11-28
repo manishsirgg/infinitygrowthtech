@@ -805,73 +805,83 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "seo-discovery",
-    "title": "SEO & Search Visibility",
-    "subtitle": "Be found where intent begins",
+    "title": "SEO & Organic Search Growth",
+    "subtitle": "Local discovery, technical foundations and sustainable organic visibility",
     "packages": [
       {
-        "title": "Google Maps Lite",
+        "title": "Google Maps Essential",
         "price": "₹3,999",
         "unit": "month",
-        "description": "Essential local presence",
+        "description": "Build a stronger local presence",
         "features": [
-          "One verified profile",
+          "1 Google Business Profile",
+          "Initial profile audit and optimisation",
+          "Business information and category optimisation",
           "2 profile posts per month",
-          "Basic business information updates",
-          "Monthly visibility summary"
-        ],
-        "note": "Verification and multi-location work extra."
-      },
-      {
-        "title": "Google Maps Visibility",
-        "price": "₹5,999",
-        "unit": "month",
-        "description": "Local search discovery",
-        "features": [
-          "Google Business Profile upkeep",
-          "4 profile posts per month",
-          "Local optimisation priorities",
           "Monthly visibility report"
         ],
-        "note": "Verification and approvals not assured."
+        "note": "One verified Google Business Profile; verification, additional locations and paid services extra. No guaranteed rankings or approvals."
+      },
+      {
+        "title": "Google Maps Growth",
+        "price": "₹5,999",
+        "unit": "month",
+        "description": "Strengthen local discovery",
+        "features": [
+          "Everything in Google Maps Essential",
+          "4 profile posts per month in total",
+          "Local competitor analysis and keyword monitoring",
+          "Review response assistance up to 15 reviews/month",
+          "Basic local citation audit",
+          "Monthly performance recommendations"
+        ],
+        "note": "One verified Google Business Profile; verification, additional locations and paid services extra. No guaranteed rankings or approvals. Responses must be truthful and client-approved."
       },
       {
         "title": "SEO Foundation",
         "price": "₹8,999",
         "unit": "month",
-        "description": "Healthy search baseline",
+        "description": "Establish a healthy search baseline",
         "features": [
-          "One website",
-          "Up to 4 priority page optimisations per month",
-          "Keyword and issue monitoring",
-          "Monthly progress report"
+          "Initial SEO audit",
+          "Up to 15 tracked keywords",
+          "Up to 4 page optimisations per month",
+          "Google Search Console and GA4 setup assistance",
+          "Technical SEO monitoring",
+          "Monthly performance report"
         ],
-        "note": "New articles and major development extra."
+        "note": "One website; major development, extensive technical fixes, paid placements and premium tools extra. Rankings, traffic and conversions are not guaranteed. New articles excluded."
       },
       {
         "title": "SEO Growth",
         "price": "₹14,999",
         "unit": "month",
-        "description": "Improve depth and coverage",
+        "description": "Expand organic search coverage",
         "features": [
-          "Expanded SEO strategy",
-          "Agreed page optimisation schedule",
-          "Technical and content priorities",
-          "Monthly performance review"
+          "Up to 30 tracked keywords",
+          "Up to 8 page optimisations per month",
+          "2 human-reviewed SEO articles up to 800 words each",
+          "Competitor and backlink analysis",
+          "Internal linking and structured data recommendations",
+          "Monthly strategy review"
         ],
-        "note": "Scope confirmed after website audit."
+        "note": "One website; major development, extensive technical fixes, paid placements and premium tools extra. Rankings, traffic and conversions are not guaranteed."
       },
       {
         "title": "SEO Authority",
         "price": "₹29,999+",
         "unit": "month",
-        "description": "Advanced search optimisation",
+        "description": "Advanced organic growth strategy",
         "features": [
-          "Advanced technical and content plan",
-          "Comprehensive optimisation scope",
-          "Search performance analysis",
-          "Strategic review and reporting"
+          "Advanced technical SEO",
+          "Up to 60 tracked keywords and 15 page optimisations/month within standard scope",
+          "4 human-reviewed SEO articles up to 1,000 words each",
+          "Content cluster strategy",
+          "Authority-building and outreach planning",
+          "Advanced analytics and conversion recommendations",
+          "Customised implementation roadmap"
         ],
-        "note": "No guaranteed rankings or traffic."
+        "note": "One website; major development, extensive technical fixes, paid placements and premium tools extra. Rankings, traffic and conversions are not guaranteed. Final scope after audit."
       }
     ]
   },
@@ -949,6 +959,67 @@ export const packageGroups: PackageGroup[] = [
           "Monthly AEO/GEO optimisation roadmap"
         ],
         "note": "One brand; service commencement subject to platform onboarding. AI answers vary; mentions, citations, rankings and sales are not guaranteed. Website implementation, paid editorial placements, third-party publishing, additional human editing and outreach execution quoted separately."
+      }
+    ]
+  },
+  {
+    "id": "unified-search",
+    "title": "Unified Search Visibility — SEO, AEO & GEO",
+    "subtitle": "Combine organic search optimisation with AI visibility monitoring and strategic content",
+    "packages": [
+      {
+        "title": "Unified Search Essential",
+        "price": "₹15,999",
+        "unit": "month",
+        "description": "SEO Foundation + AI Visibility Track Weekly",
+        "features": [
+          "Full SEO Foundation scope: 15 tracked keywords and 4 page optimisations/month",
+          "AI Visibility Track: 100 prompts across ChatGPT and Google AI, weekly refresh",
+          "Brand mentions, competitors, sentiment and citations",
+          "Combined monthly review"
+        ],
+        "note": "One brand and one website. AI monitoring starts subject to onboarding; weekly/daily refers to refresh frequency. All fees monthly. Paid placements, additional human editing, outreach execution, major development and third-party publishing extra. No guaranteed rankings, citations or sales."
+      },
+      {
+        "title": "Unified Search Growth",
+        "price": "₹21,999",
+        "unit": "month",
+        "description": "SEO Growth + AI Visibility Track Weekly",
+        "features": [
+          "Full SEO Growth scope: 30 tracked keywords, 8 page optimisations and 2 SEO articles/month",
+          "AI Visibility Track: 100 prompts, weekly refresh",
+          "Brand mentions, competitors, sentiment and citations",
+          "Combined monthly strategy review"
+        ],
+        "note": "One brand and one website. AI monitoring starts subject to onboarding; weekly/daily refers to refresh frequency. All fees monthly. Paid placements, additional human editing, outreach execution, major development and third-party publishing extra. No guaranteed rankings, citations or sales."
+      },
+      {
+        "title": "Unified Search Pro",
+        "price": "₹32,999",
+        "unit": "month",
+        "description": "SEO Growth + AI Visibility Growth Weekly",
+        "features": [
+          "Full SEO Growth scope: 30 tracked keywords, 8 page optimisations and 2 SEO articles/month",
+          "AI Visibility Growth: 100 prompts, weekly refresh",
+          "Up to 25 AI-assisted drafts/month across agreed formats; up to 4 priority drafts human-reviewed",
+          "Editorial opportunity research, news monitoring and outreach planning",
+          "Combined optimisation roadmap"
+        ],
+        "note": "One brand and one website. AI monitoring starts subject to onboarding; weekly/daily refers to refresh frequency. All fees monthly. Paid placements, additional human editing, outreach execution, major development and third-party publishing extra. No guaranteed rankings, citations or sales. SEO articles and AI draft allowances are coordinated; no duplicate billing or promise of 25 published articles."
+      },
+      {
+        "title": "Unified Search Authority",
+        "price": "₹49,999+",
+        "unit": "month",
+        "description": "SEO Authority + AI Visibility Growth Daily",
+        "features": [
+          "SEO Authority standard scope: 60 tracked keywords, 15 page optimisations and 4 SEO articles/month",
+          "AI Visibility Growth: 100 prompts, daily refresh",
+          "Up to 25 AI-assisted drafts/month; up to 4 priority drafts human-reviewed",
+          "Authority-building, editorial opportunity research and outreach planning",
+          "Combined reporting and optimisation roadmap"
+        ],
+        "note": "One brand and one website. AI monitoring starts subject to onboarding; weekly/daily refers to refresh frequency. All fees monthly. Paid placements, additional human editing, outreach execution, major development and third-party publishing extra. No guaranteed rankings, citations or sales. Final fee after audit; SEO articles and AI drafts coordinated."
       }
     ]
   },
@@ -1215,8 +1286,8 @@ export const packageGroups: PackageGroup[] = [
   },
   {
     "id": "marketplaces",
-    "title": "Amazon & Flipkart Seller Services",
-    "subtitle": "Your products. Better managed.",
+    "title": "Marketplace Management & Seller Growth",
+    "subtitle": "Amazon and Flipkart onboarding, catalogue optimisation and account growth",
     "packages": [
       {
         "title": "Seller Account Launch",
@@ -1224,25 +1295,27 @@ export const packageGroups: PackageGroup[] = [
         "unit": "one-time",
         "description": "Amazon OR Flipkart",
         "features": [
-          "Registration and onboarding guidance",
-          "Basic seller profile setup",
-          "Initial policy and category checklist",
-          "Up to 10 standard product listings"
+          "Seller registration and documentation assistance",
+          "Seller profile configuration",
+          "Up to 10 standard product listings",
+          "Initial category and policy checklist",
+          "Basic seller dashboard training"
         ],
-        "note": "Platform approval, GST and seller fees depend on the platform."
+        "note": "Client remains responsible for inventory, fulfilment, orders, returns, tax, product compliance, shipping and platform fees. Platform eligibility and approvals not guaranteed."
       },
       {
-        "title": "Marketplace Account Care",
+        "title": "Marketplace Essential",
         "price": "₹5,999",
         "unit": "month",
         "description": "Amazon OR Flipkart",
         "features": [
-          "Up to 20 listing updates per month",
-          "Listing, stock and price coordination",
-          "Account-health issue follow-up",
-          "Monthly seller performance report"
+          "Up to 20 listing updates/month",
+          "Product title and description optimisation",
+          "Stock and pricing coordination",
+          "Account health monitoring and basic support case assistance",
+          "Monthly performance report"
         ],
-        "note": "Client handles fulfilment and customer orders."
+        "note": "Client remains responsible for inventory, fulfilment, orders, returns, tax, product compliance, shipping and platform fees. Platform eligibility and approvals not guaranteed. Ads excluded."
       },
       {
         "title": "Marketplace Growth",
@@ -1250,64 +1323,53 @@ export const packageGroups: PackageGroup[] = [
         "unit": "month",
         "description": "Amazon OR Flipkart",
         "features": [
-          "Up to 30 listing optimisations",
-          "Marketplace campaign management",
-          "Catalogue and account review",
+          "Up to 30 listing optimisations/month",
+          "Competitor and keyword research",
+          "Up to 2 active sponsored ad campaigns",
+          "Basic promotion planning and account health review",
           "Biweekly performance insights"
         ],
-        "note": "Sponsored ad spend excluded."
+        "note": "Client remains responsible for inventory, fulfilment, orders, returns, tax, product compliance, shipping and platform fees. Platform eligibility and approvals not guaranteed. Managed ad budget up to ₹20,000/month; ad spend extra."
       },
       {
-        "title": "Amazon + Flipkart Partner",
+        "title": "Multi-Marketplace Growth",
         "price": "₹17,999",
         "unit": "month",
-        "description": "Manage both marketplaces",
+        "description": "Amazon AND Flipkart",
         "features": [
-          "Account care on both platforms",
-          "Up to 40 combined listing updates",
-          "Basic promotion coordination",
-          "Consolidated monthly reporting"
+          "Up to 40 combined listing updates/month",
+          "Stock and pricing coordination",
+          "Account health monitoring across both platforms",
+          "Up to 2 active sponsored ad campaigns across both platforms",
+          "Promotion planning and consolidated monthly report"
         ],
-        "note": "Ads and advanced design quoted extra."
+        "note": "Client remains responsible for inventory, fulfilment, orders, returns, tax, product compliance, shipping and platform fees. Platform eligibility and approvals not guaranteed. Combined managed ad budget up to ₹20,000/month; ad spend and advanced design extra."
       }
     ]
   },
   {
     "id": "customer-communication",
-    "title": "WhatsApp & Email Marketing",
-    "subtitle": "Permission-based communication",
+    "title": "WhatsApp, Email & Customer Engagement",
+    "subtitle": "Permission-based customer acquisition, communication and retention",
     "packages": [
       {
-        "title": "WhatsApp Lite",
-        "price": "₹2,999",
-        "unit": "month",
-        "description": "One focused customer campaign",
+        "title": "WhatsApp Business App Setup",
+        "price": "₹1,999",
+        "unit": "one-time",
+        "description": "Essential business messaging setup",
         "features": [
-          "1 approved campaign per month",
-          "Copywriting using existing assets",
-          "Scheduling and execution",
-          "Basic delivery report"
+          "Business profile setup",
+          "Catalogue of up to 10 products using supplied assets",
+          "Greeting and away messages",
+          "Quick replies and basic handover"
         ],
-        "note": "Existing official platform and consented list required; up to 1,000 recipients; messaging fees extra."
+        "note": "Client-owned account; distinct from API onboarding. Platform restrictions apply."
       },
       {
-        "title": "WhatsApp Campaign Care",
-        "price": "₹4,999",
-        "unit": "month",
-        "description": "Consent-based communication",
-        "features": [
-          "2 approved campaigns per month",
-          "Copywriting and basic segmentation",
-          "Scheduling and execution",
-          "Monthly report"
-        ],
-        "note": "Existing official platform and consented list required; up to 2,000 recipients per campaign; messaging and platform fees extra."
-      },
-      {
-        "title": "WhatsApp Platform Setup",
+        "title": "WhatsApp API Setup",
         "price": "₹4,999+",
         "unit": "one-time",
-        "description": "Platform onboarding",
+        "description": "Official business platform onboarding",
         "features": [
           "Official provider selection and onboarding",
           "Business number configuration assistance",
@@ -1317,37 +1379,127 @@ export const packageGroups: PackageGroup[] = [
         "note": "Provider fees extra; approval not guaranteed."
       },
       {
-        "title": "Email Marketing Essentials",
+        "title": "WhatsApp Lite",
+        "price": "₹2,999",
+        "unit": "month",
+        "description": "One focused customer campaign",
+        "features": [
+          "1 approved campaign/month",
+          "Up to 1,000 consented recipients",
+          "Copywriting using existing assets, scheduling and execution",
+          "Basic delivery report"
+        ],
+        "note": "Existing official platform and consented recipient list required. Messaging, provider and setup fees extra. Template approval not guaranteed; opt-outs honoured."
+      },
+      {
+        "title": "WhatsApp Growth",
+        "price": "₹4,999",
+        "unit": "month",
+        "description": "Consistent customer communication",
+        "features": [
+          "2 approved campaigns/month",
+          "Up to 2,000 consented recipients per campaign",
+          "Copywriting, basic segmentation, scheduling and execution",
+          "Monthly report"
+        ],
+        "note": "Existing official platform and consented recipient list required. Messaging, provider and setup fees extra. Template approval not guaranteed; opt-outs honoured."
+      },
+      {
+        "title": "WhatsApp Pro",
+        "price": "₹8,999",
+        "unit": "month",
+        "description": "Higher-volume customer engagement",
+        "features": [
+          "4 approved campaigns/month",
+          "Up to 5,000 consented recipients per campaign",
+          "Copywriting, basic segmentation and campaign scheduling",
+          "Monthly performance reporting"
+        ],
+        "note": "Existing official platform and consented recipient list required. Messaging, provider and setup fees extra. Template approval not guaranteed; opt-outs honoured."
+      },
+      {
+        "title": "Email Marketing Setup",
+        "price": "₹3,999",
+        "unit": "one-time",
+        "description": "Establish a reliable sending foundation",
+        "features": [
+          "Sending platform configuration",
+          "Sender authentication assistance (SPF, DKIM and DMARC as applicable)",
+          "1 basic branded email template",
+          "Unsubscribe configuration and handover"
+        ],
+        "note": "Client-owned platform and domain access required; software fees extra."
+      },
+      {
+        "title": "Email Essential",
+        "price": "₹2,999",
+        "unit": "month",
+        "description": "Stay in touch affordably",
+        "features": [
+          "1 newsletter campaign/month",
+          "Up to 1,000 consented contacts",
+          "Copy, template adaptation, scheduling and report"
+        ],
+        "note": "Client-owned sending platform and permission-based list required; unsubscribe and sender authentication supported. Software, sending and setup fees extra."
+      },
+      {
+        "title": "Email Growth",
         "price": "₹5,999",
         "unit": "month",
-        "description": "Stay in touch with your audience",
+        "description": "Regular customer newsletters",
         "features": [
-          "Client-owned sending platform",
-          "2 newsletter copy drafts",
-          "Campaign setup and scheduling",
+          "2 campaigns/month",
+          "Up to 2,000 consented contacts per campaign",
+          "Copywriting, campaign setup and scheduling",
           "Monthly performance report"
         ],
-        "note": "Up to 2,000 consented recipients per campaign; software fees extra."
+        "note": "Client-owned sending platform and permission-based list required; unsubscribe and sender authentication supported. Software, sending and setup fees extra."
+      },
+      {
+        "title": "Email Pro",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "Segmented customer engagement",
+        "features": [
+          "4 campaigns/month",
+          "Up to 5,000 consented contacts per campaign",
+          "Copywriting, basic segmentation and subject-line testing where supported",
+          "Monthly performance report"
+        ],
+        "note": "Client-owned sending platform and permission-based list required; unsubscribe and sender authentication supported. Software, sending and setup fees extra."
+      },
+      {
+        "title": "Customer Engagement Growth",
+        "price": "₹9,999",
+        "unit": "month",
+        "description": "WhatsApp and email in one plan",
+        "features": [
+          "2 WhatsApp campaigns and 2 email campaigns/month",
+          "Up to 2,000 consented recipients per campaign",
+          "Basic segmentation and promotional copywriting",
+          "Unified campaign calendar and monthly report"
+        ],
+        "note": "Existing official WhatsApp platform and client-owned email platform required. Messaging, subscriptions and initial setup extra. Consent and opt-outs required."
       },
       {
         "title": "Nurture & Automation",
-        "price": "Custom quotation",
+        "price": "₹14,999+",
         "unit": "project",
-        "description": "Better follow-up journeys",
+        "description": "Automated customer follow-up journeys",
         "features": [
-          "Welcome or reminder sequences",
+          "Up to 2 agreed welcome or reminder workflows",
           "Segmentation and routing",
-          "CRM and messaging integration",
+          "Standard CRM and messaging integration",
           "Testing and workflow documentation"
         ],
-        "note": "Defined workflows quoted separately."
+        "note": "Final price after discovery; custom integration, platform usage and ongoing management extra."
       }
     ]
   },
   {
     "id": "crm-automation",
-    "title": "CRM, AI & Business Automation",
-    "subtitle": "Systems behind growth",
+    "title": "CRM, AI & Intelligent Automation",
+    "subtitle": "Connect existing systems, simplify workflows and support business growth",
     "packages": [
       {
         "title": "CRM Starter",
@@ -1355,38 +1507,73 @@ export const packageGroups: PackageGroup[] = [
         "unit": "one-time",
         "description": "Organise opportunities",
         "features": [
-          "CRM account and sales pipeline",
-          "Lead capture form",
+          "Standard CRM account configuration",
+          "1 sales pipeline and lead capture form",
           "Lead-source tracking",
-          "Basic team handover"
+          "Basic team training and handover"
         ],
-        "note": "Software subscriptions extra."
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing."
+      },
+      {
+        "title": "CRM Professional",
+        "price": "₹19,999+",
+        "unit": "project",
+        "description": "More structured sales operations",
+        "features": [
+          "Up to 2 sales pipelines",
+          "Up to 3 agreed lead sources",
+          "Basic dashboard and follow-up reminders",
+          "Configuration, testing and team handover"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing."
+      },
+      {
+        "title": "CRM Care",
+        "price": "₹2,999",
+        "unit": "month",
+        "description": "Maintain your configured CRM",
+        "features": [
+          "Configuration updates and basic monitoring",
+          "Up to 2 support hours/month",
+          "Monthly support summary"
+        ],
+        "note": "Support for existing agreed setup during business hours; unused hours do not roll over. New features, major fixes, emergency support and third-party charges extra."
       },
       {
         "title": "Lead Automation",
         "price": "₹14,999+",
-        "unit": "one-time",
+        "unit": "project",
         "description": "Reduce manual follow-ups",
         "features": [
-          "Defined lead-routing process",
-          "Follow-up reminders",
-          "Basic workflow integration",
-          "Tested handover and documentation"
+          "One agreed lead capture and routing workflow",
+          "Follow-up reminders and standard integration",
+          "Testing and documentation"
         ],
-        "note": "One agreed workflow scope."
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing."
       },
       {
-        "title": "Website AI Assistant",
+        "title": "WhatsApp Automation",
         "price": "₹14,999+",
         "unit": "project",
-        "description": "Answer common questions",
+        "description": "Streamline business conversations",
         "features": [
-          "Knowledge-base preparation",
-          "Chatbot setup and integration",
-          "Testing of key scenarios",
-          "Admin handover"
+          "Up to 2 defined workflows for welcome, lead routing or reminders",
+          "Official WhatsApp platform integration",
+          "Testing and handover"
         ],
-        "note": "AI API usage billed separately."
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Consent and approved templates required; API onboarding separate unless scoped."
+      },
+      {
+        "title": "Appointment Automation",
+        "price": "₹9,999+",
+        "unit": "project",
+        "description": "Simplify appointment coordination",
+        "features": [
+          "One agreed booking integration",
+          "Confirmation and reminder workflow",
+          "Testing and handover"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing."
       },
       {
         "title": "Business Automation",
@@ -1395,11 +1582,98 @@ export const packageGroups: PackageGroup[] = [
         "description": "Connect operational systems",
         "features": [
           "Workflow discovery and design",
-          "Multi-step integrations",
+          "Agreed multi-step integrations",
           "Testing and exception handling",
           "Documentation and handover"
         ],
-        "note": "Custom estimate after discovery."
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing."
+      },
+      {
+        "title": "Automation Care",
+        "price": "₹4,999",
+        "unit": "month",
+        "description": "Keep agreed workflows running",
+        "features": [
+          "Basic workflow monitoring",
+          "Up to 3 support hours/month",
+          "Issue review and minor adjustments"
+        ],
+        "note": "Support for existing agreed setup during business hours; unused hours do not roll over. New features, major fixes, emergency support and third-party charges extra."
+      },
+      {
+        "title": "Website AI Assistant",
+        "price": "₹14,999+",
+        "unit": "project",
+        "description": "Answer common website questions",
+        "features": [
+          "Knowledge-base preparation from approved sources",
+          "Chatbot setup and website integration",
+          "Testing of key scenarios and admin handover"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Human escalation and privacy safeguards agreed before launch; AI accuracy not guaranteed."
+      },
+      {
+        "title": "AI Lead Qualification Assistant",
+        "price": "₹24,999+",
+        "unit": "project",
+        "description": "Capture and route qualified enquiries",
+        "features": [
+          "Agreed qualification questions and information capture",
+          "Standard CRM or lead routing integration",
+          "Human handover and testing"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Human escalation and privacy safeguards agreed before launch; AI accuracy not guaranteed."
+      },
+      {
+        "title": "AI Customer Support Assistant",
+        "price": "₹29,999+",
+        "unit": "project",
+        "description": "Support common customer enquiries",
+        "features": [
+          "Approved knowledge-base configuration",
+          "Agreed support and escalation workflows",
+          "Testing and administrator training"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Human escalation and privacy safeguards agreed before launch; AI accuracy not guaranteed."
+      },
+      {
+        "title": "AI Assistant Care",
+        "price": "₹3,999",
+        "unit": "month",
+        "description": "Maintain assistant knowledge and performance",
+        "features": [
+          "Knowledge-base updates and basic monitoring",
+          "Up to 2 support hours/month",
+          "Issue review and minor adjustments"
+        ],
+        "note": "Support for existing agreed setup during business hours; unused hours do not roll over. New features, major fixes, emergency support and third-party charges extra. AI usage billed separately."
+      },
+      {
+        "title": "Custom AI Agent Solutions",
+        "price": "Custom quotation",
+        "unit": "project",
+        "description": "Business-specific AI workflows",
+        "features": [
+          "Discovery and architecture review",
+          "Agreed advanced workflows and integrations",
+          "Safety, access controls, testing and handover"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Human escalation and privacy safeguards agreed before launch; AI accuracy not guaranteed."
+      },
+      {
+        "title": "Smart Business Automation Suite",
+        "price": "₹49,999+",
+        "unit": "project",
+        "description": "Integrated sales and customer acquisition system",
+        "features": [
+          "Standard CRM configuration and website lead capture",
+          "WhatsApp lead integration",
+          "AI-assisted lead qualification",
+          "Agreed follow-up workflows and appointment or enquiry routing",
+          "Basic sales dashboard",
+          "Testing, training and handover"
+        ],
+        "note": "Standard configuration of existing platforms, not custom-built software. Client-owned accounts; subscriptions, hosting, messaging, AI usage and third-party fees extra. Scope, access and acceptance criteria agreed in writing. Human escalation and privacy safeguards agreed before launch; AI accuracy not guaranteed. Final scope and fee after discovery; ongoing support separate."
       }
     ]
   },
@@ -1464,8 +1738,34 @@ export const packageGroups: PackageGroup[] = [
 ];
 
 export const marketplaceExtras = [
-  { title: 'Product listing & catalogue optimisation', price: 'From ₹249 / SKU' },
-  { title: 'Marketplace advertising management', price: 'From ₹5,999 / month per platform' },
+  {
+    "title": "Standard product listing",
+    "price": "From ₹249 / SKU"
+  },
+  {
+    "title": "Advanced listing optimisation",
+    "price": "From ₹499 / SKU"
+  },
+  {
+    "title": "Amazon A+ Content",
+    "price": "From ₹2,499 / product"
+  },
+  {
+    "title": "Amazon Brand Store design",
+    "price": "From ₹7,999"
+  },
+  {
+    "title": "Marketplace advertising management",
+    "price": "From ₹5,999 / month per platform"
+  },
+  {
+    "title": "Account suspension assistance",
+    "price": "Custom quotation"
+  },
+  {
+    "title": "Marketplace expansion consultation",
+    "price": "Custom quotation"
+  }
 ] as const;
 
 export const productionCategories = [
@@ -1539,3 +1839,87 @@ export const productionCategories = [
     ]
   }
 ] as const;
+
+export const serviceSubcategories: Record<string, { title: string; names: string[] }[]> = {
+  "seo-discovery": [
+    {
+      "title": "Google Maps & local SEO",
+      "names": [
+        "Google Maps Essential",
+        "Google Maps Growth"
+      ]
+    },
+    {
+      "title": "Website SEO",
+      "names": [
+        "SEO Foundation",
+        "SEO Growth",
+        "SEO Authority"
+      ]
+    }
+  ],
+  "customer-communication": [
+    {
+      "title": "WhatsApp",
+      "names": [
+        "WhatsApp Business App Setup",
+        "WhatsApp API Setup",
+        "WhatsApp Lite",
+        "WhatsApp Growth",
+        "WhatsApp Pro"
+      ]
+    },
+    {
+      "title": "Email marketing",
+      "names": [
+        "Email Marketing Setup",
+        "Email Essential",
+        "Email Growth",
+        "Email Pro"
+      ]
+    },
+    {
+      "title": "Combined & automation",
+      "names": [
+        "Customer Engagement Growth",
+        "Nurture & Automation"
+      ]
+    }
+  ],
+  "crm-automation": [
+    {
+      "title": "CRM solutions",
+      "names": [
+        "CRM Starter",
+        "CRM Professional",
+        "CRM Care"
+      ]
+    },
+    {
+      "title": "Business automation",
+      "names": [
+        "Lead Automation",
+        "WhatsApp Automation",
+        "Appointment Automation",
+        "Business Automation",
+        "Automation Care"
+      ]
+    },
+    {
+      "title": "AI assistants & agents",
+      "names": [
+        "Website AI Assistant",
+        "AI Lead Qualification Assistant",
+        "AI Customer Support Assistant",
+        "AI Assistant Care",
+        "Custom AI Agent Solutions"
+      ]
+    },
+    {
+      "title": "Integrated suite",
+      "names": [
+        "Smart Business Automation Suite"
+      ]
+    }
+  ]
+};
