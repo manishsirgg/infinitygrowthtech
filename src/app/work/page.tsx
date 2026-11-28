@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 export default function WorkPage() {
-  return <div className="container-shell py-20 md:py-28">
+  return <div className="container-shell py-10 sm:py-8 sm:py-14 md:py-24">
     <p className="eyebrow">Our work</p>
-    <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight md:text-7xl">Products we've <span className="gradient-text">built and developed.</span></h1>
-    <p className="muted mt-7 max-w-3xl text-lg leading-8">These examples come from our own ventures. They are presented to demonstrate product thinking and implementation capabilities, not as independent customer case studies or client performance results.</p>
-    <div className="mt-14 grid gap-6 md:grid-cols-2">
-      {portfolioProjects.map(project => <article key={project.slug} className="panel flex flex-col p-8">
+    <h1 className="mt-5 max-w-4xl text-3xl font-black tracking-tight sm:text-5xl md:text-7xl">Products we've <span className="gradient-text">built and developed.</span></h1>
+    <p className="muted mt-7 max-w-3xl text-base leading-7 md:text-lg md:leading-8">These examples come from our own ventures. They are presented to demonstrate product thinking and implementation capabilities, not as independent customer case studies or client performance results.</p>
+    <div className="mt-7 md:mt-14 grid gap-6 md:grid-cols-2">
+      {portfolioProjects.map(project => <article key={project.slug} className="panel flex flex-col p-5 md:p-8">
         <p className="eyebrow">{project.type}</p><h2 className="mt-5 text-3xl font-bold">{project.name}</h2>
         <p className="muted mt-4 flex-1 leading-7">{project.summary}</p>
         <Link href={`/work/${project.slug}`} className="mt-9 inline-flex items-center gap-2 font-semibold text-[#4ade80] hover:text-[#a2fac0]">Explore project <ArrowUpRight size={17} aria-hidden="true" /></Link>
