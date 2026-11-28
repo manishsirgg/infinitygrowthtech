@@ -67,3 +67,20 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
   .packages-page select, .packages-page input[type=search] { min-width: 0; max-width: 100%; font-size: 16px; }
   .packages-page h1, .packages-page h2, .packages-page h3, .packages-page h4 { overflow-wrap: anywhere; }
 }
+
+/* Shared responsive UX: preserve the design system, improve usable space. */
+main { min-width: 0; }
+main [id] { scroll-margin-top: 88px; }
+.button-outline { gap: .55rem; }
+main a, main button, main input, main select, main textarea { max-width: 100%; }
+main input, main select, main textarea { min-width: 0; }
+main h1, main h2, main h3, main h4 { overflow-wrap: anywhere; text-wrap: balance; }
+main input:focus-visible, main select:focus-visible, main textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 767px) {
+  .container-shell { width: calc(100% - 32px); }
+  main .panel { min-width: 0; border-radius: 14px; }
+  .button-primary, .button-outline { min-height: 44px; padding: .75rem 1rem; white-space: normal; text-align: center; }
+  main input, main select, main textarea { font-size: 16px; }
+  main summary { min-height: 44px; align-content: center; cursor: pointer; }
+  main [id] { scroll-margin-top: 76px; }
+}
